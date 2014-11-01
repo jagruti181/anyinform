@@ -1,0 +1,83 @@
+<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<div class="panel-group category-products" style="padding-left: 17px;" id="accordian"><!--category-productsr-->
+                            <h4>{{filters[0].name}}</h4>
+							<div class="panel panel-default" ng-repeat="filter in filters">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a ng-click="filterselect(filter.iid,filter.name)" class="cursor" ng-class="filter.name"><i class="fa fa-caret-right"></i>  {{filter.name2}}</a></h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
+									<li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+									<li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
+									<li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
+									<li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
+									<li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
+									<li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						
+					
+						
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="blog-post-area">
+						<div class="single-blog-post">
+                            <div class="msg" ng-show="msgarea">
+                                <p class="text-center" style="padding:10px;">{{msg}}</p>
+                            </div>
+                        <!-- 
+						    <h3>Girls Pink T Shirt arrived in store</h3>
+						    <div class="post-meta">
+						        <ul>
+						            <li><i class="fa fa-user"></i> Mac Doe</li>
+						            <li><i class="fa fa-clock-o"></i> 1:33 pm</li>
+						            <li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
+						        </ul>
+						    </div> -->
+					<div class="media commnets" ng-repeat="list in listings">
+						<a class="pull-left" href="#/detail/{{list.listing}}">
+							<img class="media-object mediumimage" src="{{list.logo|imagepath}}" alt="">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading"><i class="fa fa-thumbs-up fa-2x"></i>&nbsp;{{list.name}}</h4>
+                            <p><i class="fa fa-map-marker fa-2x"></i>&nbsp;{{list.address}}</p>
+                            <p><i class="fa fa-phone fa-2x"></i>&nbsp;{{list.contactno}}</p>
+							<div class="social-icons pull-laft">
+							
+                            <p class="pull-left">
+                                <a class="btn btn-primary mrr" href="">Send SMS</a>
+                                <a class="btn btn-primary mrr" href="">Send Email</a>
+                                <a class="btn btn-primary mrr" href="">Other Posts</a>
+                            </p>	
+							<ul class="nav navbar-nav mrt14">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>	
+						</div>
+					</div><!--Comments-->
+				</div>	
+			</div>
+		</div>
+	</section>
+	
+<script>
+    
+        $(".panel-title").click(function(){
+            console.log("im in");
+        });
+</script>

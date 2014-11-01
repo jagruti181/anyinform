@@ -1,0 +1,125 @@
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row searchslider">
+            <form class="searchform searchformtext">
+                <h4 style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></h4>
+                <!-- <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle usa mrt30" data-toggle="dropdown">
+                        USA
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Canada</a>
+                        </li>
+                        <li><a href="#">UK</a>
+                        </li>
+                    </ul>
+                </div> -->
+                <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">
+                    <option ng-repeat="city in cities" value="{{city.name}}">{{city.name}}</option>
+                </select>
+                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search)" style="width: 92%;" />
+                <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->
+                {{categoryid}}
+                <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
+                </button>
+                <div id="divsearch" class="searchdrop" ng-show="searchshow">
+                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.name,sea.id)">{{sea.name}}</p>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+
+            </div>
+        </div>
+    </div>
+    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#slider-carousel" data-slide-to="1"></li>
+            <li data-target="#slider-carousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="lib/images/home/banner.jpg" class="girl img-responsive fullwidth" style="height:411px;" alt="" />
+            </div>
+             <div class="item ">
+                <img src="lib/images/home/banner.jpg" class="girl img-responsive fullwidth" style="height:411px;" alt="" />
+            </div>
+             <div class="item ">
+                <img src="lib/images/home/banner.jpg" class="girl img-responsive fullwidth" style="height:411px;" alt="" />
+            </div>
+            
+
+        </div>
+
+        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+</section>
+<!--/slider-->
+<script>
+    $("#locationdrop").change(function(){
+        console.log("####################################3333");
+        console.log($(this).val());
+        $("#location").html($(this).val()+" <i class='fa fa-chevron-down'></i>");
+        $("#location").addClass("showdiv");
+        $("#locationdrop").addClass("hidediv");
+        $("#location").removeClass("hidediv");
+    });
+    $(".showdiv").click(function(){
+        $("#location").addClass("hidediv");
+        $("#locationdrop").addClass("showdiv");
+        $("#locationdrop").removeClass("hidediv");
+    });
+//    function getsearch(id){
+//        $.getJSON(
+//                "http://mafiawarloots.com/foranyinformation/index.php/json/getcategoryinfo?id="+id, {},
+//                function (data) {
+//                    console.log(data.name);
+//                    $("input[name=seachtextt]").val(data.name);
+//                    $("input[name=searchid]").val(data.id);
+//                    $("#divsearch").removeClass("yessearch");
+//                }
+//
+//            );
+//    }
+//    
+//    var searchtext="";
+//        $("#searchbox").keyup(function(){
+//            
+//            $("#divsearch").html("");
+//            var val=$(this).val();
+//            $.getJSON(
+//                "http://mafiawarloots.com/foranyinformation/index.php/json/searchcategory?categoryname="+val, {},
+//                function (data) {
+//                    //  alert(data);
+//                    if(data!="")
+//                    {
+//                        
+//                        $("#divsearch").addClass("yessearch");
+//                        console.log(data);
+//                        for(var i=0;i<data.length;i++)
+//                        {
+//                            $("#divsearch").append("<p class='demo' name='"+data[i].name+"' onclick='getsearch("+data[i].id+")'>"+data[i].name+"</p>");
+//                        }
+//                        
+//                        
+//                    }else{
+//                        $("#divsearch").addClass("nosearch");
+//                    }
+//
+//                }
+//
+//            );
+//        });
+        
+</script>

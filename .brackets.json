@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/xampp/htdocs/anyinform/getallinfo/assets/js1/modules/funnel.src.js",
+        "C:/xampp/htdocs/anyinform/getallinfo/assets/js1/modules/no-data-to-display.src.js",
+        "C:/xampp/htdocs/anyinform/js/controllers.js"
+    ]
+}

@@ -1,0 +1,6 @@
+multiple images
+store access level
+brand access level
+offers
+category filter
+offer fllter
