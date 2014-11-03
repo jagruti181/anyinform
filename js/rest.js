@@ -23,6 +23,9 @@ var restservice = angular.module('restservice', [])
         },
         getfilter: function(id){
             return $http.get(adminurl+"getfilter?id="+id,{});
+        },
+        viewonecitylocations: function(id){
+            return $http.get(adminurl+"viewonecitylocations?id="+id,{});
         }
 
     }

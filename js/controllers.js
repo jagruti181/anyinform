@@ -15,7 +15,18 @@ phonecatControllers.controller('home',
         $scope.searchid="";
         $scope.form=[];
         $scope.form.cityy="Location";
+    //  get area from city
     
+    
+        var getlocation = function (data, status){
+            console.log(data);
+            $scope.areas=data;
+        };
+    
+        $scope.citychange = function (city){
+            console.log(city);
+            RestService.viewonecitylocations(city).success(getlocation);
+        };
         $scope.totextbox = function (name,id){
             $("input[name=abc]").val(name);
             $scope.searchid=id;
