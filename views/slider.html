@@ -3,22 +3,20 @@
     <div class="container">
         <div class="row searchslider">
             <form class="searchform searchformtext">
-                <h4 style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></h4>
-                <!-- <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle usa mrt30" data-toggle="dropdown">
-                        USA
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Canada</a>
-                        </li>
-                        <li><a href="#">UK</a>
-                        </li>
-                    </ul>
-                </div> -->
+               
+               <select class="city" ng-model="form.cityy">
+                    <option style="background:#FF6A00;" ng-repeat="city in cities" value="{{city.name}}">{{city.name}} </option>
+                </select>  <i class="fa fa-chevron-down" style="color:#FFF;"></i>
+               
+                <!-- <span style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
                 <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">
                     <option ng-repeat="city in cities" value="{{city.name}}">{{city.name}}</option>
                 </select>
+                <span style="color:white;padding-left: 142px;" id="area" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
+                <select class="btn btn-default mrt30 area hidediv" id="areadrop" ng-model="area">
+                    <option ng-repeat="are in area" value="{{are.name}}">{{are.name}}</option>
+                </select> -->
+                
                 <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search)" style="width: 92%;" />
                 <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->
                 {{categoryid}}
@@ -74,6 +72,14 @@
         $("#location").addClass("showdiv");
         $("#locationdrop").addClass("hidediv");
         $("#location").removeClass("hidediv");
+    });
+    $("#areadrop").change(function(){
+        console.log("####################################3333");
+        console.log($(this).val());
+        $("#area").html($(this).val()+" <i class='fa fa-chevron-down'></i>");
+        $("#area").addClass("showdiv");
+        $("#areadrop").addClass("hidediv");
+        $("#area").removeClass("hidediv");
     });
     $(".showdiv").click(function(){
         $("#location").addClass("hidediv");

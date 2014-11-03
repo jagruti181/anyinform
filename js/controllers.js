@@ -13,6 +13,8 @@ phonecatControllers.controller('home',
         TemplateService.footerbottom = "views/footerbottom.html";
         $scope.searchshow=false;
         $scope.searchid="";
+        $scope.form=[];
+        $scope.form.cityy="Location";
     
         $scope.totextbox = function (name,id){
             $("input[name=abc]").val(name);
