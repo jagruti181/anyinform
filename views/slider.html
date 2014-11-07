@@ -9,6 +9,7 @@
                 </select>
                 
                 <select class="city onlycursor" ng-model="form.area">
+                   <option class="onlycursor" style="background:#FF6A00;" value="">Select Area</option>
                     <option class="onlycursor" style="background:#FF6A00;" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
                 </select>
                
