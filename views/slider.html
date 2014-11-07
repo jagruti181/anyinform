@@ -4,13 +4,13 @@
         <div class="row searchslider">
             <form class="searchform searchformtext">
                
-               <select class="city" ng-model="form.cityy" ng-click="citychange(form.cityy)">
-                    <option style="background:#FF6A00;" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
-                </select>  <i class="fa fa-chevron-down" style="color:#FFF;"></i>
+               <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
+                    <option class="onlycursor" style="background:#FF6A00;" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
+                </select>
                 
-                <select class="city" ng-model="form.area">
-                    <option style="background:#FF6A00;" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
-                </select>  <i class="fa fa-chevron-down" style="color:#FFF;"></i>
+                <select class="city onlycursor" ng-model="form.area">
+                    <option class="onlycursor" style="background:#FF6A00;" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
+                </select>
                
                 <!-- <span style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
                 <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">

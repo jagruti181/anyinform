@@ -3,7 +3,7 @@ var long=0;
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute']);
 
 phonecatControllers.controller('home',
-  function ($scope, TemplateService, RestService, $location) {
+  function ($scope, TemplateService, RestService, $location, $sce) {
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -14,13 +14,28 @@ phonecatControllers.controller('home',
         $scope.searchshow=false;
         $scope.searchid="";
         $scope.form=[];
-        $scope.form.cityy="Location";
+        $scope.form.cityy="9";
+        $scope.homecategory={};
     //  get area from city
     
+        var maincategories = function (data, status){
+            console.log(data[0].logo);
+            console.log("formated data");
+            $scope.homecategory=data;
+            for(var i=0 ; i < data.length ; i++)
+            {
+                $scope.homecategory[i].logo= $sce.trustAsHtml(data[i].logo);
+            }
+            
+            $scope.homecategory=partitionarray($scope.homecategory,6);
+        };
     
+        RestService.getallparentcategories().success(maincategories);
+        
         var getlocation = function (data, status){
             console.log(data);
             $scope.areas=data;
+            $scope.form.area=data[0].id;
         };
     
         $scope.citychange = function (city){
@@ -96,6 +111,28 @@ phonecatControllers.controller('home',
         } else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
+    
+    
+    //function for home category
+    
+    
+        function partitionarray(myarray,number) {
+            var arrlength=myarray.length;
+            var newarray=[];
+            var j=-1;
+            for(var i=0;i<arrlength;i++)
+            {
+                if(i%number==0)
+                {
+                    j++;
+                    newarray[j]=[];
+                }
+                newarray[j].push(myarray[i]);
+            }
+            return newarray;
+        };
+    
+    
 
   });
 
@@ -185,21 +222,38 @@ phonecatControllers.controller('detail',
 
     });
 
-phonecatControllers.controller('about', ['$scope', 'TemplateService',
+phonecatControllers.controller('about',
   function ($scope, TemplateService) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("About");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-  }]);
+  });
 
 phonecatControllers.controller('login',
-  function ($scope, TemplateService) {
+  function ($scope, TemplateService, RestService, $location, $routeParams) {
         $scope.template = TemplateService;
         TemplateService.content = "views/login.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
-    
+        $scope.signupmsg="";
+        $scope.signupmsgg=false;
+        $scope.clickme=function(){
+            console.log("helloooooo");
+        }
+        var getuser = function (data, status){
+            console.log(data);
+            if(data==false)
+            {
+        $scope.signupmsgg=true;
+            
+              $scope.signupmsg="Already Exist. Choose Another Id";  
+            }
+        };
+        $scope.signupuser = function (signup){
+            console.log(signup);
+            RestService.signup(signup.email,signup.password).success(getuser);
+        }
     
         //signup
   });

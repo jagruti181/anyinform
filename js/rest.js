@@ -21,11 +21,17 @@ var restservice = angular.module('restservice', [])
         getallcity: function(search){
             return $http.get(adminurl+"getallcity",{});
         },
+        getallparentcategories: function(search){
+            return $http.get(adminurl+"getallparentcategories",{});
+        },
         getfilter: function(id){
             return $http.get(adminurl+"getfilter?id="+id,{});
         },
         viewonecitylocations: function(id){
             return $http.get(adminurl+"viewonecitylocations?id="+id,{});
+        },
+        signup: function(email,password){
+            return $http.get(adminurl+"signup?email="+email+"&password="+password,{});
         }
 
     }
