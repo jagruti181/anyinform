@@ -1,4 +1,4 @@
-<div class="header-middle"><!--header-middle-->
+<div class="header-middle" ng-controller="OtherCtrl"><!--header-middle-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8">
@@ -15,8 +15,8 @@
 					<div class="col-sm-4">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Sign Up</a></li>
-								<li><a href="#/login"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="#"><i class="fa fa-user"></i> {{signuppro}}</a></li>
+								<li><a ng-click="loginfunction()"><i class="fa fa-lock"></i> {{loginlogout}}</a></li>
 							</ul>
 						</div>
 					</div>

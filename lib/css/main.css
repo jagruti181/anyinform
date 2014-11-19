@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 .cursor:hover {
-    color: orange !important;
+    color: #DF041D !important;
     cursor: pointer;
 }
 .filterselected {
@@ -42,7 +42,7 @@
     padding: 5px;
     color: #FFF;
     font-size: 18px;
-    background: rgba(255, 165, 0, 0.2);
+    background: rgba(229, 83, 94, 0.2);
     -webkit-appearance: initial;
     border: 0;
     text-transform: capitalize;
@@ -100,7 +100,7 @@
 }
 .msg {
     color: #333;
-    background: rgba(255, 146, 0, 0.39);
+    background: rgba(255, 6, 16, 0.39);
     padding: 10px;
     font-size: 200%;
     font-weight: 100;
@@ -125,7 +125,7 @@
 } */
 
 .subcat:hover {
-    background: #fe980f;
+    background: #DF041D;
     color: white;
     text-decoration-color: white;
 }
@@ -380,7 +380,9 @@ nav#main_menu li a,
     margin-right: 10px;
 }
 .searchformtext {
-    padding: 65px;
+    padding-top: 11%;
+    padding-bottom: 11%;
+    padding-left: 2%;
 }
 .mr30 {
     margin: 30px !important;
@@ -394,11 +396,11 @@ nav#main_menu li a,
 }
 .searchslider {
     position: absolute;
-    background: rgba(255, 165, 0, 0.78);
+    background: rgba(229, 28, 43, 0.78);
     /* height: 11%; */
-    margin-top: 8%;
-    width: 66%;
-    margin-left: 12%;
+    margin-top: 2%;
+    width: 51%;
+    margin-left: 17%;
     z-index: 1;
     box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.8);
 }
@@ -822,7 +824,7 @@ ul.sub-menu {
     width: 212px;
 }
 .searchform button {
-    background: #FF4300;
+    background: #DF041D;
     border: medium none;
     border-radius: 0;
     margin-left: -5px;
@@ -836,7 +838,7 @@ ul.sub-menu {
 }
 .searchform button:hover,
 .searchform button:focus {
-    background-color: #FE980F;
+    background-color: #A10719;
 }
 /* .searchform p {
 
@@ -1094,7 +1096,7 @@ h2.title:before {
     overflow: hidden;
 }
 h2.title {
-    color: #FE980F;
+    color: #DF041D;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -1706,10 +1708,10 @@ h2.title {
     font-size: 2em;
     -webkit-transition: all 0.5s ease;
     padding: 15px;
-    background: #fe980f;
+    background: #DF041D;
     color: white;
     border-radius: 3px;
-    border-bottom: 5px solid #E26C0B;
+    border-bottom: 5px solid #A10719;
     height: 65px;
     width: 65px;
     text-align: center;
@@ -1733,4 +1735,14 @@ h2.title {
 .phone{
     font-size: 18px;
     font-weight: 600;
+}
+.homeimageright{
+    width: 16%;
+margin-top: 2%;
+    float: right;
+}
+.homeimageleft{
+    width: 16%;
+margin-top: 2%;
+    float: left;
 }

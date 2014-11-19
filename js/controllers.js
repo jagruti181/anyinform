@@ -11,6 +11,7 @@ phonecatControllers.controller('home',
         TemplateService.content = "views/content.html";
         TemplateService.footer = "views/footer.html";
         TemplateService.footerbottom = "views/footerbottom.html";
+        $scope.demo="demo";
         $scope.searchshow = false;
         $scope.searchid = "";
         $scope.form = [];
@@ -114,11 +115,11 @@ phonecatControllers.controller('home',
         RestService.getallcity().success(getcity);
         // searching 
 
-        var searchdata = function (data, status) {
-            console.log("in home");
-            console.log(data);
-        };
-        RestService.searchcategory("h").success(searchdata);
+//        var searchdata = function (data, status) {
+//            console.log("in home");
+//            console.log(data);
+//        };
+//        RestService.searchcategory("h").success(searchdata);
 
 
 
@@ -259,8 +260,15 @@ phonecatControllers.controller('login',
         TemplateService.content = "views/login.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
+        var getuser = function (data, status){
+            console.log(data);
+        };
+        RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
+        $scope.userlogin = function(login){
+            console.log(login);
+        }
         $scope.clickme = function () {
             console.log("helloooooo");
         }
@@ -279,6 +287,39 @@ phonecatControllers.controller('login',
 
         //signup
     });
+
+
+
+phonecatControllers.controller('OtherCtrl',
+ function ($scope, TemplateService, RestService, $location, $routeParams) {
+        $scope.template = TemplateService;
+        
+        var getuser = function (data, status){
+            console.log(data);
+            if(data=="false")
+            {
+                $scope.signuppro="Sign Up";
+                $scope.loginlogout="Login";
+            }else{
+                $scope.signuppro="My Profile";
+                $scope.loginlogout="Logout";
+                $location.url('/home');
+            }
+        };
+        RestService.authenticate().success(getuser);
+    var linloutsuccess = function (data, status) {
+        console.log(data);
+        $location.url('/home');
+    };
+    $scope.loginfunction = function(){
+        if($scope.loginlogout=="Logout")
+        {
+            RestService.logout().success(linloutsuccess);
+        }
+    }
+    
+  });
+
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',
   function ($scope, TemplateService) {
         $scope.template = TemplateService;
@@ -298,6 +339,7 @@ phonecatControllers.controller('contact', ['$scope', 'TemplateService',
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
  function ($scope, TemplateService) {
         $scope.template = TemplateService;
+        $scope.demo="demo";
   }]);
 
 
