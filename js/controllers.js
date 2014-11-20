@@ -209,8 +209,6 @@ phonecatControllers.controller('subcategory',
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
 
-        // if 
-
         var allcat = function (data, status) {
             console.log(data);
             if (data == "") {
@@ -260,15 +258,24 @@ phonecatControllers.controller('login',
         TemplateService.content = "views/login.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
+    
+        var loginsuccess = function (data, status){
+            console.log(data);
+            $location.url("/home");
+            
+        };
+    
+        $scope.userlogin = function (login){
+//            console.log(login);
+            RestService.login(login.email,login.password).success(loginsuccess);
+        }
+    
         var getuser = function (data, status){
             console.log(data);
         };
         RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
-        $scope.userlogin = function(login){
-            console.log(login);
-        }
         $scope.clickme = function () {
             console.log("helloooooo");
         }
@@ -311,10 +318,21 @@ phonecatControllers.controller('OtherCtrl',
         console.log(data);
         $location.url('/home');
     };
+    
+    $scope.signupprofile = function () {
+        if($scope.signuppro=="Sign Up")
+        {
+            $location.url('/login');
+        }
+    }
+    
     $scope.loginfunction = function(){
         if($scope.loginlogout=="Logout")
         {
+            $scope.loginlogout="Login";
             RestService.logout().success(linloutsuccess);
+        }else{
+            $location.url('/login');
         }
     }
     

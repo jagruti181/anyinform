@@ -24,6 +24,9 @@ var restservice = angular.module('restservice', [])
         searchcategory: function(search){
             return $http.get(adminurl+"searchcategory?categoryname="+search,{});
         },
+        login: function(email,password){
+            return $http.get(adminurl+"login?email="+email+"&password="+password,{});
+        },
         getallcity: function(search){
             return $http.get(adminurl+"getallcity",{});
         },

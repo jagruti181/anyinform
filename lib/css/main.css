@@ -11,6 +11,12 @@
     position: relative;
     font-weight: 400px;
 }
+/*
+div#carousel-example-generic{
+    height: 250px;
+width: 163px;
+}
+*/
 .signupmsg{
     margin-bottom: 10px;
     color: #333;
@@ -125,7 +131,7 @@
 } */
 
 .subcat:hover {
-    background: #DF041D;
+    background: #043eb3;
     color: white;
     text-decoration-color: white;
 }
@@ -136,7 +142,7 @@
 .subtext {
     position: absolute;
     margin-left: 20px;
-    /* color: #fe980f; */
+    /* color: #043eb3; */
     color: black;
 }
 .mrt-80 {
@@ -156,7 +162,7 @@
     padding: 10px;
     display: table;
     line-height: 1.4;
-    background-color: #fe980f;
+    background-color: #043eb3;
     position: relative;
     font-weight: 700;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
@@ -190,7 +196,7 @@
     position: absolute;
     top: 7px;
     left: 7px;
-    background: #fe980f;
+    background: #043eb3;
     width: 30px;
     height: 30px;
     -webkit-border-radius: 3px;
@@ -384,6 +390,7 @@ nav#main_menu li a,
     padding-bottom: 11%;
     padding-left: 2%;
 }
+
 .mr30 {
     margin: 30px !important;
 }
@@ -395,12 +402,13 @@ nav#main_menu li a,
     margin-top: 10px;
 }
 .searchslider {
-    position: absolute;
-    background: rgba(229, 28, 43, 0.78);
+/*    position: absolute;*/
+    
+background: rgba(183, 187, 207, 0.78);
     /* height: 11%; */
-    margin-top: 2%;
-    width: 51%;
-    margin-left: 17%;
+/*    margin-top: 2%;*/
+/*    width: 51%;*/
+/*    margin-left: 17%;*/
     z-index: 1;
     box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.8);
 }
@@ -445,7 +453,7 @@ a#scrollUp {
     bottom: 0px;
     right: 10px;
     padding: 5px 10px;
-    background: #FE980F;
+    background: #043eb3;
     color: #FFF;
     -webkit-animation: bounce 2s ease infinite;
     animation: bounce 2s ease infinite;
@@ -529,13 +537,13 @@ a#scrollUp i {
     margin-top: 10px;
 }
 .usa:hover {
-    background: #FE980F;
+    background: #043eb3;
     color: #fff;
-    border-color: #FE980F;
+    border-color: #043eb3;
 }
 .usa:active,
 .usa.active {
-    background: none repeat scroll 0 0 #FE980F;
+    background: none repeat scroll 0 0 #043eb3;
     box-shadow: inherit;
     outline: 0 none;
 }
@@ -545,7 +553,7 @@ a#scrollUp i {
 }
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus {
-    background-color: #FE980F;
+    background-color: #043eb3;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
@@ -572,7 +580,7 @@ a#scrollUp i {
     margin-right: 3px;
 }
 .shop-menu ul li a:hover {
-    color: #fe980f;
+    color: #022977;
     background: #fff;
 }
 .header-bottom {
@@ -697,7 +705,7 @@ ul.sub-menu {
     text-transform: uppercase;
 }
 .companyinfo h2 span {
-    color: #FE980F;
+    color: #043eb3;
 }
 .companyinfo p {
     color: #B3B3AD;
@@ -729,7 +737,7 @@ ul.sub-menu {
     top: 0;
     width: 100%;
     height: 61px;
-    background: #FE980F;
+    background: #043eb3;
     border-radius: 3px;
     color: #FFF;
     font-size: 20px;
@@ -811,7 +819,7 @@ ul.sub-menu {
 }
 .single-widget ul li a:hover {
     background: none;
-    color: #FE980F;
+    color: #043eb3;
 }
 .searchform input {
     border: 1px solid #DDDDDD;
@@ -824,7 +832,7 @@ ul.sub-menu {
     width: 212px;
 }
 .searchform button {
-    background: #DF041D;
+    background: #043eb3;
     border: medium none;
     border-radius: 0;
     margin-left: -5px;
@@ -838,7 +846,7 @@ ul.sub-menu {
 }
 .searchform button:hover,
 .searchform button:focus {
-    background-color: #A10719;
+    background-color: #022977;
 }
 /* .searchform p {
 
@@ -866,7 +874,7 @@ ul.sub-menu {
     margin-left: 15px;
 }
 .footer-bottom p span a {
-    color: #FE980F;
+    color: #043eb3;
     font-style: italic;
     text-decoration: underline;
 }
@@ -881,7 +889,7 @@ ul.sub-menu {
     background: #C4C4BE;
 }
 .carousel-indicators li.active {
-    background: #FE980F;
+    background: #043eb3;
 }
 .item {} .pricing {
     position: absolute;
@@ -898,7 +906,7 @@ ul.sub-menu {
     margin-top: 115px;
 }
 .item h1 span {
-    color: #FE980F;
+    color: #043eb3;
 }
 .item h2 {
     color: #363432;
@@ -915,7 +923,7 @@ ul.sub-menu {
     font-family: 'Roboto', sans-serif;
 }
 .get {
-    background: #FE980F;
+    background: #043eb3;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -925,7 +933,7 @@ ul.sub-menu {
     margin-top: 23px;
 }
 .item button:hover {
-    background: #FE980F;
+    background: #043eb3;
 }
 .control-carousel {
     position: absolute;
@@ -934,7 +942,7 @@ ul.sub-menu {
     color: #C2C2C1;
 }
 .control-carousel:hover {
-    color: #FE980F;
+    color: #043eb3;
 }
 .right {
     right: 0;
@@ -947,7 +955,7 @@ ul.sub-menu {
 }
 .left-sidebar h2,
 .brands_products h2 {
-    color: #FE980F;
+    color: #043eb3;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -1074,7 +1082,7 @@ h2.title:before {
     padding: 35px;
 }
 .tooltip-inner {
-    background-color: #FE980F;
+    background-color: #043eb3;
     border-radius: 4px;
     color: #FFFFFF;
     max-width: 200px;
@@ -1083,7 +1091,7 @@ h2.title:before {
     text-decoration: none;
 }
 .tooltip.top .tooltip-arrow {
-    border-top-color: #FE980F;
+    border-top-color: #043eb3;
     border-width: 5px 5px 0;
     bottom: 0;
     left: 50%;
@@ -1096,7 +1104,7 @@ h2.title:before {
     overflow: hidden;
 }
 h2.title {
-    color: #DF041D;
+    color: #043eb3;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -1120,7 +1128,7 @@ h2.title {
     right: 0;
 }
 .productinfo h2 {
-    color: #FE980F;
+    color: #043eb3;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -1147,7 +1155,7 @@ h2.title {
     position: relative;
 }
 .product-overlay {
-    background: #FE980F;
+    background: #043eb3;
     top: 0;
     display: none;
     height: 0;
@@ -1172,14 +1180,14 @@ h2.title {
     background: #fff;
     border: 0 none;
     border-radius: 0;
-    color: #FE980F;
+    color: #043eb3;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     margin-bottom: 25px;
 }
 .product-overlay .add-to-cart:hover {
     background: #fff;
-    color: #FE980F;
+    color: #043eb3;
 }
 .product-overlay p {
     font-family: 'Roboto', sans-serif;
@@ -1197,7 +1205,7 @@ h2.title {
     margin-bottom: 25px;
 }
 .add-to-cart:hover {
-    background: #FE980F;
+    background: #043eb3;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1209,7 +1217,7 @@ h2.title {
     margin-right: 5px;
 }
 .add-to-cart:hover {
-    background: #FE980F;
+    background: #043eb3;
     color: #FFFFFF;
 }
 .choose {
@@ -1227,14 +1235,14 @@ h2.title {
 }
 .choose ul li a:hover {
     background: none;
-    color: #FE980F;
+    color: #043eb3;
 }
 .category-tab {
     overflow: hidden;
 }
 .category-tab ul {
     background: #40403E;
-    border-bottom: 1px solid #FE980F;
+    border-bottom: 1px solid #043eb3;
     list-style: none outside none;
     margin: 0 0 30px;
     padding: 0;
@@ -1250,7 +1258,7 @@ h2.title {
     text-transform: uppercase;
 }
 .category-tab ul li a:hover {
-    background: #FE980F;
+    background: #043eb3;
     color: #fff;
 }
 .nav-tabs li.active a,
@@ -1260,7 +1268,7 @@ h2.title {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background-color: #FE980F;
+    background-color: #043eb3;
     border: 0px;
     color: #FFFFFF;
     cursor: default;
@@ -1284,7 +1292,7 @@ h2.title {
     top: 41%;
 }
 .recommended-item-control i {
-    background: none repeat scroll 0 0 #FE980F;
+    background: none repeat scroll 0 0 #043eb3;
     color: #FFFFFF;
     font-size: 20px;
     padding: 4px 10px;
@@ -1335,8 +1343,8 @@ h2.title {
 .pagination .active span:hover,
 .pagination .active a:focus,
 .pagination .active span:focus {
-    background-color: #FE980F;
-    border-color: #FE980F;
+    background-color: #043eb3;
+    border-color: #043eb3;
     color: #FFFFFF;
     cursor: default;
     z-index: 2;
@@ -1355,7 +1363,7 @@ h2.title {
     color: #000;
 }
 .pagination li a:hover {
-    background: #FE980F;
+    background: #043eb3;
     color: #fff;
 }
 /*************************
@@ -1386,7 +1394,7 @@ h2.title {
     width: 100%;
 }
 .view-product h3 {
-    background: #FE980F;
+    background: #043eb3;
     bottom: 0;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
@@ -1409,7 +1417,7 @@ h2.title {
     top: 35%;
 }
 .item-control i {
-    background: #FE980F;
+    background: #043eb3;
     color: #FFFFFF;
     font-size: 20px;
     padding: 5px 10px;
@@ -1447,7 +1455,7 @@ h2.title {
     margin-top: 18px;
 }
 .product-information span span {
-    color: #FE980F;
+    color: #043eb3;
     float: left;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
@@ -1476,7 +1484,7 @@ h2.title {
     margin-top: 15px;
 }
 .cart {
-    background: #FE980F;
+    background: #043eb3;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1514,12 +1522,12 @@ h2.title {
     padding-right: 15px;
 }
 #reviews ul li a i {
-    color: #FE980F;
+    color: #043eb3;
     padding-right: 8px;
 }
 #reviews ul li a:hover {
     background: #fff;
-    color: #FE980F;
+    color: #043eb3;
 }
 #reviews p {
     color: #363432;
@@ -1554,7 +1562,7 @@ h2.title {
     width: 99.5%;
 }
 #reviews button {
-    background: #FE980F;
+    background: #043eb3;
     border: 0 none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1586,7 +1594,7 @@ h2.title {
     margin-top: 50px;
 }
 .content-404 h2 a {
-    background: #FE980F;
+    background: #043eb3;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     font-size: 44px;
@@ -1640,7 +1648,7 @@ h2.title {
 }
 .login-form form button,
 .signup-form form button {
-    background: #FE980F;
+    background: #043eb3;
     border: medium none;
     border-radius: 0;
     color: #FFFFFF;
@@ -1657,7 +1665,7 @@ h2.title {
     padding-left: 0;
 }
 .or {
-    background: #FE980F;
+    background: #043eb3;
     border-radius: 40px;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
@@ -1684,7 +1692,7 @@ h2.title {
     padding-left: 0;
 }
 .breadcrumbs .breadcrumb li a {
-    background: #FE980F;
+    background: #043eb3;
     color: #FFFFFF;
     padding: 3px 7px;
 }
@@ -1694,7 +1702,7 @@ h2.title {
     width: auto;
     border-width: 8px;
     border-style: solid;
-    border-color: transparent transparent transparent #FE980F;
+    border-color: transparent transparent transparent #043eb3;
     position: absolute;
     top: 11px;
     left: 48px;
@@ -1708,10 +1716,10 @@ h2.title {
     font-size: 2em;
     -webkit-transition: all 0.5s ease;
     padding: 15px;
-    background: #DF041D;
+    background: #043eb3;
     color: white;
     border-radius: 3px;
-    border-bottom: 5px solid #A10719;
+    border-bottom: 5px solid #022977;
     height: 65px;
     width: 65px;
     text-align: center;
@@ -1745,4 +1753,7 @@ margin-top: 2%;
     width: 16%;
 margin-top: 2%;
     float: left;
+}
+.a{
+    cursor: pointer;
 }
