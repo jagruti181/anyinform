@@ -28,6 +28,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'detail'
         }).
+        when('/listbusiness', {
+            templateUrl: 'views/template.html',
+            controller: 'listbusiness'
+        }).
         when('/about', {
             templateUrl: 'views/template.html',
             controller: 'about'
@@ -67,9 +71,9 @@ firstapp.filter('imagepath', function () {
 firstapp.filter('imagepath1', function () {
     return function (input) {
         if (input == "") {
-            return "http://localhost/anyinform/assets/img/default.jpg";
+            return "http://mafiawarloots.com/anyinform/assets/img/default.jpg";
         } else {
-            return "http://localhost/anyinform/lib/images/" + input;
+            return "http://mafiawarloots.com/anyinform/lib/images/" + input;
         }
     };
 });

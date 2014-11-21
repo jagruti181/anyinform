@@ -363,6 +363,14 @@ phonecatControllers.controller('OtherCtrl',
     
   });
 
+phonecatControllers.controller('listbusiness',
+  function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+        TemplateService.content = "views/listbusiness.html";
+        TemplateService.slider = false;
+        TemplateService.navigation = false;
+    $scope.demo="demo";
+  });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',
   function ($scope, TemplateService) {
         $scope.template = TemplateService;
