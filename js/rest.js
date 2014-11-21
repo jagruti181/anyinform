@@ -18,6 +18,9 @@ var restservice = angular.module('restservice', [])
         getlistingbycategory: function(id){
             return $http.get(adminurl+"getlistingbycategory?id="+id,{});
         },
+        enquiryuser: function(name,listing,email,phone,comment){
+            return $http.get(adminurl+"enquiryuser?name="+name+"&listing="+listing+"&email="+email+"&phone="+phone+"&type=2&comment="+comment,{});
+        },
         getonelistingbyid: function(id){
             return $http.get(adminurl+"getonelistingbyid?id="+id,{});
         },

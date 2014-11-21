@@ -34,13 +34,21 @@
 							        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
 							    </ul>
 							</div> -->	
-							<div class="social-icons pull-right mrt14">
+							<div class="pull-right">
+							
+							<span class='st_facebook_hcount' displayText='Facebook' style="height:0px"></span>
+<span class='st_twitter_hcount' displayText='Tweet'></span>
+<span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+<span class='st_googleplus_hcount' displayText='Google +'></span>
+							
+<!--
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 							</ul>
+-->
 						</div>					
 						</div>
 		</div>
@@ -57,6 +65,19 @@
                         <strong class="fapadl" ng-repeat="operation in detail.daysofoperation">{{operation.daysofoperationname}}&nbsp;&nbsp;</strong><h6 class="fapadl">9:00 am To 9:00 pm</h6>
                     <h2 class="title text-center">Modes Of Payment</h2>
                         <p class="fapadl" ng-repeat="payment in detail.modeofpayment">{{payment.modeofpaymentname}}</p>
+                        <h2 class="title text-center">Enquiry</h2>
+					<div class="signup-form">
+                        <div class="signupmsg" ng-show="signupmsgg">
+                            {{signupmsg}}
+                        </div>
+						<form>
+							<input type="text" ng-model="enquiry.name" placeholder="Name"/>
+							<input type="email" ng-model="enquiry.email" placeholder="Email"/>
+							<input type="number" max="10" min="6" ng-model="enquiry.phone" placeholder="Phone"/>
+                            <textarea ng-model="enquiry.comment" placeholder="Comment"></textarea>
+							<button class="btn btn-default" ng-click="enquiryuser(enquiry)">Signup</button>
+						</form>
+					</div>
             </div>
     </div>
 	</section>

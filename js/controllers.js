@@ -169,6 +169,12 @@ phonecatControllers.controller('category',
 
         $scope.msg = "";
         $scope.msgarea = false;
+    
+        $scope.linkclick = function(id)
+        {
+            $location.url('/detail/'+id);
+        }
+    
         //listiung by category id
 
         var getlisting = function (data, status) {
@@ -241,6 +247,18 @@ phonecatControllers.controller('detail',
             $scope.detail = data;
         };
         RestService.getonelistingbyid($routeParams.id).success(getdetail);
+    
+//    enquiry for listing
+    
+    
+        var enquirysuccess = function (data, status) {
+            console.log(data);
+        };
+        $scope.enquiryuser = function (enquiry) {
+            console.log(enquiry);
+            
+            RestService.enquiryuser(enquiry.name,$scope.detail.listing.listingid,enquiry.email,enquiry.phone,enquiry.comment).success(enquirysuccess);
+        }
 
     });
 

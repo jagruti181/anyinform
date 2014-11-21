@@ -51,7 +51,8 @@
     
     
 
-
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "2ebe6d3e-901b-4387-ab96-bdc6fee3912a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
 
 
