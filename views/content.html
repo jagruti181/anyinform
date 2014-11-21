@@ -12,7 +12,7 @@
                             </a>
                             <a href="#/subcategory/{{category.id}}" ng-show="{{category.status==1}}" class="homecat">
                                 <div>
-                                    <img src="http://localhost/anyinform/lib/images/home/{{category.logo}}" class="fa-3x"/>
+                                    <img ng-src="{{'png/'+category.logo|imagepath1}}" class="fa-3x"/>
                                 </div>
                                 <p>{{category.name}}</p>
                             </a>

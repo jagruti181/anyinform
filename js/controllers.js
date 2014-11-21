@@ -258,10 +258,18 @@ phonecatControllers.controller('login',
         TemplateService.content = "views/login.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
+        $scope.msg="";
+        $scope.msg1="";
     
         var loginsuccess = function (data, status){
             console.log(data);
-            $location.url("/home");
+            if(data!="false")
+            {
+                $location.url("/home");
+                $scope.loginlogout="Logout";
+            }else{
+                $scope.msg="Invalid Username Or Password";
+            }
             
         };
     
@@ -269,10 +277,10 @@ phonecatControllers.controller('login',
 //            console.log(login);
             RestService.login(login.email,login.password).success(loginsuccess);
         }
-    
-        var getuser = function (data, status){
-            console.log(data);
-        };
+//    
+//        var getuser = function (data, status){
+//            console.log(data);
+//        };
         RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
@@ -310,7 +318,6 @@ phonecatControllers.controller('OtherCtrl',
             }else{
                 $scope.signuppro="My Profile";
                 $scope.loginlogout="Logout";
-                $location.url('/home');
             }
         };
         RestService.authenticate().success(getuser);

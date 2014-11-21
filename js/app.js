@@ -64,6 +64,16 @@ firstapp.filter('imagepath', function () {
     };
 });
 
+firstapp.filter('imagepath1', function () {
+    return function (input) {
+        if (input == "") {
+            return "http://localhost/anyinform/assets/img/default.jpg";
+        } else {
+            return "http://localhost/anyinform/lib/images/" + input;
+        }
+    };
+});
+
 var rad = function(x) {
     return x * Math.PI / 180;
 };
