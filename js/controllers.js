@@ -369,6 +369,7 @@ phonecatControllers.controller('listbusiness',
         TemplateService.content = "views/listbusiness.html";
         TemplateService.slider = false;
         TemplateService.navigation = false;
+    TemplateService.navigation = "views/innerheader.html";
     $scope.demo="demo";
   });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',
