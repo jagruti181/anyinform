@@ -32,20 +32,6 @@ width: 163px;
     color: #DF041D !important;
     cursor: pointer;
 }
-.formselop{
-    background: #F0F0E9;
-border: medium none;
-color: #696763;
-display: block;
-font-family: 'Roboto', sans-serif;
-font-size: 14px;
-font-weight: 300;
-height: 40px;
-margin-bottom: 10px;
-outline: medium none;
-padding-left: 10px;
-width: 100%;
-}
 .filterselected {
     background: black;
 }
@@ -1669,6 +1655,8 @@ h2.title {
     display: block;
     font-family: 'Roboto', sans-serif;
     padding: 6px 25px;
+    width: 100px;
+    height: 36px;
 }
 .login-form label {} .login-form label input {
     border: medium none;
@@ -1770,4 +1758,52 @@ margin-top: 2%;
 }
 .a{
     cursor: pointer;
+}
+
+
+.carousel-inner>.item>img, .carousel-inner>.items>a>img {
+display: block;
+height: auto;
+max-width: 100%;
+width: 100%;
+line-height: 1;
+height: 194px;
+}
+
+.formselop{
+    background: #F0F0E9;
+border: medium none;
+color: #696763;
+display: block;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+font-weight: 300;
+height: 40px;
+margin-bottom: 10px;
+outline: medium none;
+padding-left: 10px;
+width: 100%;
+}
+
+.phone a:hover, a:focus {
+color: #D00101;
+}
+
+.text-enquiry textarea
+{
+    height: 100px;
+width: 100%;
+    margin-bottom: 10px;
+}
+
+.button-enquiry a
+{
+height: 35px;
+width: 100px;
+margin-bottom: 10px;
+}
+
+ .subcat h4
+{
+text-transform: capitalize;
 }

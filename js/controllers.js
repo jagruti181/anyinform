@@ -364,13 +364,23 @@ phonecatControllers.controller('OtherCtrl',
   });
 
 phonecatControllers.controller('listbusiness',
-  function ($scope, TemplateService) {
+  function ($scope, TemplateService, RestService, $location) {
         $scope.template = TemplateService;
         TemplateService.content = "views/listbusiness.html";
         TemplateService.slider = false;
         TemplateService.navigation = false;
-    TemplateService.navigation = "views/innerheader.html";
-    $scope.demo="demo";
+        TemplateService.navigation = "views/innerheader.html";
+        $scope.demo="demo";
+        $scope.list=[];
+        // get category all category
+        
+        var allcategories = function (data, status) {
+            console.log(data);
+            $scope.alljson=data;
+        };
+    
+        RestService.getallcategory().success(allcategories);
+        
   });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',
   function ($scope, TemplateService) {
