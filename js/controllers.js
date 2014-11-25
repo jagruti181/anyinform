@@ -292,7 +292,7 @@ phonecatControllers.controller('login',
         };
     
         $scope.userlogin = function (login){
-//            console.log(login);
+            console.log(login);
             RestService.login(login.email,login.password).success(loginsuccess);
         }
 //    
@@ -374,12 +374,12 @@ phonecatControllers.controller('listbusiness',
         $scope.list=[];
         // get category all category
         
-        var allcategories = function (data, status) {
-            console.log(data);
-            $scope.alljson=data;
-        };
+//        var allcategories = function (data, status) {
+//            console.log(data);
+//            $scope.alljson=data;
+//        };
     
-        RestService.getallcategory().success(allcategories);
+//        RestService.getallcategory().success(allcategories);
         
   });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',

@@ -7,16 +7,31 @@
                             <h5>Name</h5>
 							<input type="text" ng-model="list.name" placeholder="Name"/>
 							<h5>category</h5>
+<!--
 							<select ng-model="list.category" class="formselop">
                                 <option ng-repeat="cat in alljson.category" value="cat.id">{{cat.name}}</option>
                             </select>
+-->
+							<select ng-model="list.category" class="formselop">
+                                <option value=""></option>
+                            </select>
                             <h5>Mode Of Payment</h5>
+<!--
 							<select ng-model="list.modeofpaymnet" class="formselop">
                                 <option ng-repeat="mode in alljson.modeofpayment" value="mode.id">{{mode.name}}</option>                                
                             </select>
+-->
+							<select ng-model="list.modeofpaymnet" class="formselop">
+                                <option value=""></option>                                
+                            </select>
                             <h5>Days Of Operation</h5>
+<!--
 							<select ng-model="list.daysofoperation" class="formselop">
                                 <option ng-repeat="doo in alljson.daysofoperations" value="doo.id">{{doo.name}}</option>
+                            </select>
+-->
+							<select ng-model="list.daysofoperation" class="formselop">
+                                <option value=""></option>
                             </select>
                             <h5>Latitude</h5>
 							<input type="text" ng-model="list.latitude" placeholder="Latitude"/>
@@ -25,8 +40,13 @@
                            <h5>Address</h5>
                             <textarea ng-model="list.address" placeholder="Address" class="formselop"></textarea>
                             <h5>City</h5>
+<!--
 							<select ng-model="list.city" class="formselop">
                                 <option ng-repeat="city in alljson.city" value="city.id">{{city.name}}</option>
+                            </select>
+-->
+							<select ng-model="list.city" class="formselop">
+                                <option value=""></option>
                             </select>
                             <h5>Pincode</h5>
 							<input type="number" ng-model="list.pincode" placeholder="Pincode"/>
@@ -55,14 +75,24 @@
 							<h5>Time Of Operation Ends</h5>
 							<input type="text" ng-model="list.timeofoperationend" placeholder="Time Of Operation Ends"/>
                             <h5>Type</h5>
+<!--
 							<select ng-model="list.type" class="formselop">
                                 <option ng-repeat="type in alljson.type" value="type.id">{{type.name}}</option>
+                            </select>
+-->
+							<select ng-model="list.type" class="formselop">
+                                <option value=""></option>
                             </select>
 							<h5>Credits</h5>
 							<input type="text" ng-model="list.credits" placeholder="Credits"/>
                             <h5>IsVerified</h5>
+<!--
 							<select ng-model="list.isverified" class="formselop">
                                 <option ng-repeat="isverified in alljson.isverified" value="isverified.id">{{isverified.name}}</option>
+                            </select>
+-->
+							<select ng-model="list.isverified" class="formselop">
+                                <option value=""></option>
                             </select>
 							<h5>Video</h5>
 							<input type="text" ng-model="list.video" placeholder="Video"/>
