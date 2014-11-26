@@ -16,11 +16,11 @@ if ((($_FILES["file"]["type"] == "image/gif")
   } else {
    
 //    if (file_exists("upload/" . $_FILES["file"]["name"])) {
-    if (file_exists("http://mafiawarloots.com/foranyinformation/uploads/" . $_FILES["file"]["name"])) {
+    if (file_exists("http://mafiawarloots.com/foranyinformation/upload/" . $_FILES["file"]["name"])) {
       echo $_FILES["file"]["name"] . " already exists. ";
     } else {
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "http://mafiawarloots.com/foranyinformation/uploads/" . $_FILES["file"]["name"]);
+      "http://mafiawarloots.com/foranyinformation/upload/" . $_FILES["file"]["name"]);
       echo $_FILES["file"]["name"];
     }
   }
