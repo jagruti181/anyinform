@@ -374,12 +374,12 @@ phonecatControllers.controller('listbusiness',
         $scope.list=[];
         // get category all category
         
-//        var allcategories = function (data, status) {
-//            console.log(data);
-//            $scope.alljson=data;
-//        };
+        var allcategories = function (data, status) {
+            console.log(data);
+            $scope.alljson=data;
+        };
     
-//        RestService.getallcategory().success(allcategories);
+        RestService.getallcategory().success(allcategories);
         
   });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',

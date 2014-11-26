@@ -79,7 +79,7 @@ width: 163px;
     width: 93%;
 }
 #divsearch p:hover {
-    color: orange;
+    color: #043EB3;
     cursor: pointer;
 }
 .nosearch {
@@ -1710,7 +1710,7 @@ h2.title {
     left: 48px;
 }
 .productinfo .fa-3x:hover {
-    border-bottom: 0px solid #E26C0B;
+    border-bottom: 0px solid #5854DA;
     box-shadow: 3px 3px 5px 1px #aaa;
     /* border-top: 5px solid #E26C0B; */
 }
