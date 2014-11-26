@@ -10,6 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script type="text/javascript">
+FileAPI = {
+	debug: true,
+};
+</script>
     <link href="lib/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/css/prettyPhoto.css" rel="stylesheet">
@@ -49,11 +54,21 @@
     <script src="js/templateservice.js"></script>
     <script src="js/controllers.js"></script>
     
+    <script src="lib/js/angularimage/angular-file-upload-shim.js"></script>
+    <script src="lib/js/angularimage/angular-file-upload.js"></script>
+    
     
 
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "2ebe6d3e-901b-4387-ab96-bdc6fee3912a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
+<style>.drop-box {
+width: 220px;
+height: 40px;
+color: black;
+background: rgb(228, 241, 255);
+padding: 10px;
+}</style>
 
 
 

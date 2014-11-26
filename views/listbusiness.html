@@ -1,107 +1,136 @@
 <section>
-		<div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
             <h3>List Your Business</h3>
-					<div class="signup-form">
-						<form>
-                            <h5>Name</h5>
-							<input type="text" ng-model="list.name" placeholder="Name"/>
-							<h5>category</h5>
-							<select ng-model="list.category" class="formselop">
-                                <option ng-repeat="cat in alljson.category" value="cat.id">{{cat.name}}</option>
-                            </select>
-<!--
+            <div class="signup-form">
+                <form>
+                    <h5>Name</h5>
+                    <input type="text" ng-model="list.name" placeholder="Name" />
+                    <h5>category</h5>
+                    <select ng-model="list.category" class="formselop">
+                        <option ng-repeat="cat in alljson.category" value="cat.id">{{cat.name}}</option>
+                    </select>
+                    <!--
 							<select ng-model="list.category" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-                            <h5>Mode Of Payment</h5>
-							<select ng-model="list.modeofpaymnet" class="formselop">
-                                <option ng-repeat="mode in alljson.modeofpayment" value="mode.id">{{mode.name}}</option>                                
-                            </select>
-<!--
+                    <h5>Mode Of Payment</h5>
+                    <select ng-model="list.modeofpaymnet" class="formselop">
+                        <option ng-repeat="mode in alljson.modeofpayment" value="mode.id">{{mode.name}}</option>
+                    </select>
+                    <!--
 							<select ng-model="list.modeofpaymnet" class="formselop">
                                 <option value=""></option>                                
                             </select>
 -->
-                            <h5>Days Of Operation</h5>
+                    <h5>Days Of Operation</h5>
+                    <select ng-model="list.daysofoperation" class="formselop">
+                        <option ng-repeat="doo in alljson.daysofoperations" value="doo.id">{{doo.name}}</option>
+                    </select>
+                    <!--
 							<select ng-model="list.daysofoperation" class="formselop">
-                                <option ng-repeat="doo in alljson.daysofoperations" value="doo.id">{{doo.name}}</option>
-                            </select>
-<!--
-							<select ng-model="list.daysofoperation" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-                            <h5>Latitude</h5>
-							<input type="text" ng-model="list.latitude" placeholder="Latitude"/>
-							<h5>Longitude</h5>
-							<input type="text" ng-model="list.longitude" placeholder="Longitude"/>
-                           <h5>Address</h5>
-                            <textarea ng-model="list.address" placeholder="Address" class="formselop"></textarea>
-                            <h5>City</h5>
-							<select ng-model="list.city" class="formselop">
-                                <option ng-repeat="city in alljson.city" value="city.id">{{city.name}}</option>
-                            </select>
-<!--
+                    <h5>Latitude</h5>
+                    <input type="text" ng-model="list.latitude" placeholder="Latitude" />
+                    <h5>Longitude</h5>
+                    <input type="text" ng-model="list.longitude" placeholder="Longitude" />
+                    <h5>Address</h5>
+                    <textarea ng-model="list.address" placeholder="Address" class="formselop"></textarea>
+                    <h5>City</h5>
+                    <select ng-model="list.city" class="formselop">
+                        <option ng-repeat="city in alljson.city" value="city.id">{{city.name}}</option>
+                    </select>
+                    <!--
 							<select ng-model="list.city" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-                            <h5>Pincode</h5>
-							<input type="number" ng-model="list.pincode" placeholder="Pincode"/>
-							<h5>State</h5>
-							<input type="text" ng-model="list.state" placeholder="State"/>
-							<h5>Country</h5>
-							<input type="text" ng-model="list.country" placeholder="Country"/>
-							<h5>Description</h5>
-							<textarea ng-model="list.description" placeholder="Description" class="formselop"></textarea>
-							<h5>Contact Number</h5>
-							<input type="number" max="11" min="6" ng-model="list.contact" placeholder="Contact Number"/>
-							<h5>Email</h5>
-							<input type="email" ng-model="list.email" placeholder="Email"/>
-							<h5>Website</h5>
-							<input type="text" ng-model="list.website" placeholder="Website"/>
-							<h5>Facebook Username</h5>
-							<input type="text" ng-model="list.facenook" placeholder="Facebook Username"/>
-							<h5>Googleplus Username</h5>
-							<input type="text" ng-model="list.googleplus" placeholder="Googleplus Username"/>
-							<h5>Twitter Username</h5>
-							<input type="text" ng-model="list.twitter" placeholder="Twitter Username"/>
-							<h5>Year Of Establishment</h5>
-							<input type="text" ng-model="list.yearofestablishment" placeholder="Year Of Establishment"/>
-							<h5>Time Of Operation Start</h5>
-							<input type="text" ng-model="list.timeofoperationstart" placeholder="Time Of Operation Start"/>
-							<h5>Time Of Operation Ends</h5>
-							<input type="text" ng-model="list.timeofoperationend" placeholder="Time Of Operation Ends"/>
-                            <h5>Type</h5>
-							<select ng-model="list.type" class="formselop">
-                                <option ng-repeat="type in alljson.type" value="type.id">{{type.name}}</option>
-                            </select>
-<!--
+                    <h5>Pincode</h5>
+                    <input type="number" ng-model="list.pincode" placeholder="Pincode" />
+                    <h5>State</h5>
+                    <input type="text" ng-model="list.state" placeholder="State" />
+                    <h5>Country</h5>
+                    <input type="text" ng-model="list.country" placeholder="Country" />
+                    <h5>Description</h5>
+                    <textarea ng-model="list.description" placeholder="Description" class="formselop"></textarea>
+                    <h5>Contact Number</h5>
+                    <input type="number" max="11" min="6" ng-model="list.contact" placeholder="Contact Number" />
+                    <h5>Email</h5>
+                    <input type="email" ng-model="list.email" placeholder="Email" />
+                    <h5>Website</h5>
+                    <input type="text" ng-model="list.website" placeholder="Website" />
+                    <h5>Facebook Username</h5>
+                    <input type="text" ng-model="list.facenook" placeholder="Facebook Username" />
+                    <h5>Googleplus Username</h5>
+                    <input type="text" ng-model="list.googleplus" placeholder="Googleplus Username" />
+                    <h5>Twitter Username</h5>
+                    <input type="text" ng-model="list.twitter" placeholder="Twitter Username" />
+                    <h5>Year Of Establishment</h5>
+                    <input type="text" ng-model="list.yearofestablishment" placeholder="Year Of Establishment" />
+                    <h5>Time Of Operation Start</h5>
+                    <input type="text" ng-model="list.timeofoperationstart" placeholder="Time Of Operation Start" />
+                    <h5>Time Of Operation Ends</h5>
+                    <input type="text" ng-model="list.timeofoperationend" placeholder="Time Of Operation Ends" />
+                    <h5>Type</h5>
+                    <select ng-model="list.type" class="formselop">
+                        <option ng-repeat="type in alljson.type" value="type.id">{{type.name}}</option>
+                    </select>
+                    <!--
 							<select ng-model="list.type" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-							<h5>Credits</h5>
-							<input type="text" ng-model="list.credits" placeholder="Credits"/>
-                            <h5>IsVerified</h5>
-							<select ng-model="list.isverified" class="formselop">
-                                <option ng-repeat="isverified in alljson.isverified" value="isverified.id">{{isverified.name}}</option>
-                            </select>
-<!--
+                    <h5>Credits</h5>
+                    <input type="text" ng-model="list.credits" placeholder="Credits" />
+                    <h5>IsVerified</h5>
+                    <select ng-model="list.isverified" class="formselop">
+                        <option ng-repeat="isverified in alljson.isverified" value="isverified.id">{{isverified.name}}</option>
+                    </select>
+                    <!--
 							<select ng-model="list.isverified" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-							<h5>Video</h5>
-							<input type="text" ng-model="list.video" placeholder="Video"/>
-							<h5>Logo</h5>
-							<input type="file" ng-model="list.logo" placeholder="Video"/>
-							<button class="btn btn-default" ng-click="enquiryuser(enquiry)">Create Listing</button>
-						</form>
-					</div>
+                    <h5>Video</h5>
+                    <input type="text" ng-model="list.video" placeholder="Video" />
+                    <h5>Logo</h5>
+                    <!--							start angular image upload-->
+
+                    <div class="upload-div" ng-controller="MyCtrl">
+                        <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+
+                        <div class="upload-buttons">
+                            <input type="file" ng-file-select="onFileSelect($files)" onclick="this.value=null">
+                        </div>
+
+                        <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100">or drop files here</div>
+                        <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>
+
+                        <div class="err" ng-show="errorMsg != null">{{errorMsg}}</div>
+
+                        <div ng-show="selectedFiles != null">
+                            <div class="sel-file" ng-repeat="f in selectedFiles">
+                                <div ng-show="$last">
+                                    <img ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}" width="240px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="response" ng-show="uploadResult.length > 0">
+                            <span ng-repeat="result in uploadResult">
+						<p ng-show="$last">{{result}}</p>
+			        </span>
+
+                        </div>
+                    </div>
+
+                    <!--							end angular image upload-->
+
+                    <button class="btn btn-default" ng-click="enquiryuser(enquiry)">Create Listing</button>
+                </form>
             </div>
+        </div>
     </div>
-	</section>
-	
+</section>
