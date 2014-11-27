@@ -1,6 +1,6 @@
 var lat = 0;
 var long = 0;
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput']);
 
 window.uploadUrl = 'upload.php';
 
@@ -372,16 +372,151 @@ phonecatControllers.controller('listbusiness',
         TemplateService.slider = false;
         TemplateService.navigation = false;
         TemplateService.navigation = "views/innerheader.html";
-        $scope.demo="demo";
+        $scope.userdata="";
         $scope.list=[];
-        // get category all category
+    
+//        start validation for user if not valid go to home page
+    
+//        var getuser = function (data, status){
+//            console.log(data);
+//            if(data=="false")
+//            {
+//                $location.url("/home");
+//            }else{
+//                $scope.userdata=data;
+//            }
+//        };
+//        RestService.authenticate().success(getuser);
+    
+//        end validation for user if not valid go to home page
         
+//        start add category tag
+            $scope.addcategorytab = function (cat){
+                console.log(cat);
+            }
+    
+//        end add category tag
+    
+//        start get latitude and longitude by address parameters
+        
+        var mapp = function (data, state) {
+            console.log(data);
+            console.log(data.results[0].geometry.location.lat);
+            console.log(data.results[0].geometry.location.lng);
+            $scope.list.latitude = data.results[0].geometry.location.lat;
+            $scope.list.longitude = data.results[0].geometry.location.lng;
+
+        };
+        $scope.getlatlong = function (address, pin, city, state, country) {
+            if(!address)
+            {
+                address="";
+            }
+            if(!pin)
+            {
+                pin="";
+            }
+            if(!city)
+            {
+                city="";
+            }else{
+                $scope.city=city.split(",");
+                city=$scope.city['1'];
+            }
+            if(!state)
+            {
+                state="";
+            }
+            if(!country)
+            {
+                country="";
+            }
+            
+            $scope.lmap = address + "," + pin + "," + city + "," + state + "," + country;
+            console.log($scope.lmap);
+            RestService.getmap($scope.lmap).success(mapp);
+        };
+    
+//        end get latitude and longitude by address parameters
+    
+//        start on listbusiness submit
+    
+        var listingsuccess = function (data, status) {
+            
+            console.log(data);
+            
+        };
+    
+    
+         $scope.submitlist = function (list) {
+             
+             
+            $scope.allvalidation = [{
+                field: $scope.list.name,
+                validation: ""
+             }, {
+                field: $scope.list.category,
+                validation: ""
+             }, {
+                field: $scope.list.modeofpayment,
+                validation: ""
+             }, {
+                field: $scope.list.daysofoperation,
+                validation: ""
+             }, {
+                field: $scope.list.address,
+                validation: ""
+             }, {
+                field: $scope.list.pincode,
+                validation: ""
+             }, {
+                field: $scope.list.city,
+                validation: ""
+             }, {
+                field: $scope.list.state,
+                validation: ""
+             }, {
+                field: $scope.list.country,
+                validation: ""
+             }, {
+                field: $scope.list.contact,
+                validation: ""
+             }, {
+                field: $scope.list.email,
+                validation: ""
+             }, {
+                field: $scope.list.type,
+                validation: ""
+             }];
+             
+             var check = formvalidation($scope.allvalidation);
+             
+             if(check)
+             {
+                list.user=$scope.userdata;
+                list.logo="default.jpg";
+                list.city=list.city.split(",");
+                list.city=list.city['0'];
+                console.log(list);
+                RestService.createlisting(list).success(listingsuccess);
+             }else{
+                 console.log("not ckeck");
+             }
+             
+         }
+    
+//        end on listbusiness submit
+    
+//        start get category all category
+        $scope.tagdata=[];
         var allcategories = function (data, status) {
             console.log(data);
             $scope.alljson=data;
         };
     
         RestService.getallcategory().success(allcategories);
+    
+//        end get category all category
         
   });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',

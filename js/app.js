@@ -82,6 +82,22 @@ var rad = function(x) {
     return x * Math.PI / 180;
 };
 
+var formvalidation = function(allvalidation) {
+            var isvalid2 = true;
+            for (var i = 0; i < allvalidation.length; i++) {
+                console.log("checking");
+                console.log(allvalidation[i].field);
+                if (allvalidation[i].field == "" || !allvalidation[i].field) {
+                    allvalidation[i].validation = "ng-dirty";
+                    isvalid2 = false;
+                }
+            }
+            return isvalid2;
+        };
+
+
+
+
 
 var getDistance = function(lat1,long1,lat2,long2) {
     var R = 6378.137; // Earth’s mean radius in km

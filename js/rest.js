@@ -1,22 +1,55 @@
 
-var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
+var adminurl="http://localhost/foranyinformation/index.php/json/";
 
 var restservice = angular.module('restservice', [])
 
 .factory('RestService', function ($http) {
    
     return {
+        getmap: function(data){
+            return $http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+data+"&key=AIzaSyAj0OXepKIgjTlZiPe_ZVYTDjL8rYpobgQ",{});
+        },
         getsubcategory: function(id){
             return $http.get(adminurl+"getsubcategory?id="+id,{});
         },
         logout: function(){
             return $http.get(adminurl+"logout",{});
-        }
-        ,
+        },
         getallcategory: function(){
             return $http.get(adminurl+"getcategoryfront",{});
-        }
-        ,
+        },
+        createlisting: function(list){
+            return $http({
+                url: adminurl+"createlisting",
+                method: "POST",
+               data: {'name':list.name,
+                      'category':list.category,
+                      'modeofpayment':list.modeofpayment,
+                      'daysofoperation':list.daysofoperation,
+                      'address':list.address,
+                      'pincode':list.pincode,
+                      'city':list.city,
+                      'state':list.state,
+                      'country':list.country,
+                      'latitude':list.latitude,
+                      'longitude':list.longitude,
+                      'description':list.description,
+                      'contact':list.contact,
+                      'email':list.email,
+                      'website':list.website,
+                      'facebook':list.facebook,
+                      'googleplus':list.googleplus,
+                      'twitter':list.twitter,
+                      'yearofestablishment':list.yearofestablishment,
+                      'timeofoperationstart':list.timeofoperationstart,
+                      'timeofoperationend':list.timeofoperationend,
+                      'type':list.type,
+                      'credits':list.credits,
+                      'video':list.video,
+                      'logo':list.logo,
+                      'user':list.user}
+            });
+        },
         authenticate: function(){
             return $http.get(adminurl+"authenticate",{});
         },

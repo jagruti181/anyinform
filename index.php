@@ -22,6 +22,8 @@ FileAPI = {
     <link href="lib/css/animate.css" rel="stylesheet">
     <link href="lib/css/main.css" rel="stylesheet">
     <link href="lib/css/responsive.css" rel="stylesheet">
+    <link href="lib/css/ng-tags-input.bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/ng-tags-input.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <script src="lib/js/respond.min.js"></script>
@@ -40,6 +42,7 @@ FileAPI = {
     <script src="lib/js/jquery.prettyPhoto.js"></script>
     <script src="lib/js/main.js"></script>
     <script src="lib/js/angular.js"></script>
+    <script src="lib/js/ng-tags-input.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -47,6 +50,7 @@ FileAPI = {
     <script src="lib/js/angular-ui-router.min.js"></script>
     <script src="lib/js/ui-utils.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         
 
     <script src="js/app.js"></script>

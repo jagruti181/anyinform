@@ -1785,6 +1785,7 @@ padding-left: 10px;
 width: 100%;
 }
 
+.ng-invalid.ng-dirty { border: 1px solid red; }
 .phone a:hover, a:focus {
 color: #D00101;
 }
