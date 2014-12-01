@@ -15,6 +15,9 @@ var restservice = angular.module('restservice', [])
         logout: function(){
             return $http.get(adminurl+"logout",{});
         },
+        alladd: function(){
+            return $http.get(adminurl+"alladd",{});
+        },
         getallcategory: function(){
             return $http.get(adminurl+"getcategoryfront",{});
         },

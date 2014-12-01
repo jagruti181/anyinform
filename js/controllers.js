@@ -19,6 +19,30 @@ phonecatControllers.controller('home',
         $scope.form = [];
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
+    
+//    Start Get all Banners / Adds
+        var addsuccess = function (data, status) {
+            console.log("my adds");
+            console.log(data);
+            for(var i=0;i<data.length;i++)
+            {
+                if(data[i].position == 1)
+                {
+                    $scope.positionone=data[i].adds;
+                }else{
+                    $scope.positiontwo=data[i].adds;
+                }
+            }
+            console.log("one");
+            console.log($scope.positionone);
+            console.log("two");
+            console.log($scope.positiontwo);
+        };
+    
+        RestService.alladd().success(addsuccess);
+    
+//    End Get all Banners / Adds
+    
         //  get area from city
 
         function showPosition2(position) {
@@ -206,7 +230,8 @@ phonecatControllers.controller('category',
             $scope.one1 = name;
             $scope.one1 = "filterselected";
             $scope.listings = "";
-            RestService.getlistingbycategory(iid).success(getlisting);
+            $location.url("/subcategory/" + iid);
+//            RestService.getlistingbycategory(iid).success(getlisting);
         }
     });
 
