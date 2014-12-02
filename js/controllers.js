@@ -98,7 +98,8 @@ phonecatControllers.controller('home',
         var getlocation = function (data, status) {
             console.log(data);
             $scope.areas = data;
-            $scope.form.area = data[0].id;
+//            $scope.form.area = data[0].id;
+            $scope.form.area = 0;
         };
 
         $scope.citychange = function (city) {
@@ -125,8 +126,11 @@ phonecatControllers.controller('home',
 
             }
         };
-        $scope.searchlist = function (text) {
-            console.log(text);
+        $scope.searchlist = function (text,city,area) {
+            if(!city)
+                city=0;
+            if(!area)
+                area=0;
             if (text != "") {
                 RestService.searchcategory(text).success(searchsuccess);
             } else {
@@ -472,6 +476,42 @@ phonecatControllers.controller('listbusiness',
         TemplateService.navigation = "views/innerheader.html";
         $scope.userdata="";
         $scope.list=[];
+        $scope.list.category=[];
+        $scope.catgo=[];
+    $scope.demo="";
+//    start my angular tree view
+    var gettreeview =function (data, status) {
+        console.log(data);
+        $scope.roleList = data.children;
+    };
+    RestService.getcategorytree().success(gettreeview);
+    console.log("tree select");
+    $scope.tagcategory=[];
+    $scope.selectNodeLabel = function (c,b){
+//        console.log(c);
+//        if($scope.catgo=="")
+//        {
+//            $scope.catgo=c.id;
+//        }else{
+            $scope.list.category.push(c.id);
+//        }
+        console.log($scope.list.category);
+        $scope.tagcategory.push({text:c.name,id:c.id});
+        console.log($scope.tagcategory.length);
+//        for(var i=0;i=$scope.tagcategory.length;i++)
+//        {
+//            if($scope.tagcategory)
+//            for(var j=0;j<$scope.tagcategory.length;i++)
+//            {
+//            }
+//        }
+    }
+    $scope.addcategory = function (data){
+        console.log(data);
+        
+    }
+    
+//    end my angular tree view
     
 //        start validation for user if not valid go to home page
     

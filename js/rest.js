@@ -1,5 +1,5 @@
 
-var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
+var adminurl="http://localhost/foranyinformation/index.php/json/";
 
 var restservice = angular.module('restservice', [])
 
@@ -14,6 +14,9 @@ var restservice = angular.module('restservice', [])
         },
         logout: function(){
             return $http.get(adminurl+"logout",{});
+        },
+        getcategorytree: function(){
+            return $http.get(adminurl+"getcategorytree",{});
         },
         alladd: function(){
             return $http.get(adminurl+"alladd",{});

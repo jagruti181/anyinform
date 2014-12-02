@@ -3,19 +3,41 @@
         <div class="row">
             <h3>List Your Business</h3>
             <div class="signup-form">
+                   
+
+                   
                     <h5>Name *</h5>
                     <input type="text" ng-model="list.name" placeholder="Name" class="form-control" ng-class="allvalidation[0].validation" required/>
                     <h5>category *</h5>
+                    <tags-input ng-model="tagcategory"  display-property="text">
+                        <auto-complete source="tagdata"></auto-complete>
+                    </tags-input>
+                    <!--                   demo angular tree-->
+
+    <!--
+      [TREE attribute]
+      angular-treeview: the treeview directive
+      tree-model : the tree model on $scope.
+      node-id : each node's id
+      node-label : each node's label
+      node-children: each node's children
+    -->
+    <div
+      data-angular-treeview="false"
+      data-tree-model="roleList"
+      data-node-id="id"
+      data-node-label="name"
+      data-node-children="children" >
+    </div>
+
+
+<!--                   demo angular tree-->
+<!--
                     <select ng-model="list.category" ng-change="addcategorytab(list.category)" class="formselop form-control" ng-class="allvalidation[1].validation" multiple required>
                         <option ng-repeat="cat in alljson.category" value="{{cat.id}}">{{cat.name}}</option>
                     </select>
-<!--
-                    {{tagdata}}
-                    <tags-input ng-model="list.tagcategory">
-                        <auto-complete source="tagdata"></auto-complete>
-                    </tags-input>
-                    <p>Model: {{tags}}</p>
 -->
+                    
                     
                     
 <!--

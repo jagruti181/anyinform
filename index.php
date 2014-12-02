@@ -51,6 +51,7 @@ FileAPI = {
     <script src="lib/js/ui-utils.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!--       <script src="lib/js/angular-treeview.js"></script>-->
         
 
     <script src="js/app.js"></script>

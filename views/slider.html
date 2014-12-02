@@ -79,7 +79,7 @@
                 </select>
                 
                 <select class="city onlycursor" ng-model="form.area">
-                   <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" value="">Select Area</option>
+                   <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" value="0">Select Area</option>
                     <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
                 </select>
                
@@ -92,7 +92,7 @@
                     <option ng-repeat="are in area" value="{{are.name}}">{{are.name}}</option>
                 </select> -->
                 
-                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search)" style="width: 90%;" />
+                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search,form.cityy,form.area)" style="width: 90%;" />
                 <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->
                 {{categoryid}}
                 <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
