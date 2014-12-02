@@ -234,13 +234,38 @@ phonecatControllers.controller('category',
 //            RestService.getlistingbycategory(iid).success(getlisting);
         }
         
+//        start authenticating user
+        
+            var getuser = function (data, status){
+            console.log("my data");
+            console.log(data);
+            if(data=="false")
+            {
+                $scope.user=0;
+            }else{
+                $scope.user=data;
+            }
+        };
+        RestService.authenticate().success(getuser);
+        
+//        end authenticating user
+        
 //        start send email to user
         
+        var sendsuccess = function (data, status) {
+            console.log(data);
+        };
             $scope.sendemail = function(listing){
                 console.log("listing");
                 console.log(listing);
                 console.log("user");
-                console.log(listing);
+                console.log($scope.user);
+                if($scope.user==0)
+                {
+                    $location.url('/login');
+                }else{
+                    RestService.sendemail($scope.user,listing).success(sendsuccess);
+                }
                 
             }
         
