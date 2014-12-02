@@ -195,7 +195,7 @@ phonecatControllers.controller('category',
 
         $scope.msg = "";
         $scope.msgarea = false;
-    
+//    start authen
         $scope.linkclick = function(id)
         {
             $location.url('/detail/'+id);
@@ -233,6 +233,19 @@ phonecatControllers.controller('category',
             $location.url("/subcategory/" + iid);
 //            RestService.getlistingbycategory(iid).success(getlisting);
         }
+        
+//        start send email to user
+        
+            $scope.sendemail = function(listing){
+                console.log("listing");
+                console.log(listing);
+                console.log("user");
+                console.log(listing);
+                
+            }
+        
+//        end send email to user
+        
     });
 
 phonecatControllers.controller('subcategory',
@@ -267,6 +280,9 @@ phonecatControllers.controller('detail',
         TemplateService.content = "views/detail.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
+        $scope.enquirymsg="";
+        $scope.enquiryshow=false;
+        $scope.enquiry=[];
 
         //get detail listing
         var getdetail = function (data, status) {
@@ -280,11 +296,43 @@ phonecatControllers.controller('detail',
     
         var enquirysuccess = function (data, status) {
             console.log(data);
+            if(data=="1")
+            {
+                $scope.enquiryshow=true;
+                $scope.enquirymsg="Enquiry Send";
+                
+            }else{
+                $scope.enquiryshow=true;
+                $scope.enquirymsg="Sorry, Try again later";
+            }
         };
         $scope.enquiryuser = function (enquiry) {
             console.log(enquiry);
-            
-            RestService.enquiryuser(enquiry.name,$scope.detail.listing.listingid,enquiry.email,enquiry.phone,enquiry.comment).success(enquirysuccess);
+                
+            $scope.allvalidation = [{
+                field: $scope.enquiry.name,
+                validation: ""
+             }, {
+                field: $scope.enquiry.email,
+                validation: ""
+             }, {
+                field: $scope.enquiry.phone,
+                validation: ""
+             }, {
+                field: $scope.enquiry.comment,
+                validation: ""
+             }];
+             
+             var check = formvalidation($scope.allvalidation);
+             
+             if(check)
+             {
+                RestService.enquiryuser(enquiry.name,$scope.detail.listing.listingid,enquiry.email,enquiry.phone,enquiry.comment).success(enquirysuccess);
+             }else{
+                 console.log("not ckeck");
+             }
+             
+     
         }
 
     });
@@ -336,7 +384,6 @@ phonecatControllers.controller('login',
             console.log(data);
             if (data == false) {
                 $scope.signupmsgg = true;
-
                 $scope.signupmsg = "Already Exist. Choose Another Id";
             }
         };
@@ -355,6 +402,7 @@ phonecatControllers.controller('OtherCtrl',
         $scope.template = TemplateService;
         
         var getuser = function (data, status){
+            console.log("my data");
             console.log(data);
             if(data=="false")
             {
@@ -402,16 +450,16 @@ phonecatControllers.controller('listbusiness',
     
 //        start validation for user if not valid go to home page
     
-//        var getuser = function (data, status){
-//            console.log(data);
-//            if(data=="false")
-//            {
-//                $location.url("/home");
-//            }else{
-//                $scope.userdata=data;
-//            }
-//        };
-//        RestService.authenticate().success(getuser);
+        var getuser = function (data, status){
+            console.log(data);
+            if(data=="false")
+            {
+                $location.url("/login");
+            }else{
+                $scope.userdata=data;
+            }
+        };
+        RestService.authenticate().success(getuser);
     
 //        end validation for user if not valid go to home page
         
