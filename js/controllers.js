@@ -493,18 +493,32 @@ phonecatControllers.controller('listbusiness',
 //        {
 //            $scope.catgo=c.id;
 //        }else{
+        if($scope.tagcategory.length==0)
+        {
             $scope.list.category.push(c.id);
-//        }
         console.log($scope.list.category);
         $scope.tagcategory.push({text:c.name,id:c.id});
         console.log($scope.tagcategory.length);
-//        for(var i=0;i=$scope.tagcategory.length;i++)
-//        {
-//            if($scope.tagcategory)
-//            for(var j=0;j<$scope.tagcategory.length;i++)
-//            {
-//            }
-//        }
+        }else{
+        for(var i=0;i<$scope.tagcategory.length;i++)
+        {
+            console.log($scope.tagcategory[0].id);
+           if($scope.tagcategory[i].id==c.id)
+           {
+               $scope.check=0;
+           }else{
+               $scope.check=1;
+           }
+        }
+        if($scope.check==1)
+        {
+            $scope.list.category.push(c.id);
+        console.log($scope.list.category);
+        $scope.tagcategory.push({text:c.name,id:c.id});
+        console.log($scope.tagcategory.length);         
+        }
+        }
+        
     }
     $scope.addcategory = function (data){
         console.log(data);
