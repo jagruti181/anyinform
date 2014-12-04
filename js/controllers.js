@@ -1,5 +1,6 @@
 var lat = 0;
 var long = 0;
+var pat = '\home';
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput']);
 
 window.uploadUrl = 'upload.php';
@@ -264,12 +265,13 @@ phonecatControllers.controller('category',
                 console.log(listing);
                 console.log("user");
                 console.log($scope.user);
-                if($scope.user==0)
-                {
-                    $location.url('/login');
-                }else{
-                    RestService.sendemail($scope.user,listing).success(sendsuccess);
-                }
+                pat=$location.url();
+//                if($scope.user==0)
+//                {
+//                    $location.url('/login');
+//                }else{
+//                    RestService.sendemail($scope.user,listing).success(sendsuccess);
+//                }
                 
             }
         
