@@ -5,12 +5,12 @@
                 <div class="product-image-wrapper homecat">
                     <div class="single-products">
                         <div class="productinfo text-center">
-                            <a href="#/subcategory/{{category.id}}" ng-show="{{category.status==0}}" class="homecat">
+                            <a ng-click="oncategoryclick(category.id)" ng-show="{{category.status==0}}" class="homecat">
                                 <div><i class="{{category.logo}}"></i>
                                 </div>
                                 <p>{{category.name}}</p>
                             </a>
-                            <a href="#/subcategory/{{category.id}}" ng-show="{{category.status==1}}" class="homecat">
+                            <a ng-click="oncategoryclick(category.id)" ng-show="{{category.status==1}}" class="homecat">
                                 <div>
                                     <img ng-src="{{'png/'+category.logo|imagepath1}}" class="fa-3x"/>
                                 </div>

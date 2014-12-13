@@ -5,6 +5,7 @@ var restservice = angular.module('restservice', [])
 
 .factory('RestService', function ($http) {
    
+    var banner='';
     return {
         getmap: function(data){
             return $http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+data+"&key=AIzaSyAj0OXepKIgjTlZiPe_ZVYTDjL8rYpobgQ",{});
@@ -14,6 +15,16 @@ var restservice = angular.module('restservice', [])
         },
         logout: function(){
             return $http.get(adminurl+"logout",{});
+        },
+        getbanner: function(){
+            return banner;
+        },
+        setbanner: function(banner){
+            banner = banner;
+            return banner;
+        },
+        getcategoryinfo: function(id){
+            return $http.get(adminurl+"getcategoryinfo?id="+id,{});
         },
         getcategorytree: function(){
             return $http.get(adminurl+"getcategorytree",{});
@@ -67,6 +78,9 @@ var restservice = angular.module('restservice', [])
         },
         enquiryuser: function(name,listing,email,phone,comment){
             return $http.get(adminurl+"enquiryuser?name="+name+"&listing="+listing+"&email="+email+"&phone="+phone+"&type=2&comment="+comment,{});
+        },
+        getspecialoffersbycategory: function(cid){
+            return $http.get(adminurl+"getspecialoffersbycategory?categoryid="+cid,{});
         },
         getonelistingbyid: function(id){
             return $http.get(adminurl+"getonelistingbyid?id="+id,{});

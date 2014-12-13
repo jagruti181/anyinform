@@ -18,9 +18,21 @@ phonecatControllers.controller('home',
         $scope.searchshow = false;
         $scope.searchid = "";
         $scope.form = [];
+        $scope.city = '';
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
-
+        
+        // set banner
+        var bannersuccess = function (data, status) {
+            console.log(data);
+            $scope.banner=data.banner;
+            console.log(RestService.setbanner(data.banner));
+            $location.url('/subcategory/'+data.id);
+        };
+        $scope.oncategoryclick = function (banner) {
+            RestService.getcategoryinfo(banner).success(bannersuccess);
+        }
+    
         //    Start Get all Banners / Adds
         var addsuccess = function (data, status) {
             console.log("my adds");
@@ -67,7 +79,7 @@ phonecatControllers.controller('home',
 
                     console.log($scope.cities[i].name == $scope.cityis.selected);
                     if ($scope.cities[i].name == $scope.cityis.selected) {
-
+                        $scope.city = $scope.cities[i].name;
                         citywegot = $scope.cities[i].id;
                     }
                 }
@@ -137,12 +149,18 @@ phonecatControllers.controller('home',
             // substr()
             text = text.split(' in ');
             console.log("search tet");
-            console.log(text[0]);
+            $scope.searchtext=text[0];
             console.log("city");
             console.log(text[1]);
+            if(!text[1])
+            {
+                city=$scope.city;
+            }else{
+                city=text[1];
+            }
 
             if (text[0] != "") {
-                RestService.searchcategory(text[0], text[1]).success(searchsuccess);
+                RestService.searchcategory($scope.searchtext, city).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }
@@ -212,6 +230,18 @@ phonecatControllers.controller('category',
         $scope.linkclick = function (id) {
             $location.url('/detail/' + id);
         }
+
+        //special offers by category id
+
+        var getoffers = function (data, status) {
+            
+            console.log("offers");
+            console.log(data);
+            $scope.offers=data;
+
+        };
+        RestService.getspecialoffersbycategory($routeParams.id).success(getoffers);
+
 
         //listiung by category id
 
@@ -291,6 +321,13 @@ phonecatControllers.controller('subcategory',
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
 
+        var categoryinfosuccess = function (data, status) {
+            console.log(data);
+            $scope.banner=data;
+            RestService.setbanner(data.banner);
+        };
+        RestService.getcategoryinfo($routeParams.id).success(categoryinfosuccess);
+    
         var allcat = function (data, status) {
             console.log(data);
             if (data == "") {
@@ -447,6 +484,11 @@ phonecatControllers.controller('OtherCtrl',
     function ($scope, TemplateService, RestService, $location, $routeParams) {
         $scope.template = TemplateService;
         $scope.userdata = [];
+    
+        $scope.banner = RestService.getbanner();
+    console.log("my banner//////////////////////////////");
+    console.log(RestService.getbanner());
+    
         var getuser = function (data, status) {
             $scope.userdata = data;
             console.log("my data");

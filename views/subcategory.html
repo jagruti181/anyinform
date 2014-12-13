@@ -1,4 +1,11 @@
 <div class="container">
+   
+   
+				<div class="banner">
+                   <img src="lib/images/ad/ad.jpg" ng-show="banner.banner==''" width="100%">
+                   <img src="lib/images/ad/{{banner.banner}}" ng-show="banner.banner!=''" width="100%">
+                </div>
+   
     <div class="row" style="height:10px;">
     </div>
     <div class="" ng-repeat="cat in subcat">
