@@ -1,8 +1,8 @@
 <section>
-		<div class="container">
-			<div class="row">
-				
-							<!-- <h3>Girls Pink T Shirt arrived in store</h3>
+    <div class="container">
+        <div class="row">
+
+            <!-- <h3>Girls Pink T Shirt arrived in store</h3>
 							<div class="post-meta">
 							    <ul>
 							        <li><i class="fa fa-user"></i> Mac Doe</li>
@@ -10,38 +10,38 @@
 							        <li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
 							    </ul>
 							</div> -->
-					<div class="media commnets">
-						<a class="pull-left" href="#">
-							<img class="media-object mediumimage" src="{{detail.listing.logo|imagepath}}" alt="">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading"><i class="fa fa-thumbs-up fa-2x fapadr"></i>{{detail.listing.name}}</h4>
-                            <p><i class="fa fa-map-marker fa-2x fapadr"></i>&nbsp;{{detail.listing.address}}</p>
-                            <p><i class="fa fa-phone fa-2x fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
-                            <p>
-                                <i class="fa fa-at fa-2x fapadr"></i>Send Enquiry By Email
-                            </p>
-                            <p class="pull-left">
-                                <a class="btn btn-primary mrr" href="">Send SMS</a>
-                                <a class="btn btn-primary mrr" href="">Send Email</a>
-                                <a class="btn btn-primary mrr" href="">Other Posts</a>
-                            </p>	
-							<!-- <div class="blog-socials">
+            <div class="media commnets">
+                <a class="pull-left" href="#">
+                    <img class="media-object mediumimage" src="{{detail.listing.logo|imagepath}}" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading"><i class="fa fa-thumbs-up fapadr"></i>{{detail.listing.name}}</h4>
+                    <p><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
+                    <p><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
+                    <p>
+                        <i class="fa fa-at fapadr"></i>Send Enquiry By Email
+                    </p>
+                    <p class="pull-left">
+                        <a class="btn btn-primary mrr" href="">Send SMS</a>
+                        <a class="btn btn-primary mrr" href="">Send Email</a>
+                        <a class="btn btn-primary mrr" href="">Other Posts</a>
+                    </p>
+                    <!-- <div class="blog-socials">
 							    <ul>
 							        <li><a href=""><i class="fa fa-facebook"></i></a></li>
 							        <li><a href=""><i class="fa fa-twitter"></i></a></li>
 							        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
 							        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
 							    </ul>
-							</div> -->	
-							<div class="pull-right">
-							
-							<span class='st_facebook_hcount' displayText='Facebook' style="height:0px"></span>
-                            <span class='st_twitter_hcount' displayText='Tweet'></span>
-                            <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
-                            <span class='st_googleplus_hcount' displayText='Google +'></span>
-							
-<!--
+							</div> -->
+                    <div class="pull-right">
+
+                        <span class='st_facebook_hcount' displayText='Facebook' style="height:0px"></span>
+                        <span class='st_twitter_hcount' displayText='Tweet'></span>
+                        <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+                        <span class='st_googleplus_hcount' displayText='Google +'></span>
+
+                        <!--
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -49,35 +49,43 @@
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 							</ul>
 -->
-						</div>					
-						</div>
-		</div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                    <h2 class="title text-center">More Information</h2>
-                            <p class="fapadl"><i class="fa fa-info-circle fa-2x fapadr"></i>{{detail.listing.description}}</p>
-                        <p class="fapadl"><i class="fa fa-map-marker fa-2x fapadr"></i>&nbsp;{{detail.listing.address}}</p>
-                        <p class="fapadl"><i class="fa fa-phone fa-2x fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
-                    
-                    <h2 class="title text-center">Other categories</h2>
-                        <p class="fapadl" ng-repeat="category in detail.categories"><i class="fa fa-angle-double-right fa-2x fapadr"></i>&nbsp;{{category.categoryname}}</p>
-                    <h2 class="title text-center">Hours Of Operation</h2>
-                        <strong class="fapadl" ng-repeat="operation in detail.daysofoperation">{{operation.daysofoperationname}}&nbsp;&nbsp;</strong><h6 class="fapadl">9:00 am To 9:00 pm</h6>
-                    <h2 class="title text-center">Modes Of Payment</h2>
-                        <p class="fapadl" ng-repeat="payment in detail.modeofpayment">{{payment.modeofpaymentname}}</p>
-                        <h2 class="title text-center">Enquiry</h2>
-					<div class="signup-form">
-                        <div class="signupmsg" ng-show="enquiryshow">
-                        
-                            {{enquirymsg}}
-                        </div>
-							<input type="text" ng-model="enquiry.name" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
-							<input type="email" ng-model="enquiry.email"  class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
-							<input type="number" ng-model="enquiry.phone"  class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
-                            <textarea ng-model="enquiry.comment"  class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
-							<button class="btn btn-default" ng-click="enquiryuser(enquiry)">Send</button>
-					</div>
+        </div>
+        <div class="row">
+            <h2 class="title text-center">More Information</h2>
+
+
+            <!--                           facebook post start-->
+
+            <div class="fb-like-box" data-href="https://www.facebook.com/{{detail.listing.facebook}}" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+
+            <!--                           facebook post  end-->
+
+            <p class="fapadl"><i class="fa fa-info-circle fapadr"></i>{{detail.listing.description}}</p>
+            <p class="fapadl"><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
+            <p class="fapadl"><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
+
+            <h2 class="title text-center">Other categories</h2>
+            <p class="fapadl" ng-repeat="category in detail.categories"><i class="fa fa-angle-double-right fapadr"></i>&nbsp;{{category.categoryname}}</p>
+            <h2 class="title text-center">Hours Of Operation</h2>
+            <strong class="fapadl" ng-repeat="operation in detail.daysofoperation">{{operation.daysofoperationname}}&nbsp;&nbsp;</strong>
+            <h6 class="fapadl">9:00 am To 9:00 pm</h6>
+            <h2 class="title text-center">Modes Of Payment</h2>
+            <p class="fapadl" ng-repeat="payment in detail.modeofpayment">{{payment.modeofpaymentname}}</p>
+            <h2 class="title text-center">Enquiry</h2>
+            <div class="signup-form">
+                <div class="signupmsg" ng-show="enquiryshow">
+
+                    {{enquirymsg}}
+                </div>
+                <input type="text" ng-model="enquiry.name" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
+                <input type="email" ng-model="enquiry.email" class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
+                <input type="number" ng-model="enquiry.phone" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
+                <textarea ng-model="enquiry.comment" class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
+                <button class="btn btn-default" ng-click="enquiryuser(enquiry)">Send</button>
             </div>
+        </div>
     </div>
-	</section>
-	
+</section>

@@ -14,24 +14,22 @@ phonecatControllers.controller('home',
         TemplateService.content = "views/content.html";
         TemplateService.footer = "views/footer.html";
         TemplateService.footerbottom = "views/footerbottom.html";
-        $scope.demo="demo";
+        $scope.demo = "demo";
         $scope.searchshow = false;
         $scope.searchid = "";
         $scope.form = [];
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
-    
-//    Start Get all Banners / Adds
+
+        //    Start Get all Banners / Adds
         var addsuccess = function (data, status) {
             console.log("my adds");
             console.log(data);
-            for(var i=0;i<data.length;i++)
-            {
-                if(data[i].position == 1)
-                {
-                    $scope.positionone=data[i].adds;
-                }else{
-                    $scope.positiontwo=data[i].adds;
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].position == 1) {
+                    $scope.positionone = data[i].adds;
+                } else {
+                    $scope.positiontwo = data[i].adds;
                 }
             }
             console.log("one");
@@ -39,11 +37,11 @@ phonecatControllers.controller('home',
             console.log("two");
             console.log($scope.positiontwo);
         };
-    
+
         RestService.alladd().success(addsuccess);
-    
-//    End Get all Banners / Adds
-    
+
+        //    End Get all Banners / Adds
+
         //  get area from city
 
         function showPosition2(position) {
@@ -66,10 +64,10 @@ phonecatControllers.controller('home',
                 var citywegot = 9;
                 var cities = $scope.cities;
                 for (var i = 0; i < $scope.cities.length; i++) {
-                    
+
                     console.log($scope.cities[i].name == $scope.cityis.selected);
                     if ($scope.cities[i].name == $scope.cityis.selected) {
-                    
+
                         citywegot = $scope.cities[i].id;
                     }
                 }
@@ -99,7 +97,7 @@ phonecatControllers.controller('home',
         var getlocation = function (data, status) {
             console.log(data);
             $scope.areas = data;
-//            $scope.form.area = data[0].id;
+            //            $scope.form.area = data[0].id;
             $scope.form.area = 0;
         };
 
@@ -114,7 +112,7 @@ phonecatControllers.controller('home',
         }
 
         $scope.innershearch = function () {
-            $location.url("/subcategory/" + $scope.searchid);
+            $location.url("/detail/" + $scope.searchid);
         };
 
         var searchsuccess = function (data, status) {
@@ -126,19 +124,29 @@ phonecatControllers.controller('home',
                 $scope.searchshow = false;
 
             }
+            for(var i=0;i<data.length;i++)
+            {
+                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].cityname+" ) ";
+            }
         };
-        $scope.searchlist = function (text,city,area) {
-            if(!city)
-                city=0;
-            if(!area)
-                area=0;
-            if (text != "") {
-                RestService.searchcategory(text).success(searchsuccess);
+        $scope.searchlist = function (text, city, area) {
+            if (!city)
+                city = 0;
+            if (!area)
+                area = 0;
+            // substr()
+            text = text.split(' in ');
+            console.log("search tet");
+            console.log(text[0]);
+            console.log("city");
+            console.log(text[1]);
+
+            if (text[0] != "") {
+                RestService.searchcategory(text[0], text[1]).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }
         }
-
         var getcity = function (data, status) {
             console.log(data);
             $scope.cities = data;
@@ -146,11 +154,11 @@ phonecatControllers.controller('home',
         RestService.getallcity().success(getcity);
         // searching 
 
-//        var searchdata = function (data, status) {
-//            console.log("in home");
-//            console.log(data);
-//        };
-//        RestService.searchcategory("h").success(searchdata);
+        //        var searchdata = function (data, status) {
+        //            console.log("in home");
+        //            console.log(data);
+        //        };
+        //        RestService.searchcategory("h").success(searchdata);
 
 
 
@@ -200,12 +208,11 @@ phonecatControllers.controller('category',
 
         $scope.msg = "";
         $scope.msgarea = false;
-//    start authen
-        $scope.linkclick = function(id)
-        {
-            $location.url('/detail/'+id);
+        //    start authen
+        $scope.linkclick = function (id) {
+            $location.url('/detail/' + id);
         }
-    
+
         //listiung by category id
 
         var getlisting = function (data, status) {
@@ -236,47 +243,45 @@ phonecatControllers.controller('category',
             $scope.one1 = "filterselected";
             $scope.listings = "";
             $location.url("/subcategory/" + iid);
-//            RestService.getlistingbycategory(iid).success(getlisting);
+            //            RestService.getlistingbycategory(iid).success(getlisting);
         }
-        
-//        start authenticating user
-        
-            var getuser = function (data, status){
+
+        //        start authenticating user
+
+        var getuser = function (data, status) {
             console.log("my data");
             console.log(data);
-            if(data=="false")
-            {
-                $scope.user=0;
-            }else{
-                $scope.user=data;
+            if (data == "false") {
+                $scope.user = 0;
+            } else {
+                $scope.user = data;
             }
         };
         RestService.authenticate().success(getuser);
-        
-//        end authenticating user
-        
-//        start send email to user
-        
+
+        //        end authenticating user
+
+        //        start send email to user
+
         var sendsuccess = function (data, status) {
             console.log(data);
         };
-            $scope.sendemail = function(listing){
-                console.log("listing");
-                console.log(listing);
-                console.log("user");
-                console.log($scope.user);
-                pat=$location.url();
-//                if($scope.user==0)
-//                {
-//                    $location.url('/login');
-//                }else{
-//                    RestService.sendemail($scope.user,listing).success(sendsuccess);
-//                }
-                
+        $scope.sendemail = function (listing) {
+            console.log("listing");
+            console.log(listing);
+            console.log("user");
+            console.log($scope.user);
+            pat = $location.url();
+            if ($scope.user == 0) {
+                $location.url('/login');
+            } else {
+                RestService.sendemail($scope.user, listing).success(sendsuccess);
             }
-        
-//        end send email to user
-        
+
+        }
+
+        //        end send email to user
+
     });
 
 phonecatControllers.controller('subcategory',
@@ -311,9 +316,22 @@ phonecatControllers.controller('detail',
         TemplateService.content = "views/detail.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
-        $scope.enquirymsg="";
-        $scope.enquiryshow=false;
-        $scope.enquiry=[];
+        $scope.enquirymsg = "";
+        $scope.enquiryshow = false;
+        $scope.enquiry = [];
+
+        $scope.$on('$viewContentLoaded', function () {
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=623204201082335&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            //Here your view content is fully loaded !!
+        });
+
 
         //get detail listing
         var getdetail = function (data, status) {
@@ -321,25 +339,24 @@ phonecatControllers.controller('detail',
             $scope.detail = data;
         };
         RestService.getonelistingbyid($routeParams.id).success(getdetail);
-    
-//    enquiry for listing
-    
-    
+
+        //    enquiry for listing
+
+
         var enquirysuccess = function (data, status) {
             console.log(data);
-            if(data=="1")
-            {
-                $scope.enquiryshow=true;
-                $scope.enquirymsg="Enquiry Send";
-                
-            }else{
-                $scope.enquiryshow=true;
-                $scope.enquirymsg="Sorry, Try again later";
+            if (data == "1") {
+                $scope.enquiryshow = true;
+                $scope.enquirymsg = "Enquiry Send";
+
+            } else {
+                $scope.enquiryshow = true;
+                $scope.enquirymsg = "Sorry, Try again later";
             }
         };
         $scope.enquiryuser = function (enquiry) {
             console.log(enquiry);
-                
+
             $scope.allvalidation = [{
                 field: $scope.enquiry.name,
                 validation: ""
@@ -353,17 +370,16 @@ phonecatControllers.controller('detail',
                 field: $scope.enquiry.comment,
                 validation: ""
              }];
-             
-             var check = formvalidation($scope.allvalidation);
-             
-             if(check)
-             {
-                RestService.enquiryuser(enquiry.name,$scope.detail.listing.listingid,enquiry.email,enquiry.phone,enquiry.comment).success(enquirysuccess);
-             }else{
-                 console.log("not ckeck");
-             }
-             
-     
+
+            var check = formvalidation($scope.allvalidation);
+
+            if (check) {
+                RestService.enquiryuser(enquiry.name, $scope.detail.listing.listingid, enquiry.email, enquiry.phone, enquiry.comment).success(enquirysuccess);
+            } else {
+                console.log("not ckeck");
+            }
+
+
         }
 
     });
@@ -382,29 +398,28 @@ phonecatControllers.controller('login',
         TemplateService.content = "views/login.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
-        $scope.msg="";
-        $scope.msg1="";
-    
-        var loginsuccess = function (data, status){
+        $scope.msg = "";
+        $scope.msg1 = "";
+
+        var loginsuccess = function (data, status) {
             console.log(data);
-            if(data!="false")
-            {
+            if (data != "false") {
                 $location.url("/home");
-                $scope.loginlogout="Logout";
-            }else{
-                $scope.msg="Invalid Username Or Password";
+                $scope.loginlogout = "Logout";
+            } else {
+                $scope.msg = "Invalid Username Or Password";
             }
-            
+
         };
-    
-        $scope.userlogin = function (login){
+
+        $scope.userlogin = function (login) {
             console.log(login);
-            RestService.login(login.email,login.password).success(loginsuccess);
+            RestService.login(login.email, login.password).success(loginsuccess);
         }
-//    
-//        var getuser = function (data, status){
-//            console.log(data);
-//        };
+        //    
+        //        var getuser = function (data, status){
+        //            console.log(data);
+        //        };
         RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
@@ -429,130 +444,140 @@ phonecatControllers.controller('login',
 
 
 phonecatControllers.controller('OtherCtrl',
- function ($scope, TemplateService, RestService, $location, $routeParams) {
+    function ($scope, TemplateService, RestService, $location, $routeParams) {
         $scope.template = TemplateService;
-        
-        var getuser = function (data, status){
+        $scope.userdata = [];
+        var getuser = function (data, status) {
+            $scope.userdata = data;
             console.log("my data");
             console.log(data);
-            if(data=="false")
-            {
-                $scope.signuppro="Sign Up";
-                $scope.loginlogout="Login";
-            }else{
-                $scope.signuppro="My Profile";
-                $scope.loginlogout="Logout";
+            if (data == "false") {
+                $scope.signuppro = "Sign Up";
+                $scope.loginlogout = "Login";
+            } else {
+                $scope.signuppro = "My Profile";
+                $scope.loginlogout = "Logout";
             }
         };
         RestService.authenticate().success(getuser);
-    var linloutsuccess = function (data, status) {
-        console.log(data);
-        $location.url('/home');
-    };
-    
-    $scope.signupprofile = function () {
-        if($scope.signuppro=="Sign Up")
-        {
-            $location.url('/login');
+        var linloutsuccess = function (data, status) {
+            console.log(data);
+            $location.url('/home');
+        };
+
+        $scope.signupprofile = function () {
+            if ($scope.signuppro == "Sign Up") {
+                $location.url('/login');
+            }
         }
-    }
-    
-    $scope.loginfunction = function(){
-        if($scope.loginlogout=="Logout")
-        {
-            $scope.loginlogout="Login";
-            RestService.logout().success(linloutsuccess);
-        }else{
-            $location.url('/login');
+        //show listing one home page button
+        $scope.showlisting = function () {
+
+            if ($scope.userdata == "false") {
+                $location.url('/login');
+            } else {
+                $location.url('/listbusiness');
+            }
+
         }
-    }
-    
-  });
+
+        // home page login function
+        $scope.loginfunction = function () {
+            if ($scope.loginlogout == "Logout") {
+                $scope.loginlogout = "Login";
+                RestService.logout().success(linloutsuccess);
+            } else {
+                $location.url('/login');
+            }
+        }
+
+    });
 
 phonecatControllers.controller('listbusiness',
-  function ($scope, TemplateService, RestService, $location) {
+    function ($scope, TemplateService, RestService, $location) {
         $scope.template = TemplateService;
         TemplateService.content = "views/listbusiness.html";
         TemplateService.slider = false;
         TemplateService.navigation = false;
         TemplateService.navigation = "views/innerheader.html";
-        $scope.userdata="";
-        $scope.list=[];
-        $scope.list.category=[];
-        $scope.catgo=[];
-    $scope.demo="";
-//    start my angular tree view
-    var gettreeview =function (data, status) {
-        console.log(data);
-        $scope.roleList = data.children;
-    };
-    RestService.getcategorytree().success(gettreeview);
-    console.log("tree select");
-    $scope.tagcategory=[];
-    $scope.selectNodeLabel = function (c,b){
-//        console.log(c);
-//        if($scope.catgo=="")
-//        {
-//            $scope.catgo=c.id;
-//        }else{
-        if($scope.tagcategory.length==0)
-        {
-            $scope.list.category.push(c.id);
-        console.log($scope.list.category);
-        $scope.tagcategory.push({text:c.name,id:c.id});
-        console.log($scope.tagcategory.length);
-        }else{
-        for(var i=0;i<$scope.tagcategory.length;i++)
-        {
-            console.log($scope.tagcategory[0].id);
-           if($scope.tagcategory[i].id==c.id)
-           {
-               $scope.check=0;
-           }else{
-               $scope.check=1;
-           }
-        }
-        if($scope.check==1)
-        {
-            $scope.list.category.push(c.id);
-        console.log($scope.list.category);
-        $scope.tagcategory.push({text:c.name,id:c.id});
-        console.log($scope.tagcategory.length);         
-        }
-        }
-        
-    }
-    $scope.addcategory = function (data){
-        console.log(data);
-        
-    }
-    
-//    end my angular tree view
-    
-//        start validation for user if not valid go to home page
-    
-        var getuser = function (data, status){
+        $scope.userdata = "";
+        $scope.list = [];
+        $scope.list.category = [];
+        $scope.catgo = [];
+        $scope.demo = "";
+        //    start my angular tree view
+        var gettreeview = function (data, status) {
             console.log(data);
-            if(data=="false")
-            {
+            $scope.roleList = data.children;
+        };
+        RestService.getcategorytree().success(gettreeview);
+        console.log("tree select");
+        $scope.tagcategory = [];
+        $scope.selectNodeLabel = function (c, b) {
+            //        console.log(c);
+            //        if($scope.catgo=="")
+            //        {
+            //            $scope.catgo=c.id;
+            //        }else{
+            if ($scope.tagcategory.length == 0) {
+                $scope.list.category.push(c.id);
+                console.log($scope.list.category);
+                $scope.tagcategory.push({
+                    text: c.name,
+                    id: c.id
+                });
+                console.log($scope.tagcategory.length);
+            } else {
+                for (var i = 0; i < $scope.tagcategory.length; i++) {
+                    console.log($scope.tagcategory[0].id);
+                    if ($scope.tagcategory[i].id == c.id) {
+                        $scope.check = 0;
+                    } else {
+                        $scope.check = 1;
+                    }
+                }
+                if ($scope.check == 1) {
+                    $scope.list.category.push(c.id);
+                    console.log($scope.list.category);
+                    $scope.tagcategory.push({
+                        text: c.name,
+                        id: c.id
+                    });
+                    console.log($scope.tagcategory.length);
+                }
+            }
+
+        }
+        $scope.addcategory = function (data) {
+            console.log(data);
+
+        }
+
+        //    end my angular tree view
+
+        //        start validation for user if not valid go to home page
+
+        var getuser = function (data, status) {
+            console.log(data);
+            if (data == "false") {
                 $location.url("/login");
-            }else{
-                $scope.userdata=data;
+            } else {
+                $scope.userdata = data;
             }
         };
         RestService.authenticate().success(getuser);
-    
-//        end validation for user if not valid go to home page
-        
-//        start add category tag
-            $scope.addcategorytab = function (cat){
-                console.log(cat);
-            }
-    
-//        end add category tag
-    
-//        start get latitude and longitude by address parameters
-        
+
+        //        end validation for user if not valid go to home page
+
+        //        start add category tag
+        $scope.addcategorytab = function (cat) {
+            console.log(cat);
+        }
+
+        //        end add category tag
+
+        //        start get latitude and longitude by address parameters
+
         var mapp = function (data, state) {
             console.log(data);
             console.log(data.results[0].geometry.location.lat);
@@ -562,49 +587,44 @@ phonecatControllers.controller('listbusiness',
 
         };
         $scope.getlatlong = function (address, pin, city, state, country) {
-            if(!address)
-            {
-                address="";
+            if (!address) {
+                address = "";
             }
-            if(!pin)
-            {
-                pin="";
+            if (!pin) {
+                pin = "";
             }
-            if(!city)
-            {
-                city="";
-            }else{
-                $scope.city=city.split(",");
-                city=$scope.city['1'];
+            if (!city) {
+                city = "";
+            } else {
+                $scope.city = city.split(",");
+                city = $scope.city['1'];
             }
-            if(!state)
-            {
-                state="";
+            if (!state) {
+                state = "";
             }
-            if(!country)
-            {
-                country="";
+            if (!country) {
+                country = "";
             }
-            
+
             $scope.lmap = address + "," + pin + "," + city + "," + state + "," + country;
             console.log($scope.lmap);
             RestService.getmap($scope.lmap).success(mapp);
         };
-    
-//        end get latitude and longitude by address parameters
-    
-//        start on listbusiness submit
-    
+
+        //        end get latitude and longitude by address parameters
+
+        //        start on listbusiness submit
+
         var listingsuccess = function (data, status) {
-            
+
             console.log(data);
-            
+
         };
-    
-    
-         $scope.submitlist = function (list) {
-             
-             
+
+
+        $scope.submitlist = function (list) {
+
+
             $scope.allvalidation = [{
                 field: $scope.list.name,
                 validation: ""
@@ -642,37 +662,36 @@ phonecatControllers.controller('listbusiness',
                 field: $scope.list.type,
                 validation: ""
              }];
-             
-             var check = formvalidation($scope.allvalidation);
-             
-             if(check)
-             {
-                list.user=$scope.userdata;
-                list.logo="default.jpg";
-                list.city=list.city.split(",");
-                list.city=list.city['0'];
+
+            var check = formvalidation($scope.allvalidation);
+
+            if (check) {
+                list.user = $scope.userdata;
+                list.logo = "default.jpg";
+                list.city = list.city.split(",");
+                list.city = list.city['0'];
                 console.log(list);
                 RestService.createlisting(list).success(listingsuccess);
-             }else{
-                 console.log("not ckeck");
-             }
-             
-         }
-    
-//        end on listbusiness submit
-    
-//        start get category all category
-        $scope.tagdata=[];
+            } else {
+                console.log("not ckeck");
+            }
+
+        }
+
+        //        end on listbusiness submit
+
+        //        start get category all category
+        $scope.tagdata = [];
         var allcategories = function (data, status) {
             console.log(data);
-            $scope.alljson=data;
+            $scope.alljson = data;
         };
-    
+
         RestService.getallcategory().success(allcategories);
-    
-//        end get category all category
-        
-  });
+
+        //        end get category all category
+
+    });
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService',
   function ($scope, TemplateService) {
         $scope.template = TemplateService;
@@ -692,75 +711,77 @@ phonecatControllers.controller('contact', ['$scope', 'TemplateService',
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
  function ($scope, TemplateService) {
         $scope.template = TemplateService;
-        $scope.demo="demo";
+        $scope.demo = "demo";
   }]);
 
 
 phonecatControllers.controller('MyCtrl',
- function ($scope, $http, $timeout, $upload) {
-    
-	$scope.usingFlash = FileAPI && FileAPI.upload != null;
-	$scope.fileReaderSupported = window.FileReader != null && (window.FileAPI == null || FileAPI.html5 != false);
-	$scope.uploadRightAway = true;
-	$scope.changeAngularVersion = function() {
-		window.location.hash = $scope.angularVersion;
-		window.location.reload(true);
-	};
-	$scope.hasUploader = function(index) {
-		return $scope.upload[index] != null;
-	};
-	$scope.abort = function(index) {
-		$scope.upload[index].abort(); 
-		$scope.upload[index] = null;
-	};
-	$scope.angularVersion = window.location.hash.length > 1 ? (window.location.hash.indexOf('/') === 1 ? 
-			window.location.hash.substring(2): window.location.hash.substring(1)) : '1.2.20';
-	$scope.onFileSelect = function($files) {
-		$scope.selectedFiles = [];
-		$scope.progress = [];
-		if ($scope.upload && $scope.upload.length > 0) {
-			for (var i = 0; i < $scope.upload.length; i++) {
-				if ($scope.upload[i] != null) {
-					$scope.upload[i].abort();
-				}
-			}
-		}
-		$scope.upload = [];
-		$scope.uploadResult = [];
-		$scope.selectedFiles = $files;
-		$scope.dataUrls = [];
-		for ( var i = 0; i < $files.length; i++) {
-			var $file = $files[i];
-			if ($scope.fileReaderSupported && $file.type.indexOf('image') > -1) {
-				var fileReader = new FileReader();
-				fileReader.readAsDataURL($files[i]);
-				var loadFile = function(fileReader, index) {
-					fileReader.onload = function(e) {
-						$timeout(function() {
-							$scope.dataUrls[index] = e.target.result;
-						});
-					}
-				}(fileReader, i);
-			}
-			$scope.progress[i] = -1;
-			if ($scope.uploadRightAway) {
-				$scope.start(i);
-			}
-		}
-	};
-	
-	$scope.start = function(index) {
-		$scope.progress[index] = 0;
-		$scope.errorMsg = null;
-		if ($scope.howToSend == 1) {
-			$scope.upload[index] = $upload.upload({
-				url: uploadUrl,
-				method: $scope.httpMethod,
-				headers: {'my-header': 'my-header-value'},
-				data : {
-					myModel : $scope.myModel
-				},
-				/* formDataAppender: function(fd, key, val) {
+    function ($scope, $http, $timeout, $upload) {
+
+        $scope.usingFlash = FileAPI && FileAPI.upload != null;
+        $scope.fileReaderSupported = window.FileReader != null && (window.FileAPI == null || FileAPI.html5 != false);
+        $scope.uploadRightAway = true;
+        $scope.changeAngularVersion = function () {
+            window.location.hash = $scope.angularVersion;
+            window.location.reload(true);
+        };
+        $scope.hasUploader = function (index) {
+            return $scope.upload[index] != null;
+        };
+        $scope.abort = function (index) {
+            $scope.upload[index].abort();
+            $scope.upload[index] = null;
+        };
+        $scope.angularVersion = window.location.hash.length > 1 ? (window.location.hash.indexOf('/') === 1 ?
+            window.location.hash.substring(2) : window.location.hash.substring(1)) : '1.2.20';
+        $scope.onFileSelect = function ($files) {
+            $scope.selectedFiles = [];
+            $scope.progress = [];
+            if ($scope.upload && $scope.upload.length > 0) {
+                for (var i = 0; i < $scope.upload.length; i++) {
+                    if ($scope.upload[i] != null) {
+                        $scope.upload[i].abort();
+                    }
+                }
+            }
+            $scope.upload = [];
+            $scope.uploadResult = [];
+            $scope.selectedFiles = $files;
+            $scope.dataUrls = [];
+            for (var i = 0; i < $files.length; i++) {
+                var $file = $files[i];
+                if ($scope.fileReaderSupported && $file.type.indexOf('image') > -1) {
+                    var fileReader = new FileReader();
+                    fileReader.readAsDataURL($files[i]);
+                    var loadFile = function (fileReader, index) {
+                        fileReader.onload = function (e) {
+                            $timeout(function () {
+                                $scope.dataUrls[index] = e.target.result;
+                            });
+                        }
+                    }(fileReader, i);
+                }
+                $scope.progress[i] = -1;
+                if ($scope.uploadRightAway) {
+                    $scope.start(i);
+                }
+            }
+        };
+
+        $scope.start = function (index) {
+            $scope.progress[index] = 0;
+            $scope.errorMsg = null;
+            if ($scope.howToSend == 1) {
+                $scope.upload[index] = $upload.upload({
+                    url: uploadUrl,
+                    method: $scope.httpMethod,
+                    headers: {
+                        'my-header': 'my-header-value'
+                    },
+                    data: {
+                        myModel: $scope.myModel
+                    },
+                    /* formDataAppender: function(fd, key, val) {
 					if (angular.isArray(val)) {
                         angular.forEach(val, function(v) {
                           fd.append(key, v);
@@ -769,62 +790,64 @@ phonecatControllers.controller('MyCtrl',
                         fd.append(key, val);
                       }
 				}, */
-				/* transformRequest: [function(val, h) {
+                    /* transformRequest: [function(val, h) {
 					console.log(val, h('my-header')); return val + '-modified';
 				}], */
-				file: $scope.selectedFiles[index],
-				fileFormDataName: 'file'
-			});
-			$scope.upload[index].then(function(response) {
-				$timeout(function() {
-					$scope.uploadResult.push(response.data);
-				});
-			}, function(response) {
-				if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
-			}, function(evt) {
-				// Math.min is to fix IE which reports 200% sometimes
-				$scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-			});
-			$scope.upload[index].xhr(function(xhr){
-//				xhr.upload.addEventListener('abort', function() {console.log('abort complete')}, false);
-			});
-		} else {
-			var fileReader = new FileReader();
-            fileReader.onload = function(e) {
-		        $scope.upload[index] = $upload.http({
-		        	url: uploadUrl,
-					headers: {'Content-Type': $scope.selectedFiles[index].type},
-					data: e.target.result
-		        }).then(function(response) {
-					$scope.uploadResult.push(response.data);
-				}, function(response) {
-					if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
-				}, function(evt) {
-					// Math.min is to fix IE which reports 200% sometimes
-					$scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-				});
+                    file: $scope.selectedFiles[index],
+                    fileFormDataName: 'file'
+                });
+                $scope.upload[index].then(function (response) {
+                    $timeout(function () {
+                        $scope.uploadResult.push(response.data);
+                    });
+                }, function (response) {
+                    if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
+                }, function (evt) {
+                    // Math.min is to fix IE which reports 200% sometimes
+                    $scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+                });
+                $scope.upload[index].xhr(function (xhr) {
+                    //				xhr.upload.addEventListener('abort', function() {console.log('abort complete')}, false);
+                });
+            } else {
+                var fileReader = new FileReader();
+                fileReader.onload = function (e) {
+                    $scope.upload[index] = $upload.http({
+                        url: uploadUrl,
+                        headers: {
+                            'Content-Type': $scope.selectedFiles[index].type
+                        },
+                        data: e.target.result
+                    }).then(function (response) {
+                        $scope.uploadResult.push(response.data);
+                    }, function (response) {
+                        if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
+                    }, function (evt) {
+                        // Math.min is to fix IE which reports 200% sometimes
+                        $scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+                    });
+                }
+                fileReader.readAsArrayBuffer($scope.selectedFiles[index]);
             }
-	        fileReader.readAsArrayBuffer($scope.selectedFiles[index]);
-		}
-	};
-	
-	$scope.dragOverClass = function($event) {
-		var items = $event.dataTransfer.items;
-		var hasFile = false;
-		if (items != null) {
-			for (var i = 0 ; i < items.length; i++) {
-				if (items[i].kind == 'file') {
-					hasFile = true;
-					break;
-				}
-			}
-		} else {
-			hasFile = true;
-		}
-		return hasFile ? "dragover" : "dragover-err";
-	};
-    
-  });
+        };
+
+        $scope.dragOverClass = function ($event) {
+            var items = $event.dataTransfer.items;
+            var hasFile = false;
+            if (items != null) {
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].kind == 'file') {
+                        hasFile = true;
+                        break;
+                    }
+                }
+            } else {
+                hasFile = true;
+            }
+            return hasFile ? "dragover" : "dragover-err";
+        };
+
+    });
 
 
 

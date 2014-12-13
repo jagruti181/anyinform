@@ -98,7 +98,7 @@
                 <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
                 </button>
                 <div id="divsearch" class="searchdrop" ng-show="searchshow">
-                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.name,sea.id)">{{sea.name}}</p>
+                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.search,sea.listing)">{{sea.search}}</p>
                 </div>
             </form>
         </div>

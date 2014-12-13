@@ -5,16 +5,15 @@
     <title ng-bind="'Website Name - '+template.title">Website Name</title>
 
 
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <script type="text/javascript">
-FileAPI = {
-	debug: true,
-};
-</script>
+        FileAPI = {
+            debug: true,
+        };
+    </script>
     <link href="lib/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/css/prettyPhoto.css" rel="stylesheet">
@@ -51,29 +50,38 @@ FileAPI = {
     <script src="lib/js/ui-utils.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<!--       <script src="lib/js/angular-treeview.js"></script>-->
-        
+    <!--       <script src="lib/js/angular-treeview.js"></script>-->
+
 
     <script src="js/app.js"></script>
     <script src="js/rest.js"></script>
     <script src="js/templateservice.js"></script>
     <script src="js/controllers.js"></script>
-    
+
     <script src="lib/js/angularimage/angular-file-upload-shim.js"></script>
     <script src="lib/js/angularimage/angular-file-upload.js"></script>
-    
-    
 
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "2ebe6d3e-901b-4387-ab96-bdc6fee3912a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
-<style>.drop-box {
-width: 220px;
-height: 40px;
-color: black;
-background: rgb(228, 241, 255);
-padding: 10px;
-}</style>
+
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "2ebe6d3e-901b-4387-ab96-bdc6fee3912a",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+
+    <style>
+        .drop-box {
+            width: 220px;
+            height: 40px;
+            color: black;
+            background: rgb(228, 241, 255);
+            padding: 10px;
+        }
+    </style>
 
 
 
@@ -81,6 +89,10 @@ padding: 10px;
 
 <body>
 
+    <div id="fb-root"></div>
+    <script>
+        
+    </script>
 
     <div class="repeated-item" ng-view></div>
 
