@@ -103,6 +103,8 @@ width: 163px;
 .fapadr {
     padding-right: 13px;
     text-transform: capitalize;
+    font-size: 17px;
+    color: #3276b1;
 }
 .msg {
     color: #333;
@@ -365,6 +367,9 @@ nav#main_menu li a,
 }
 .mediumimage {
     width: 200px !important;
+    border: 1px solid #000;
+    margin-left: 8px;
+    height: 155px !important;
 }
 .fa-linkedin {
     background: rgba(255, 69, 24, 0.3);
@@ -1035,6 +1040,13 @@ h2.title:before {
     vertical-align: baseline;
     white-space: nowrap;
 }
+.media.commnets {
+    margin: 11px auto;
+    /* padding-bottom: 20px; */
+    background: rgba(70, 109, 157, 0.05);
+    padding: 25px 11px;
+    width: 1142px;
+}
 .panel-body ul {
     padding-left: 20px;
 }
@@ -1611,7 +1623,9 @@ h2.title {
     margin-top: 185px;
     overflow: hidden;
 }
-.login-form {} .signup-form {} .login-form h2,
+.login-form {} .signup-form {
+    text-align: center;
+} .login-form h2,
 .signup-form h2 {
     color: #696763;
     font-family: 'Roboto', sans-serif;
@@ -1868,5 +1882,100 @@ div[data-tree-model] li .selected {
   padding: 1px 5px;
 }
 
+.st-facebook-counter {
+width: 61px;
+height: 50px;
+}
+span.stButton_gradient.stHBubble {
+height: 22px;
+}
+.stButton .st-yahoo-counter, .stButton .st-linkedin-counter {
+width: 60px;
+height: 50px;
+}
 
-/*angular tree demo*/
+span.stMainServices.st-facebook-counter{
+height: 50px;
+}
+span.stMainServices.st-twitter-counter {
+height: 50px;
+}
+span.stMainServices.st-linkedin-counter {
+height: 50px;
+}
+a.btn.btn-primary.mrr {
+    /* border: none; */
+    border-radius: 0px;
+  
+}
+.media-heading {
+margin: 0 0 13px;
+}
+.details-content {
+    margin: 50px 9px 20px -18px;
+    background: rgba(70, 109, 157, 0.05);
+    /* margin-right: 15px; */
+    padding: 10px 0px;
+}
+.more-text {
+    padding: 17px 0px;
+}
+
+.more-text p {
+    text-indent: 10px;
+}
+.fapd {
+    text-indent: 0px;
+    padding-left: 35px;
+}
+
+.fapd.fapad1 {
+    color: rgb(194, 65, 65);
+}
+
+.fapd strong.fapadl.ng-binding.ng-scope {
+    color: rgb(246, 93, 93);
+}
+.fapd p {
+    padding-left: 59px;
+    font-size: 20px;
+    color: rgb(246, 93, 93);
+}
+.signup-form input {
+margin: 20px auto;
+width: 50%;
+border-radius: 0px;
+padding: 4px 12px;
+}
+.signup-form textarea {
+margin: 20px auto;
+width: 50%;
+border-radius: 0px;
+padding: 4px 12px;
+height: 100px;
+}
+.signup-form button {
+    /* float: center; */
+
+    text-align: center;
+    width: 100px;
+    border-radius: 0px;
+    margin: 13px auto;
+    
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd;
+
+}
+.pluginSkinLight.pluginFontHelvetica {
+margin: 12px auto;
+}
+.fapd .fa-calendar {
+    color: #3276b1;
+}
+.fapd i.fa.fa-clock-o{
+    color: #3276b1;
+}
+.fapd i.fa.fa-money{
+    color: #3276b1;
+}
