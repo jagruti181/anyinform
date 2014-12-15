@@ -11,9 +11,13 @@
 							    </ul>
 							</div> -->
             <div class="media commnets">
+               <div class="row"> 
+               <div class="col-md-3">       
                 <a class="pull-left" href="#">
-                    <img class="media-object mediumimage" src="{{detail.listing.logo|imagepath}}" alt="">
+                    <img class="media-object mediumimage img-responsive" src="{{detail.listing.logo|imagepath}}" alt="">
                 </a>
+                </div>
+                <div class="col-md-4">
                 <div class="media-body">
                     <h4 class="media-heading"><i class="fa fa-thumbs-up fapadr"></i>{{detail.listing.name}}</h4>
                     <p><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
@@ -21,11 +25,16 @@
                     <p>
                         <i class="fa fa-at fapadr"></i>Send Enquiry By Email
                     </p>
+                    </div>
+                    
+                    <div class="btn-mail">
                     <p class="pull-left">
                         <a class="btn btn-primary mrr" href="">Send SMS</a>
                         <a class="btn btn-primary mrr" href="">Send Email</a>
                         <a class="btn btn-primary mrr" href="">Other Posts</a>
                     </p>
+                    </div>
+                    </div>
                     <!-- <div class="blog-socials">
 							    <ul>
 							        <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -34,13 +43,17 @@
 							        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
 							    </ul>
 							</div> -->
+                   <div class="col-md-5">
+                   
                     <div class="pull-right">
-
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3770.8012985523833!2d72.900164!3d19.072472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6277363c179%3A0x36691e6c95a165c3!2sWohlig+Technologies+LLP!5e0!3m2!1sen!2sin!4v1418620638368" width="400" height="180" frameborder="0" style="border:0"></iframe><br>
+                       <div class="social-btn">
                         <span class='st_facebook_hcount' displayText='Facebook' ></span>
                         <span class='st_twitter_hcount' displayText='Tweet'></span>
                         <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
                         <span class='st_googleplus_hcount stMainServices' displayText='Google +'></span>
-
+</div>
+                       </div>
                         <!--
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -52,6 +65,8 @@
                     </div>
                 </div>
             </div>
+                        
+</div>
         </div>
         <div class="container">
         <div class="details-content">   
@@ -94,7 +109,7 @@
                 <input type="email" ng-model="enquiry.email" class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
                 <input type="number" ng-model="enquiry.phone" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
                 <textarea ng-model="enquiry.comment" class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
-                <button class="btn btn-default" ng-click="enquiryuser(enquiry)">Send</button>
+                <button class="btn" ng-click="enquiryuser(enquiry)">Send</button>
             </div>
             </div>
         </div>

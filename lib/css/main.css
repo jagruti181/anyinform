@@ -47,12 +47,12 @@ width: 163px;
 .city {
     padding: 5px;
     color: #FFF;
-    font-size: 18px;
+    font-size: 15px;
     background: #043eb3;
     -webkit-appearance: initial;
     border: 0;
     text-transform: capitalize;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 /* .city:hover{
     color: orange;
@@ -74,8 +74,8 @@ width: 163px;
 }
 .searchrow {} #divsearch p {
     margin-left: 20px;
-    margin-bottom: 5px !important;
-    border-bottom: 1px dotted grey;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid white;
     width: 93%;
 }
 #divsearch p:hover {
@@ -89,12 +89,15 @@ width: 163px;
     visibility: visible;
 }
 .searchdrop {
-    background: rgba(226, 226, 226, 0.58);
+    background: rgba(154, 152, 152, 1);
     position: absolute;
     width: 78%;
     padding: 6px;
     margin-top: 2px;
     z-index: 1;
+    color: #fff;
+    text-align: justify;
+    font-size: 15px;
 }
 .fapadl {
     padding-left: 15px;
@@ -366,10 +369,10 @@ nav#main_menu li a,
     margin-top: 7px;
 }
 .mediumimage {
-    width: 200px !important;
+    width: 249px !important;
     border: 1px solid #000;
     margin-left: 8px;
-    height: 155px !important;
+    height: 198px !important;
 }
 .fa-linkedin {
     background: rgba(255, 69, 24, 0.3);
@@ -443,13 +446,18 @@ h6 {
     font-family: 'Roboto', sans-serif;
 }
 .btn {
-    padding: 6px !important;
+    padding: 8px 5px !important;
     font-size: small !important;
 }
-.btn:hover,
+.btn:,
 .btn:focus {
     outline: none;
     box-shadow: none;
+    
+}
+.btn:hover, .btn:focus {
+color: #fff;
+text-decoration: none;
 }
 .navbar-toggle {
     background-color: #000;
@@ -523,7 +531,7 @@ a#scrollUp i {
     background: #CE3C2D;
 }
 .header-middle .container .row {
-    border-bottom: 1px solid #f5f5f5;
+    /* border-bottom: 1px solid #f5f5f5; */
     padding-bottom: 20px;
     padding-top: 20px;
 }
@@ -823,8 +831,12 @@ ul.sub-menu {
     margin-right: 18px;
 }
 .single-widget ul li a:hover {
-    background: none;
-    color: #043eb3;
+    background: #043eb3;
+    color: #FFFFFF;
+    border-radius: 0px;
+    /* padding: 8px; */
+    padding-left: 22px;
+    margin-left: -22px;
 }
 .searchform input {
     border: 1px solid #DDDDDD;
@@ -1046,6 +1058,7 @@ h2.title:before {
     background: rgba(70, 109, 157, 0.05);
     padding: 25px 11px;
     width: 1142px;
+    padding-bottom: 0px;
 }
 .panel-body ul {
     padding-left: 20px;
@@ -1907,6 +1920,19 @@ a.btn.btn-primary.mrr {
     /* border: none; */
     border-radius: 0px;
   
+    padding: 12px;
+    width: 104px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0px 4px;
+    box-shadow: 0 4px #022977;  
+    -webkit-box-shadow: 0 4px #022977;  -moz-box-shadow: 0 4px #022977;  -o-box-shadow: 0 4px #022977; 
+}
+.signup-form button:hover{
+
+background-color: #3276b1;
+border-color: #285e8e;
+text-transform: uppercase;
 }
 .media-heading {
 margin: 0 0 13px;
@@ -1961,11 +1987,12 @@ height: 100px;
     width: 100px;
     border-radius: 0px;
     margin: 13px auto;
-    
+    text-transform: uppercase;
 color: #fff;
 background-color: #428bca;
 border-color: #357ebd;
 
+    box-shadow: 0 4px #022977;        -webkit-box-shadow: 0 4px #022977;  -moz-box-shadow: 0 4px #022977;  -o-box-shadow: 0 4px #022977;
 }
 .pluginSkinLight.pluginFontHelvetica {
 margin: 12px auto;
@@ -1978,4 +2005,25 @@ margin: 12px auto;
 }
 .fapd i.fa.fa-money{
     color: #3276b1;
+}
+.social-btn{
+margin:14px auto;
+}
+.btn-mail{
+margin:43px auto;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+color: none;
+background-color: none;
+border-color: none;
+}
+ul.nav.navbar-nav .fa-user {
+    color: #3276b1;
+}
+ul.nav.navbar-nav .fa-lock {
+    color: #3276b1;
+}
+.single-widget p {
+    margin: 23px auto;
+    color: #8C8C88;
 }
