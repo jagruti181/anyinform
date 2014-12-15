@@ -226,6 +226,15 @@ phonecatControllers.controller('category',
 
         $scope.msg = "";
         $scope.msgarea = false;
+    
+    
+        var categoryinfosuccess = function (data, status) {
+            console.log(data);
+            $scope.banner=data;
+            RestService.setbanner(data.banner);
+        };
+        RestService.getcategoryinfo($routeParams.id).success(categoryinfosuccess);
+    
         //    start authen
         $scope.linkclick = function (id) {
             $location.url('/detail/' + id);
@@ -367,6 +376,9 @@ phonecatControllers.controller('detail',
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             //Here your view content is fully loaded !!
+            
+            
+            
         });
 
 
@@ -484,6 +496,7 @@ phonecatControllers.controller('OtherCtrl',
     function ($scope, TemplateService, RestService, $location, $routeParams) {
         $scope.template = TemplateService;
         $scope.userdata = [];
+        $scope.demo = "demo";
     
         $scope.banner = RestService.getbanner();
     console.log("my banner//////////////////////////////");
@@ -530,6 +543,48 @@ phonecatControllers.controller('OtherCtrl',
                 RestService.logout().success(linloutsuccess);
             } else {
                 $location.url('/login');
+            }
+        }
+        
+        
+        // inner header search 
+        
+         var searchsuccess = function (data, status) {
+            console.log(data);
+            if (data != "") {
+                $scope.searchdrop = data;
+                $scope.searchshow = true;
+            } else {
+                $scope.searchshow = false;
+
+            }
+            for(var i=0;i<data.length;i++)
+            {
+                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].cityname+" ) ";
+            }
+        };
+        $scope.searchlist = function (text, city, area) {
+            if (!city)
+                city = 0;
+            if (!area)
+                area = 0;
+            // substr()
+            text = text.split(' in ');
+            console.log("search tet");
+            $scope.searchtext=text[0];
+            console.log("city");
+            console.log(text[1]);
+            if(!text[1])
+            {
+                city=$scope.city;
+            }else{
+                city=text[1];
+            }
+
+            if (text[0] != "") {
+                RestService.searchcategory($scope.searchtext, city).success(searchsuccess);
+            } else {
+                $scope.searchshow = false;
             }
         }
 
