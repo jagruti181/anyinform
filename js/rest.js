@@ -6,9 +6,26 @@ var restservice = angular.module('restservice', [])
 .factory('RestService', function ($http) {
    
     var banner='';
+    var recent = [];
     return {
         getmap: function(data){
             return $http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+data+"&key=AIzaSyAj0OXepKIgjTlZiPe_ZVYTDjL8rYpobgQ",{});
+        },
+        recentvisit: function(id){
+//            $recent = {
+//                'one' : id
+//            };
+            recent=$.jStorage.get('recent');
+            recent.push(id);
+            if(recent.length > 3)
+            {
+            recent.splice(0,1);
+//                $scope.cat.splice(i, 1);
+            }
+        $.jStorage.set('recent',recent);
+        },
+        getrecentvisit: function(){
+            return $.jStorage.get('recent');
         },
         getsubcategory: function(id){
             return $http.get(adminurl+"getsubcategory?id="+id,{});

@@ -47,7 +47,7 @@
 						        </ul>
 						    </div> -->
 					<div class="media commnets" ng-repeat="list in listings">
-						<a class="pull-left" href="#/detail/{{list.listing}}">
+						<a class="pull-left" ng-click="linkclick(list.listing)">
 							<img class="media-object mediumimage" src="{{list.logo|imagepath}}" alt="">
 						</a>
 						<div class="media-body">

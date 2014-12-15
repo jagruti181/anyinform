@@ -237,6 +237,7 @@ phonecatControllers.controller('category',
     
         //    start authen
         $scope.linkclick = function (id) {
+            RestService.recentvisit(id);
             $location.url('/detail/' + id);
         }
 
@@ -366,6 +367,11 @@ phonecatControllers.controller('detail',
         $scope.enquiryshow = false;
         $scope.enquiry = [];
 
+        // Get recent visit
+        console.log("my recent visit");
+    console.log(RestService.getrecentvisit());
+    
+    
         $scope.$on('$viewContentLoaded', function () {
             (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
