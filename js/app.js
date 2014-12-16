@@ -78,6 +78,59 @@ firstapp.filter('imagepath1', function () {
     };
 });
 
+// start angular map directive
+
+firstapp.directive('map', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        template: '<div></div>',
+        link: function(scope, element, attrs) {
+            var markersArray = [];
+            var myOptions = {
+                zoom: 14,
+                center: new google.maps.LatLng(attrs.glat,attrs.glang),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById(attrs.id), myOptions);
+
+            google.maps.event.addListener(map, 'click', function(e) {
+                scope.$apply(function() {
+                    addMarker({
+                    lat: e.latLng.lat(),
+                    lng: e.latLng.lng()
+                  }); 
+
+                    console.log(e);
+                });
+
+            }); // end click listener
+
+            addMarker= function(pos){
+            for (var i = 0; i < markersArray.length; i++ ) {
+    markersArray[i].setMap(null);
+  }
+  markersArray.length = 0;
+               //map.clearOverlays();
+                //alert(pos.lat);alert(pos.lng);
+               var myLatlng = new google.maps.LatLng(pos.lat,pos.lng);
+               marker = new google.maps.Marker({
+                    position: myLatlng, 
+                    map: map,
+                    title:"Hello World!"
+                });
+                scope.pinLatLang={"lat":pos.lat,"lang":pos.lng};
+                scope.$apply();
+                markersArray.push(marker);
+google.maps.event.addListener(marker,"click",function(){});
+            } //end addMarker
+        }
+    };
+})
+
+// end angular map directive
+
+
 var rad = function(x) {
     return x * Math.PI / 180;
 };
