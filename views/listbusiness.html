@@ -1,20 +1,32 @@
 <section>
     <div class="container">
         <div class="row">
+           
+            <div class="col-md-3">
+               <div class="list-head">
             <h3>List Your Business</h3>
-            <div class="signup-form">
-                   
+            </div>
+                <div class="list-back">
+                    <div data-angular-treeview="true" data-tree-model="roleList" data-node-id="id" data-node-label="name" data-node-children="children">
+                    </div>
+                </div>
 
-                   
+            </div>
+            <div class="col-md-9">
+               <div class="">
+                <div class="signup-list">
+
+
+
                     <h5>Name *</h5>
                     <input type="text" ng-model="list.name" placeholder="Name" class="form-control" ng-class="allvalidation[0].validation" required/>
-                    <h5>category *</h5>
-                    <tags-input ng-model="tagcategory"  display-property="text">
+                    <h5>Category * <span class="list-select">( Select Category From Left Side )</span></h5>
+                    <tags-input ng-model="tagcategory" display-property="text">
                         <auto-complete source="tagdata"></auto-complete>
                     </tags-input>
                     <!--                   demo angular tree-->
 
-    <!--
+                    <!--
       [TREE attribute]
       angular-treeview: the treeview directive
       tree-model : the tree model on $scope.
@@ -22,25 +34,19 @@
       node-label : each node's label
       node-children: each node's children
     -->
-    <div
-      data-angular-treeview="true"
-      data-tree-model="roleList"
-      data-node-id="id"
-      data-node-label="name"
-      data-node-children="children" >
-    </div>
 
 
-<!--                   demo angular tree-->
-<!--
+
+                    <!--                   demo angular tree-->
+                    <!--
                     <select ng-model="list.category" ng-change="addcategorytab(list.category)" class="formselop form-control" ng-class="allvalidation[1].validation" multiple required>
                         <option ng-repeat="cat in alljson.category" value="{{cat.id}}">{{cat.name}}</option>
                     </select>
 -->
-                    
-                    
-                    
-<!--
+
+
+
+                    <!--
 							<select ng-model="tags" class="formselop">
                                 <option value=""></option>
                             </select>
@@ -65,36 +71,36 @@
                             </select>
 -->
                     <h6>* Address, Pincode, City, State, And Country Field should be perfect.</h6>
-                   <h5>Address *</h5>
+                    <h5>Address *</h5>
                     <textarea ng-model="list.address" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="Address" class="formselop form-control" ng-class="allvalidation[4].validation" required></textarea>
-                    
+
                     <h5>Pincode *</h5>
                     <input type="number" ng-model="list.pincode" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="Pincode" class="form-control" ng-class="allvalidation[5].validation" required />
-                    
+
                     <h5>City *</h5>
                     <select ng-model="list.city" class="formselop form-control" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" ng-class="allvalidation[6].validation" required>
                         <option ng-repeat="city in alljson.city" value="{{city.id}},{{city.name}}">{{city.name}}</option>
                     </select>
-                    
+
                     <h5>State *</h5>
                     <input type="text" ng-model="list.state" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="State" class="form-control" ng-class="allvalidation[7].validation" required />
-                    
+
                     <h5>Country *</h5>
                     <input type="text" ng-model="list.country" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="Country" class="form-control" ng-class="allvalidation[8].validation" required />
-                    
+
                     <h5>Latitude</h5>
                     <input type="text" ng-model="list.latitude" class="form-control" placeholder="Latitude" disabled />
-                    
+
                     <h5>Longitude</h5>
                     <input type="text" ng-model="list.longitude" class="form-control" placeholder="Longitude" disabled />
-                    
-                    
+
+
                     <!--
 							<select ng-model="list.city" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-                    
+
                     <h5>Description</h5>
                     <textarea ng-model="list.description" placeholder="Description" class="formselop form-control"></textarea>
                     <h5>Contact Number</h5>
@@ -126,7 +132,7 @@
 -->
                     <h5>Credits</h5>
                     <input type="text" ng-model="list.credits" class="form-control" placeholder="Credits" />
-                    
+
                     <h5>Video</h5>
                     <input type="text" ng-model="list.video" class="form-control" placeholder="Video" />
                     <h5>Logo</h5>
@@ -161,7 +167,10 @@
 
                     <!--							end angular image upload-->
 
-                    <button class="btn btn-default" ng-click="submitlist(list)">Create Listing</button>
+                    <button class="btn" ng-click="submitlist(list)">Create Listing</button>
+
+                </div>
+                </div>
             </div>
         </div>
     </div>
