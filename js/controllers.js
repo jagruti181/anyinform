@@ -552,20 +552,6 @@ phonecatControllers.controller('OtherCtrl',
             }
         }
         
-        //inner header serch on list click
-        
-        $scope.totextbox = function (name, id) {
-            console.log(name);
-            $("input[name=abc]").val(name);
-            $scope.searchid = id;
-            $scope.searchshow = false;
-        }
-        
-        //on inner serch button click
-        $scope.innershearch = function () {
-            $location.url("/detail/" + $scope.searchid);
-        };
-        
         
         // inner header search 
         
