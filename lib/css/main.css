@@ -2220,6 +2220,7 @@ position: relative;
 /* transform: translateZ(0px); */
 background-color: rgb(229, 227, 223);
 height: 160px;
+margin-right: 8px;
 }
 .login-text {
 /* background: rgba(66, 93, 126, 0.0470588); */
@@ -2268,5 +2269,6 @@ margin: 100px auto;
 }
 .mhs{
 border-right:1px solid;
-   padding: 0px 16px 0px 16px;
+   
+padding: 0px 7px 0px 11px;
 }
