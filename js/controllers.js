@@ -366,7 +366,17 @@ phonecatControllers.controller('detail',
         $scope.enquirymsg = "";
         $scope.enquiryshow = false;
         $scope.enquiry = [];
+        $scope.recentvisit = [];
 
+        $scope.listid = RestService.getrecentvisit();
+        console.log("my recent visits");
+        console.log($scope.listid);
+        var getlistingrecent = function (data, status){
+            console.log(data);
+            $scope.recentvisit = data;
+        };
+        RestService.getlistingarray($scope.listid).success(getlistingrecent);
+    
         // Get recent visit
         console.log("my recent visit");
     console.log(RestService.getrecentvisit());

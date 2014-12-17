@@ -127,17 +127,9 @@
                             <div class="panel-heading">Recently Visited</div>
                             <table class="table">
                                
-                                <tr>
-                                    <td><img src="lib/images/home/logo2.png"></td>
-                                    <td>Restaurants</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="lib/images/home/logo2.png"></td>
-                                    <td>ATM's</td>
-                                </tr>
-                                 <tr>
-                                    <td><img src="lib/images/home/logo2.png"></td>
-                                    <td>Automobiles</td>
+                                <tr ng-repeat="recent in recentvisit">
+                                    <td><img src="{{recent.logo|imagepath}}"></td>
+                                    <td>{{recent.name}}</td>
                                 </tr>
                             </table>
                         </div>

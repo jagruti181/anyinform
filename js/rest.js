@@ -1,6 +1,6 @@
 
-var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
-//var adminurl="http://localhost/foranyinformation/index.php/json/";
+//var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
+var adminurl="http://localhost/foranyinformation/index.php/json/";
 
 var restservice = angular.module('restservice', [])
 
@@ -18,7 +18,7 @@ var restservice = angular.module('restservice', [])
 //            $recent = {
 //                'one' : id
 //            };
-//            recent=$.jStorage.get('recent');
+            recent=$.jStorage.get('recent');
             recent.push(id);
             if(recent.length > 3)
             {
@@ -104,6 +104,9 @@ var restservice = angular.module('restservice', [])
         },
         getonelistingbyid: function(id){
             return $http.get(adminurl+"getonelistingbyid?id="+id,{});
+        },
+        getlistingarray: function(id){
+            return $http.get(adminurl+"getlistingarray?ids="+id,{});
         },
         searchcategory: function(text,city){
             if(!city)
