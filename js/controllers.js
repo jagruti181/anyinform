@@ -552,6 +552,19 @@ phonecatControllers.controller('OtherCtrl',
             }
         }
         
+        // on inner search go button
+        
+        $scope.innershearch = function () {
+            $location.url("/detail/" + $scope.searchid);
+        };
+        
+        // innersearch in drop click
+        
+        $scope.totextbox = function (name, id) {
+            $("input[name=abc]").val(name);
+            $scope.searchid = id;
+            $scope.searchshow = false;
+        }
         
         // inner header search 
         
