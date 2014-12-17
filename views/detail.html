@@ -11,29 +11,29 @@
 							    </ul>
 							</div> -->
             <div class="media commnets">
-               <div class="row"> 
-               <div class="col-md-3">       
-                <a class="pull-left" href="#">
-                    <img class="media-object mediumimage img-responsive" src="{{detail.listing.logo|imagepath}}" alt="">
-                </a>
-                </div>
-                <div class="col-md-4">
-                <div class="media-body">
-                    <h4 class="media-heading"><i class="fa fa-thumbs-up fapadr"></i>{{detail.listing.name}}</h4>
-                    <p><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
-                    <p><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
-                    <p>
-                        <i class="fa fa-at fapadr"></i>Send Enquiry By Email
-                    </p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="pull-left" href="#">
+                            <img class="media-object mediumimage img-responsive" src="{{detail.listing.logo|imagepath}}" alt="">
+                        </a>
                     </div>
-                    
-                    <div class="btn-mail">
-                    <p class="pull-left">
-                        <a class="btn btn-primary mrr" href="">Send SMS</a>
-                        <a class="btn btn-primary mrr" href="">Send Email</a>
-                        <a class="btn btn-primary mrr" href="">Other Posts</a>
-                    </p>
-                    </div>
+                    <div class="col-md-4">
+                        <div class="media-body">
+                            <h4 class="media-heading"><i class="fa fa-thumbs-up fapadr"></i>{{detail.listing.name}}</h4>
+                            <p><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
+                            <p><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
+                            <p>
+                                <i class="fa fa-at fapadr"></i>Send Enquiry By Email
+                            </p>
+                        </div>
+
+                        <div class="btn-mail">
+                            <p class="pull-left">
+                                <a class="btn btn-primary mrr" href="">Send SMS</a>
+                                <a class="btn btn-primary mrr" href="">Send Email</a>
+                                <a class="btn btn-primary mrr" href="">Other Posts</a>
+                            </p>
+                        </div>
                     </div>
                     <!-- <div class="blog-socials">
 							    <ul>
@@ -43,6 +43,7 @@
 							        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
 							    </ul>
 							</div> -->
+<<<<<<< HEAD
                    <div class="col-md-5">
                    
                     <div class="pull-right">
@@ -55,6 +56,20 @@
                         <span class='st_googleplus_hcount stMainServices' displayText='Google +'></span>
 </div>
                        </div>
+=======
+                    <div class="col-md-5">
+
+                        <div class="pull-right">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3770.8012985523833!2d72.900164!3d19.072472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6277363c179%3A0x36691e6c95a165c3!2sWohlig+Technologies+LLP!5e0!3m2!1sen!2sin!4v1418620638368" width="400" height="180" frameborder="0" style="border:0"></iframe>
+                            <br>
+                            <div class="social-btn">
+                                <span class='st_facebook_hcount' displayText='Facebook'></span>
+                                <span class='st_twitter_hcount' displayText='Tweet'></span>
+                                <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+                                <span class='st_googleplus_hcount stMainServices' displayText='Google +'></span>
+                            </div>
+                        </div>
+>>>>>>> origin/master
                         <!--
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -66,62 +81,83 @@
                     </div>
                 </div>
             </div>
-                        
-</div>
-        </div>
-        <div class="container">
-        <div class="details-content">   
-        <div class="row">
-        <div class="col-md-8">
-            <div class="more-text">
-            <h2 class="title text-center">More Information</h2>
-            <p class="fapadl"><i class="fa fa-info-circle fapadr"></i>{{detail.listing.description}}</p>
-            <p class="fapadl"><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
-            <p class="fapadl"><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
-</div>
-            <div class="more-text">
-            <h2 class="title text-center">Other categories</h2>
-            <p class="fapadl" ng-repeat="category in detail.categories"><i class="fa fa-angle-double-right fapadr"></i>&nbsp;{{category.categoryname}}</p>
-            </div>
-            <div class="more-text">
-            
-            <h2 class="title text-center">Hours Of Operation</h2>
-            <div class="fapd">
-           <i class="fa fa-calendar"></i> <strong class="fapadl" ng-repeat="operation in detail.daysofoperation">{{operation.daysofoperationname}}&nbsp;&nbsp;</strong><br><br>
-             
-             
-            <i class="fa fa-clock-o"></i><span class="fapadl">9:00 am To 9:00 pm</span>
-            </div>
-            </div>
-            <div class="more-text">
-            <h2 class="title text-center">Modes Of Payment</h2>
-            <div class="fapd fap">
-            <i class="fa fa-money"></i><span class="fapadl" ng-repeat="payment in detail.modeofpayment">{{payment.modeofpaymentname}}</span>
-            </div>
-             </div>
-             <div class="more-text">
-            <h2 class="title text-center">Enquiry</h2>
-            <div class="signup-form">
-                <div class="signupmsg" ng-show="enquiryshow">
 
-                    {{enquirymsg}}
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="more-text">
+                        <h2 class="title text-center">More Information</h2>
+                        <p class="fapadl"><i class="fa fa-info-circle fapadr"></i>{{detail.listing.description}}</p>
+                        <p class="fapadl"><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
+                        <p class="fapadl"><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
+                    </div>
+                    <div class="more-text">
+                        <h2 class="title text-center">Other categories</h2>
+                        <p class="fapadl" ng-repeat="category in detail.categories"><i class="fa fa-angle-double-right fapadr"></i>&nbsp;{{category.categoryname}}</p>
+                    </div>
+                    <div class="more-text">
+
+                        <h2 class="title text-center">Hours Of Operation</h2>
+                        <div class="fapd">
+                            <i class="fa fa-calendar"></i>  <strong class="fapadl" ng-repeat="operation in detail.daysofoperation">{{operation.daysofoperationname}}&nbsp;&nbsp;</strong>
+                            <br>
+                            <br>
+
+
+                            <i class="fa fa-clock-o"></i><span class="fapadl">9:00 am To 9:00 pm</span>
+                        </div>
+                    </div>
+                    <div class="more-text">
+                        <h2 class="title text-center">Modes Of Payment</h2>
+                        <div class="fapd fap">
+                            <i class="fa fa-money"></i><span class="fapadl" ng-repeat="payment in detail.modeofpayment">{{payment.modeofpaymentname}}</span>
+                        </div>
+                    </div>
+                    <div class="more-text">
+                        <h2 class="title text-center">Enquiry</h2>
+                        <div class="signup-form">
+                            <div class="signupmsg" ng-show="enquiryshow">
+
+                                {{enquirymsg}}
+                            </div>
+                            <input type="text" ng-model="enquiry.name" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
+                            <input type="email" ng-model="enquiry.email" class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
+                            <input type="number" ng-model="enquiry.phone" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
+                            <textarea ng-model="enquiry.comment" class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
+                            <button class="btn" ng-click="enquiryuser(enquiry)">Send</button>
+                        </div>
+                    </div>
                 </div>
-                <input type="text" ng-model="enquiry.name" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
-                <input type="email" ng-model="enquiry.email" class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
-                <input type="number" ng-model="enquiry.phone" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
-                <textarea ng-model="enquiry.comment" class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
-                <button class="btn" ng-click="enquiryuser(enquiry)">Send</button>
+                <div class="col-md-4">
+
+                    <div class="fb-like-box" data-href="https://www.facebook.com/{{detail.listing.facebook}}" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+                    <div class="recent-box">
+                 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Recently Visited</div>
+                            <table class="table">
+                               
+                                <tr>
+                                    <td><img src="../lib/images/home/product1.jpg"></td>
+                                    <td>Visitor Name</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="../lib/images/home/product1.jpg"></td>
+                                    <td>Visitor Name</td>
+                                </tr>
+                                 <tr>
+                                    <td><img src="../lib/images/home/product1.jpg"></td>
+                                    <td>Visitor Name</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            
-                      <div class="fb-like-box" data-href="https://www.facebook.com/{{detail.listing.facebook}}" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
-        </div>
-        </div>
-        </div>
-        </div>
-<!--
+            <!--
         <div class="row">
             <h2 class="title text-center">More Information</h2>
 
@@ -157,5 +193,5 @@
             </div>
         </div>
 -->
-    </div>
+        </div>
 </section>
