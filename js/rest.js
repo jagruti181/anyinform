@@ -1,5 +1,6 @@
 
-var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
+//var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
+var adminurl="http://localhost/foranyinformation/index.php/json/";
 
 var restservice = angular.module('restservice', [])
 
@@ -12,10 +13,12 @@ var restservice = angular.module('restservice', [])
             return $http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+data+"&key=AIzaSyAj0OXepKIgjTlZiPe_ZVYTDjL8rYpobgQ",{});
         },
         recentvisit: function(id){
+//            console.log("my recent id");
+//            console.log(id);
 //            $recent = {
 //                'one' : id
 //            };
-            recent=$.jStorage.get('recent');
+//            recent=$.jStorage.get('recent');
             recent.push(id);
             if(recent.length > 3)
             {
