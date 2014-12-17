@@ -48,7 +48,7 @@ width: 163px;
     padding: 5px;
     color: #FFF;
     font-size: 15px;
-    background: #043eb3;
+    background: #049fb3;
     -webkit-appearance: initial;
     border: 0;
     text-transform: capitalize;
@@ -107,7 +107,7 @@ width: 163px;
     padding-right: 13px;
     text-transform: capitalize;
     font-size: 17px;
-    color: #3276b1;
+    color: #049fb3;
 }
 .msg {
     color: #333;
@@ -136,7 +136,7 @@ width: 163px;
 } */
 
 .subcat:hover {
-    background: #043eb3;
+    background: #049fb3;
     color: white;
     text-decoration-color: white;
 }
@@ -486,8 +486,12 @@ a#scrollUp i {
 }
 .contactinfo ul li a {
     font-size: 12px;
-    color: #696763;
+    color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
+    background: #049fb3;
+    border-radius: 0px;
+    padding-left: 14px;
+    margin-left: 10px;
 }
 .contactinfo ul li a:hover {
     background: inherit;
@@ -580,13 +584,13 @@ a#scrollUp i {
     padding-right: 0;
 }
 .shop-menu ul li a {
-    background: #FFFFFF;
-    color: #696763;
+    background: rgba(5, 5, 5, 0.59);
+    color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
-    padding: 0;
-    padding-right: 0;
+    padding: 6px 13px 7px 9px;
+    /* padding-right: 0; */
     margin-top: 10px;
 }
 .shop-menu ul li a i {
@@ -831,7 +835,7 @@ ul.sub-menu {
     margin-right: 18px;
 }
 .single-widget ul li a:hover {
-    background: #043eb3;
+    background: #049fb3;
     color: #FFFFFF;
     border-radius: 0px;
     /* padding: 8px; */
@@ -849,7 +853,7 @@ ul.sub-menu {
     width: 212px;
 }
 .searchform button {
-    background: #043eb3;
+    background: #049fb3;
     border: medium none;
     border-radius: 0;
     margin-left: -5px;
@@ -863,7 +867,7 @@ ul.sub-menu {
 }
 .searchform button:hover,
 .searchform button:focus {
-    background-color: #022977;
+    background-color: #026177;
 }
 /* .searchform p {
 
@@ -966,13 +970,14 @@ ul.sub-menu {
 }
 .category-products {
     border: 1px solid #F7F7F0;
-    margin-bottom: 35px;
+    margin-bottom: 34px;
     padding-bottom: 20px;
-    padding-top: 15px;
+    padding-top: 16px;
+    margin: 12px auto;
 }
 .left-sidebar h2,
 .brands_products h2 {
-    color: #043eb3;
+    color: #049fb3;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -986,7 +991,7 @@ ul.sub-menu {
 h2.title:after {
     content: " ";
     position: absolute;
-    border: 1px solid #f5f5f5;
+    border: 1px solid #049fb3;
     bottom: 8px;
     left: 0;
     width: 100%;
@@ -1070,9 +1075,11 @@ h2.title:before {
     text-transform: uppercase;
 }
 .brands-name {
-    border: 1px solid #F7F7F0;
-    padding-bottom: 20px;
-    padding-top: 15px;
+    border: 1px solid #049fb3;
+    /* padding-bottom: 20px; */
+    /* padding-top: 15px; */
+    padding: 10px;
+    text-transform: uppercase;
 }
 .brands-name .nav-stacked li a {
     background-color: #FFFFFF;
@@ -1129,7 +1136,7 @@ h2.title:before {
     overflow: hidden;
 }
 h2.title {
-    color: #043eb3;
+    color: #049fb3;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -1737,7 +1744,7 @@ h2.title {
     left: 48px;
 }
 .productinfo .fa-3x:hover {
-    border-bottom: 0px solid #5854DA;
+    border-bottom: 0px solid #026177;
     box-shadow: 3px 3px 5px 1px #aaa;
     /* border-top: 5px solid #E26C0B; */
 }
@@ -1745,10 +1752,10 @@ h2.title {
     font-size: 2em;
     -webkit-transition: all 0.5s ease;
     padding: 15px;
-    background: #043eb3;
+    background: #049fb3;
     color: white;
     border-radius: 3px;
-    border-bottom: 5px solid #022977;
+    border-bottom: 5px solid #026177;
     height: 65px;
     width: 65px;
     text-align: center;
@@ -1814,7 +1821,7 @@ width: 100%;
 
 .ng-invalid.ng-dirty { border: 1px solid red; }
 .phone a:hover, a:focus {
-color: #D00101;
+color: #026177;
 }
 
 .text-enquiry textarea
@@ -1925,14 +1932,22 @@ a.btn.btn-primary.mrr {
     text-align: center;
     text-transform: uppercase;
     padding: 0px 4px;
-    box-shadow: 0 4px #022977;  
-    -webkit-box-shadow: 0 4px #022977;  -moz-box-shadow: 0 4px #022977;  -o-box-shadow: 0 4px #022977; 
+    box-shadow: 0 4px #026177;  
+    -webkit-box-shadow: 0 4px #026177;  
+    -moz-box-shadow: 0 4px #026177;  
+    -o-box-shadow: 0 4px #026177; 
 }
 .signup-form button:hover{
 
-background-color: #3276b1;
-border-color: #285e8e;
-text-transform: uppercase;
+/* background-color: #049fb3; */
+
+
+/* border-color: #285e8e; */
+
+
+/* text-transform: uppercase; */
+border-bottom: 0px solid #026177;  box-shadow: 3px 3px 5px 1px #aaa;
+
 }
 .media-heading {
 margin: 0 0 13px;
@@ -1981,30 +1996,31 @@ padding: 4px 12px;
 height: 100px;
 }
 .signup-form button {
-    /* float: center; */
-
-    text-align: center;
-    width: 100px;
-    border-radius: 0px;
-    margin: 13px auto;
-    text-transform: uppercase;
+/* float: center; */
+text-align: center;
+width: 100px;
+border-radius: 0px;
+margin: 13px auto;
+text-transform: uppercase;
 color: #fff;
-background-color: #428bca;
-border-color: #357ebd;
-
-    box-shadow: 0 4px #022977;        -webkit-box-shadow: 0 4px #022977;  -moz-box-shadow: 0 4px #022977;  -o-box-shadow: 0 4px #022977;
+background-color: #049fb3;
+border-color: #049fb3;
+box-shadow: 0 4px #026177;
+-webkit-box-shadow: 0 4px #026177;
+-moz-box-shadow: 0 4px #026177;
+-o-box-shadow: 0 4px #026177;
 }
 .pluginSkinLight.pluginFontHelvetica {
 margin: 12px auto;
 }
 .fapd .fa-calendar {
-    color: #3276b1;
+    color: #049fb3;
 }
 .fapd i.fa.fa-clock-o{
-    color: #3276b1;
+    color: #049fb3;
 }
 .fapd i.fa.fa-money{
-    color: #3276b1;
+    color: #049fb3;
 }
 .social-btn{
 margin:14px auto;
@@ -2018,12 +2034,95 @@ background-color: none;
 border-color: none;
 }
 ul.nav.navbar-nav .fa-user {
-    color: #3276b1;
+    color: #049fb3;
 }
 ul.nav.navbar-nav .fa-lock {
-    color: #3276b1;
+    color: #049fb3;
 }
 .single-widget p {
     margin: 23px auto;
     color: #8C8C88;
+}
+.btn-primary {
+color: #fff;
+background-color: #049fb3;
+border-color: #049fb3;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+color: #fff;
+background-color: #049fb3;
+border-color: #049fb3;
+}
+a {
+color: #049fb3;
+text-decoration: none;
+}
+.recent-box .panel-default {
+    width: 299px;
+    height: auto;
+    border-radius: 0px;
+    margin-top: 30px;
+}
+.panel.panel-default img {
+    width: 60px;
+}
+.panel.panel-default tr {
+    border-bottom: 1px solid grey;
+}
+.recent-box .panel-heading {
+text-align: center;
+}
+.recent-box .panel-default>.panel-heading {
+color: #FFF;
+background-color: #049fb3;
+border-color: #049fb3;
+}
+.category .media {
+    width: 850px;
+    padding: 26px 0px;
+    padding-bottom: 0px;
+}
+.cate-social {
+    /* padding: 55px 0px; */
+    padding: 84px 0px 0px;
+}
+.cat-btn a {
+    margin: 16px auto;
+}
+.cat-aside h4.ng-binding {
+    background: #049fb3;
+    padding: 6px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: justify;
+    font-size: 18px;
+}
+.cat-aside div#accordian {
+    border-color: #049fb3;
+}
+.cat-aside a.cursor.ng-binding.all.restaurants:hover {
+    background: #049fb3;
+    padding: 10px;
+    color: #fff !important;
+}
+a.btn.btn-primary.mrr:hover {
+    border-bottom: 0px solid #026177;  box-shadow: 3px 3px 5px 1px #aaa;
+}
+a.cursor.ng-binding.Sub.Mobile:hover {
+    background: #049fb3;  padding: 10px;  color: #fff !important;
+}
+.contactinfo ul li a:hover {
+font-size: 12px;
+color: #049fb3;
+font-family: 'Roboto', sans-serif;
+background: #fff;
+border-radius: 0px ;
+padding-left: 14px;
+margin-left: 10px;
+    border-color:#049fb3;
+}
+option.onlycursor {
+    background: #fff;
+    color: #000;
+    padding: 11px 4px 1px;
 }
