@@ -2084,8 +2084,8 @@ border-color: #049fb3;
 }
 .category .media {
     width: 850px;
-    padding: 26px 0px;
-    padding-bottom: 0px;
+    padding: 21px;
+    /* padding-bottom: 0px; */
 }
 .cate-social {
     /* padding: 55px 0px; */
@@ -2105,7 +2105,7 @@ border-color: #049fb3;
 .cat-aside div#accordian {
     border-color: #049fb3;
 }
-.cat-aside a.cursor.ng-binding.all.restaurants:hover {
+ a.cursor:hover {
     background: #049fb3;
     padding: 10px;
     color: #fff !important;
