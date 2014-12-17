@@ -1645,15 +1645,22 @@ h2.title {
     margin-top: 185px;
     overflow: hidden;
 }
-.login-form {} .signup-form {
+.login-form {
+    padding: 0px 12px 3px 3px;
+    text-transform: capitalize;
+} .signup-form {
     text-align: center;
 } .login-form h2,
 .signup-form h2 {
-    color: #696763;
+    color: #FFFEFD;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 30px;
+    background: #049fb3;
+    text-align: center;
+    padding: 10px;
+    /* width: 310px; */
 }
 .login-form form input,
 .signup-form form input {
@@ -2207,4 +2214,5 @@ height: 160px;
 .login-text {
 background: rgba(66, 93, 126, 0.0470588);
 height: 260px;
+width: 100%;
 }
