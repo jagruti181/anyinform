@@ -2197,3 +2197,14 @@ position: relative;
 line-height: 20px;
 padding-left: 22px;
 }
+.map_canvas {
+position: relative;
+/* overflow: hidden; */
+/* transform: translateZ(0px); */
+background-color: rgb(229, 227, 223);
+height: 160px;
+}
+.login-text {
+background: rgba(66, 93, 126, 0.0470588);
+height: 260px;
+}
