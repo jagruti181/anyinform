@@ -376,7 +376,7 @@ nav#main_menu li a,
     width: 249px !important;
     border: 1px solid #000;
     margin-left: 8px;
-    height: 198px !important;
+    height: 206px !important;
 }
 .fa-linkedin {
     background: rgba(255, 69, 24, 0.3);
@@ -1975,7 +1975,7 @@ border-bottom: 0px solid #026177;  box-shadow: 3px 3px 5px 1px #aaa;
 margin: 0 0 13px;
 }
 .details-content {
-    margin: 50px 9px 20px -18px;
+    margin: 50px 0px 19px 0px;
     background: rgba(70, 109, 157, 0.05);
     /* margin-right: 15px; */
     padding: 10px 0px;
@@ -2045,7 +2045,7 @@ margin: 12px auto;
     color: #049fb3;
 }
 .social-btn{
-margin:14px auto;
+margin: 3px auto;
 }
 .btn-mail{
 margin:43px auto;
