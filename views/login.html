@@ -1,8 +1,8 @@
 <section id="login"><!--form-->
 		<div class="container">
 			<div class="row">
-			<div class="login-text">
-				<div class="col-sm-4 col-sm-offset-1">
+			<div class="">
+				<div class="col-md-5">
 					<div class="login-form "><!--login form-->
 						<h2>Login to your account</h2>
                         <h5 class="demo ">{{msg}}</h5>
@@ -15,21 +15,21 @@
 								Keep me signed in
 							</span>
 -->
-							<button class="btn btn-default form-control" ng-click="userlogin(login)">Login</button>
+							<button class="btn form-control" ng-click="userlogin(login)">Login</button>
 					</div><!--/login form-->
 				</div>
-				<div class="col-sm-1">
+				<div class="col-md-2">
 					<h2 class="or">OR</h2>
 				</div>
-				<div class="col-sm-4">
-					<div class="signup-form"><!--sign up form-->
+				<div class="col-md-5">
+					<div class="login-form "><!--sign up form-->
 						<h2>New User Signup!</h2>
                         <div class="signupmsg" ng-show="signupmsgg">
                             {{signupmsg}}
                         </div>
 							<input type="email" ng-model="signup.email" class="form-control" placeholder="Email Address"/>
 							<input type="password" ng-model="signup.password" class="form-control" placeholder="Password"/>
-							<button class="btn btn-default form-control" ng-click="signupuser(signup)">Signup</button>
+							<button class="btn  form-control" ng-click="signupuser(signup)">Signup</button>
 					</div><!--/sign up form-->
 				</div>
 				</div>
