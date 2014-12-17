@@ -79,8 +79,9 @@ width: 163px;
     width: 93%;
 }
 #divsearch p:hover {
-    color: #043EB3;
+    color: #049fb3;
     cursor: pointer;
+    text-transform: capitalize;
 }
 .nosearch {
     visibility: hidden;
@@ -89,15 +90,16 @@ width: 163px;
     visibility: visible;
 }
 .searchdrop {
-    background: rgba(154, 152, 152, 1);
+    background: rgba(255, 255, 255, 1);
     position: absolute;
     width: 78%;
     padding: 6px;
     margin-top: 2px;
     z-index: 1;
-    color: #fff;
+    color: #000;
     text-align: justify;
     font-size: 15px;
+    text-transform: capitalize;
 }
 .fapadl {
     padding-left: 15px;
@@ -1805,8 +1807,9 @@ height: 194px;
 }
 
 .formselop{
-    background: #F0F0E9;
-border: medium none;
+    background: #FFFFFF;
+
+    /* border: medium none; */
 color: #696763;
 display: block;
 font-family: 'Roboto', sans-serif;
@@ -1816,7 +1819,9 @@ height: 40px;
 margin-bottom: 10px;
 outline: medium none;
 padding-left: 10px;
-width: 100%;
+
+    width: 60%;
+    border-radius: 0px;
 }
 
 .ng-invalid.ng-dirty { border: 1px solid red; }
@@ -1870,7 +1875,7 @@ div[data-tree-model] ul {
 
 div[data-tree-model] li {
   position: relative;
-  padding: 0 0 0 20px;
+  padding: 11px 0px 0px 0px;
   line-height: 20px;
 }
 
@@ -1887,7 +1892,7 @@ div[data-tree-model] li .collapsed {
 }
 
 div[data-tree-model] li .normal {
-  padding: 1px 10px;
+  padding: 0px 10px;
   background-image: url("http://mafiawarloots.com/anyinform/lib/images/png/minus25.png");
   background-repeat: no-repeat;
 }
@@ -2125,4 +2130,70 @@ option.onlycursor {
     background: #fff;
     color: #000;
     padding: 11px 4px 1px;
+}
+.list-back {
+    /* border-right: 1px solid #049fb3; */
+    background: rgba(70, 109, 157, 0.05);
+    padding: 11px 0px 0px 23px;
+}
+.list-head {
+    background: #049fb3;
+    color: #fff;
+    /* padding: 0px 0px 1px 27px; */
+    /* vertical-align: -webkit-baseline-middle; */
+}
+
+.list-head h3 {
+    font-size: 23px;
+    padding: 10px;
+}
+.list-form {
+    background: rgba(70, 109, 157, 0.05);
+    /* float: left; */
+    padding: 26px;
+    margin: 77px auto;
+    /* width: 571px; */
+}
+.signup-list{
+background: rgba(70, 109, 157, 0.05);
+/* float: left; */
+padding: 26px;
+margin: 77px auto;
+}
+.signup-list input {
+    width: 268px;
+    border-radius: 0px;
+    margin-bottom: 30px;
+}
+span.list-select {
+    color: red;
+    font-size: 12px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+.signup-list button {
+border-radius: 0px;
+padding: 12px;
+width: 118px;
+text-align: center;
+text-transform: uppercase;
+padding: 0px 4px;
+box-shadow: 0 4px #026177;
+-webkit-box-shadow: 0 4px #026177;
+-moz-box-shadow: 0 4px #026177;
+-o-box-shadow: 0 4px #026177;
+margin-top: 20px;
+background: #049fb3;
+color: #fff;
+}
+
+.signup-list button:hover{
+border-bottom: 0px solid #026177;
+box-shadow: 3px 3px 5px 1px #aaa;
+}
+div[data-node-children] li {
+position: relative;
+/* padding: 11px 0px 0px 0px; */
+line-height: 20px;
+padding-left: 22px;
 }
