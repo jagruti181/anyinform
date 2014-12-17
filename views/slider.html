@@ -1,0 +1,215 @@
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <!-- <div class="row searchslider">
+            <form class="searchform searchformtext">
+               
+               <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
+                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
+                </select>
+                
+                <select class="city onlycursor" ng-model="form.area">
+                   <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" value="">Select Area</option>
+                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
+                </select>
+               
+                <span style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
+                <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">
+                    <option ng-repeat="city in cities" value="{{city.name}}">{{city.name}}</option>
+                </select>
+                <span style="color:white;padding-left: 142px;" id="area" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
+                <select class="btn btn-default mrt30 area hidediv" id="areadrop" ng-model="area">
+                    <option ng-repeat="are in area" value="{{are.name}}">{{are.name}}</option>
+                </select>
+                
+                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search)" style="width: 90%;" />
+                <input type="hidden" name="searchid" ng-model="categoryid">
+                {{categoryid}}
+                <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
+                </button>
+                <div id="divsearch" class="searchdrop" ng-show="searchshow">
+                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.name,sea.id)">{{sea.name}}</p>
+                </div>
+            </form>
+        </div> -->
+        <div class="row">
+            <div class="col-sm-12">
+
+
+            </div>
+        </div>
+        <div class="row">
+<!--<img src="http://localhost/anyinform/lib/images/home/shipping.jpg" class="homeimageright">-->
+
+
+
+
+            
+            <div class="col-xs-3">
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            
+                        <div class="item active items" ng-repeat="one in positionone">
+                            <img src="{{one.image|imagepath}}" width="200"/>
+                        </div>
+
+                    <!-- Controls -->
+                    
+                </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-xs-6">
+                
+                <div class="searchslider">
+            <form class="searchform searchformtext">
+               <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
+                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
+                </select>
+                
+                <select class="city onlycursor" ng-model="form.area">
+                   <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" value="0">Select Area</option>
+                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
+                </select>
+               
+                <!-- <span style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
+                <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">
+                    <option ng-repeat="city in cities" value="{{city.name}}">{{city.name}}</option>
+                </select>
+                <span style="color:white;padding-left: 142px;" id="area" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
+                <select class="btn btn-default mrt30 area hidediv" id="areadrop" ng-model="area">
+                    <option ng-repeat="are in area" value="{{are.name}}">{{are.name}}</option>
+                </select> -->
+                
+                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search,form.cityy,form.area)" style="width: 90%;" />
+                <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->
+                {{categoryid}}
+                <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
+                </button>
+<!--
+                <div id="divsearch" class="searchdrop" ng-show="searchshow">
+                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.search,sea.listing)">{{sea.search}}</p>
+                </div>
+-->
+<<<<<<< HEAD
+<!--
+                <div id="divsearch" class="searchdrop">
+                    <p ng-click="totextbox(sea.search,sea.listing)">demo</p>
+                    <p ng-click="totextbox(sea.search,sea.listing)">testing</p>
+=======
+                <div id="divsearch" class="searchdrop" ng-show="searchshow">
+                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.search,sea.listing)">{{sea.search}}</p>
+>>>>>>> origin/master
+                </div>
+-->
+            </form>
+        </div>
+                
+            </div>
+
+
+            
+            <div class="col-xs-3">
+
+                <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic1" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic1" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active items" ng-repeat="one in positiontwo">
+                            <img src="{{one.image|imagepath}}" width="200"/>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    
+                </div>
+            </div>
+
+<!--<img src="http://localhost/anyinform/lib/images/home/shipping.jpg" class="homeimageleft">-->
+        </div>
+    </div>
+    
+</section>
+<!--/slider-->
+<script>
+    $("#locationdrop").change(function(){
+        console.log("####################################3333");
+        console.log($(this).val());
+        $("#location").html($(this).val()+" <i class='fa fa-chevron-down'></i>");
+        $("#location").addClass("showdiv");
+        $("#locationdrop").addClass("hidediv");
+        $("#location").removeClass("hidediv");
+    });
+    $("#areadrop").change(function(){
+        console.log("####################################3333");
+        console.log($(this).val());
+        $("#area").html($(this).val()+" <i class='fa fa-chevron-down'></i>");
+        $("#area").addClass("showdiv");
+        $("#areadrop").addClass("hidediv");
+        $("#area").removeClass("hidediv");
+    });
+    $(".showdiv").click(function(){
+        $("#location").addClass("hidediv");
+        $("#locationdrop").addClass("showdiv");
+        $("#locationdrop").removeClass("hidediv");
+    });
+//    function getsearch(id){
+//        $.getJSON(
+//                "http://mafiawarloots.com/foranyinformation/index.php/json/getcategoryinfo?id="+id, {},
+//                function (data) {
+//                    console.log(data.name);
+//                    $("input[name=seachtextt]").val(data.name);
+//                    $("input[name=searchid]").val(data.id);
+//                    $("#divsearch").removeClass("yessearch");
+//                }
+//
+//            );
+//    }
+//    
+//    var searchtext="";
+//        $("#searchbox").keyup(function(){
+//            
+//            $("#divsearch").html("");
+//            var val=$(this).val();
+//            $.getJSON(
+//                "http://mafiawarloots.com/foranyinformation/index.php/json/searchcategory?categoryname="+val, {},
+//                function (data) {
+//                    //  alert(data);
+//                    if(data!="")
+//                    {
+//                        
+//                        $("#divsearch").addClass("yessearch");
+//                        console.log(data);
+//                        for(var i=0;i<data.length;i++)
+//                        {
+//                            $("#divsearch").append("<p class='demo' name='"+data[i].name+"' onclick='getsearch("+data[i].id+")'>"+data[i].name+"</p>");
+//                        }
+//                        
+//                        
+//                    }else{
+//                        $("#divsearch").addClass("nosearch");
+//                    }
+//
+//                }
+//
+//            );
+//        });
+        
+</script>
