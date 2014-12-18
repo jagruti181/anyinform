@@ -18,7 +18,7 @@ var restservice = angular.module('restservice', [])
 //            $recent = {
 //                'one' : id
 //            };
-            recent=$.jStorage.get('recent');
+//            recent=$.jStorage.get('recent');
             recent.push(id);
             if(recent.length > 3)
             {
