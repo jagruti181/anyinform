@@ -1,8 +1,8 @@
 <section>
 		<div class="container">
 		<div class="banner">
-                   <img src="{{'ad/'+ad.jpg | imagepath1}}" ng-show="banner.banner==''" width="100%">
-                   <img src="{{'png/'+banner.banner | imagepath1}}" ng-show="banner.banner!=''" width="100%">
+                   <img ng-src="{{'ad/ad.jpg' | imagepath1}}" ng-show="banner.banner==''" width="100%">
+                   <img ng-src="{{'png/'+banner.banner | imagepath1}}" ng-show="banner.banner!=''" width="100%">
                 </div>
 			<div class="row">
 				<div class="col-sm-3">

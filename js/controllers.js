@@ -332,8 +332,9 @@ phonecatControllers.controller('subcategory',
         TemplateService.navigation = "views/innerheader.html";
 
         var categoryinfosuccess = function (data, status) {
+            console.log("my banner");
             console.log(data);
-            $scope.banner=data;
+            $scope.banner1=data;
             RestService.setbanner(data.banner);
         };
         RestService.getcategoryinfo($routeParams.id).success(categoryinfosuccess);
