@@ -108,12 +108,12 @@ var restservice = angular.module('restservice', [])
         getlistingarray: function(id){
             return $http.get(adminurl+"getlistingarray?ids="+id,{});
         },
-        searchcategory: function(text,city){
+        searchcategory: function(text,city,area,lat,long){
             if(!city)
             {
                 city='';
             }
-            return $http.get(adminurl+"searchcategory?categoryname="+text+"&cityname="+city,{});
+            return $http.get(adminurl+"searchcategory?categoryname="+text+"&cityname="+city+"&area="+area+"&lat="+lat+"&long="+long,{});
         },
         login: function(email,password){
             return $http.get(adminurl+"login?email="+email+"&password="+password,{});

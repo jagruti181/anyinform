@@ -55,7 +55,7 @@ phonecatControllers.controller('home',
         //    End Get all Banners / Adds
 
         //  get area from city
-
+        $scope.area = "";
         function showPosition2(position) {
             var latlon = position.coords.latitude + "," + position.coords.longitude;
             console.log("Positions:.........");
@@ -71,6 +71,11 @@ phonecatControllers.controller('home',
                     if (data[i].types[0] == "locality") {
                         $scope.cityis.selected = data[i].long_name;
                         console.log($scope.cityis.selected);
+                    }
+                    if (data[i].types[0] == "sublocality_level_1") {
+//                        $scope.cityis.selected = data[i].long_name;
+                        $scope.area = data[i].long_name;
+                        console.log(data[i].long_name);
                     }
                 }
                 var citywegot = 9;
@@ -102,6 +107,7 @@ phonecatControllers.controller('home',
             }
 
             $scope.homecategory = partitionarray($scope.homecategory, 6);
+            console.log(partitionarray($scope.homecategory, 6));
         };
 
         RestService.getallparentcategories().success(maincategories);
@@ -141,11 +147,14 @@ phonecatControllers.controller('home',
                 $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].cityname+" ) ";
             }
         };
-        $scope.searchlist = function (text, city, area) {
+        $scope.searchlist = function (text, city) {
             if (!city)
                 city = 0;
-            if (!area)
-                area = 0;
+            console.log("my city");
+            console.log(city);
+            console.log("my area");
+            console.log($scope.area);
+            
             // substr()
             text = text.split(' in ');
             console.log("search tet");
@@ -154,13 +163,23 @@ phonecatControllers.controller('home',
             console.log(text[1]);
             if(!text[1])
             {
-                city=$scope.city;
+                $scope.area=$scope.area;
             }else{
-                city=text[1];
+                $scope.area=text[1];
             }
 
             if (text[0] != "") {
-                RestService.searchcategory($scope.searchtext, city).success(searchsuccess);
+                
+                
+//        $category=$this->input->get_post('categoryname');
+//        $city=$this->input->get_post('cityname');
+//        $area=$this->input->get_post('area');
+//        $lat=$this->input->get_post('lat');
+//        $long=$this->input->get_post('long');
+//        $data['message']=$this->category_model->s
+        
+                
+                RestService.searchcategory($scope.searchtext, city, $scope.area, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }
@@ -344,8 +363,9 @@ phonecatControllers.controller('subcategory',
             if (data == "") {
                 $location.url("/category/" + $routeParams.id);
             } else {
-                $scope.subcat = data;
+                $scope.subcat = partitionarray(data,2);
             }
+            console.log(partitionarray(data,3));
 
         };
         RestService.getsubcategory($routeParams.id).success(allcat);
@@ -355,6 +375,24 @@ phonecatControllers.controller('subcategory',
             $location.url("/subcategory/" + id);
 
         }
+        
+        
+        function partitionarray(myarray, number) {
+            var arrlength = myarray.length;
+            var newarray = [];
+            var j = -1;
+            for (var i = 0; i < arrlength; i++) {
+                if (i % number == 0) {
+                    j++;
+                    newarray[j] = [];
+                }
+                newarray[j].push(myarray[i]);
+            }
+            return newarray;
+        };
+
+
+        
 
     });
 

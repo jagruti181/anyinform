@@ -2078,6 +2078,7 @@ border-color: #049fb3;
 a {
 color: #049fb3;
 text-decoration: none;
+cursor: pointer;
 }
 .recent-box .panel-default {
     width: 299px;
@@ -2274,9 +2275,16 @@ padding: 0px 7px 0px 11px;
 }
 .sub-cat {
     font-size: 22px;
-    background: rgb(228, 241, 255);
+/*    background: rgb(228, 241, 255);*/
     padding: 22px 34px;
+    line-height: 1;
 }
 .sub-cat i.fa.fa-chevron-right {
     color: #049fb3;
+}
+.subcate-text{
+    color: #049fb3;
+}
+.subcate-text:hover{
+    color: #026177;
 }
