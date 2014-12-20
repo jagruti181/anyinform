@@ -6,6 +6,7 @@
                <div class="list-head">
             <h3>List Your Business</h3>
             </div>
+                <h5>Category List</h5>
                 <div class="list-back">
                     <div data-angular-treeview="true" data-tree-model="roleList" data-node-id="id" data-node-label="name" >
                     <div 
@@ -23,6 +24,11 @@
 
 
                     <h5>Name *</h5>
+<!--
+                    <video width="320" height="240" controls>
+                      <source src="http://localhost/foranyinformation/uploads/event11166.mp4" type="video/mp4">
+                    </video>
+-->
                     <input type="text" ng-model="list.name" placeholder="Name" class="form-control" ng-class="allvalidation[0].validation" required/>
                     <h5>Category * <span class="list-select">( Select Category From Left Side )</span></h5>
                     <tags-input ng-model="tagcategory" display-property="text">
@@ -76,21 +82,24 @@
 -->
                     <h6>* Address, Pincode, City, State, And Country Field should be perfect.</h6>
                     <h5>Address *</h5>
-                    <textarea ng-model="list.address" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="Address" class="formselop form-control" ng-class="allvalidation[4].validation" required></textarea>
+                    <textarea ng-model="list.address" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Address" class="formselop form-control" ng-class="allvalidation[4].validation" required></textarea>
 
+                    <h5>Area *</h5>
+                    <input type="text" ng-model="list.area" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Area" class="form-control" ng-class="allvalidation[5].validation" required />
+                    
                     <h5>Pincode *</h5>
-                    <input type="number" ng-model="list.pincode" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="Pincode" class="form-control" ng-class="allvalidation[5].validation" required />
+                    <input type="number" ng-model="list.pincode" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Pincode" class="form-control" ng-class="allvalidation[6].validation" required />
 
                     <h5>City *</h5>
-                    <select ng-model="list.city" class="formselop form-control" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" ng-class="allvalidation[6].validation" required>
+                    <select ng-model="list.city" class="formselop form-control" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" ng-class="allvalidation[7].validation" required>
                         <option ng-repeat="city in alljson.city" value="{{city.id}},{{city.name}}">{{city.name}}</option>
                     </select>
 
                     <h5>State *</h5>
-                    <input type="text" ng-model="list.state" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="State" class="form-control" ng-class="allvalidation[7].validation" required />
+                    <input type="text" ng-model="list.state" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="State" class="form-control" ng-class="allvalidation[8].validation" required />
 
                     <h5>Country *</h5>
-                    <input type="text" ng-model="list.country" ng-change="getlatlong(list.address,list.pincode,list.city,list.state,list.country)" placeholder="Country" class="form-control" ng-class="allvalidation[8].validation" required />
+                    <input type="text" ng-model="list.country" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Country" class="form-control" ng-class="allvalidation[9].validation" required />
 
                     <h5>Latitude</h5>
                     <input type="text" ng-model="list.latitude" class="form-control" placeholder="Latitude" disabled />
@@ -110,7 +119,7 @@
                     <h5>Contact Number</h5>
                     <input type="number" ng-model="list.contact" placeholder="Contact Number" class="form-control" ng-class="allvalidation[9].validation" required />
                     <h5>Email</h5>
-                    <input type="email" ng-model="list.email" placeholder="Email" class="form-control" ng-class="allvalidation[10].validation" required />
+                    <input type="email" ng-model="list.email" placeholder="Email" class="form-control" ng-class="allvalidation[11].validation" required />
                     <h5>Website</h5>
                     <input type="text" ng-model="list.website" class="form-control" placeholder="Website" />
                     <h5>Facebook Username</h5>
@@ -126,7 +135,7 @@
                     <h5>Time Of Operation Ends</h5>
                     <input type="text" ng-model="list.timeofoperationend" class="form-control" placeholder="Time Of Operation Ends" />
                     <h5>Type</h5>
-                    <select ng-model="list.type" class="formselop form-control" ng-class="allvalidation[11].validation" required>
+                    <select ng-model="list.type" class="formselop form-control" ng-class="allvalidation[12].validation" required>
                         <option ng-repeat="type in alljson.type" value="{{type.id}}">{{type.name}}</option>
                     </select>
                     <!--
@@ -138,10 +147,16 @@
                     <input type="text" ng-model="list.credits" class="form-control" placeholder="Credits" />
 
                     <h5>Video</h5>
-                    <input type="text" ng-model="list.video" class="form-control" placeholder="Video" />
+                    <iframe class="myiframe1" src="{{ipath1}}" width="700px" height="130px" frameBorder="0"> </iframe>
                     <h5>Logo</h5>
+                    
+                    Note * Upload 200px : 200px Image
+               <!--input type="text" id="msg"-->
+                <iframe class="myiframe" src="{{ipath}}" width="700px" height="330px" frameBorder="0"> </iframe>
+                    
                     <!--							start angular image upload-->
 
+<!--
                     <div class="upload-div" ng-controller="MyCtrl">
                         <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
 
@@ -168,6 +183,7 @@
 
                         </div>
                     </div>
+-->
 
                     <!--							end angular image upload-->
 

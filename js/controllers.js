@@ -512,6 +512,7 @@ phonecatControllers.controller('login',
         $scope.msg = "";
         $scope.msg1 = "";
         $scope.login = [];
+        $scope.signup = [];
 
         var loginsuccess = function (data, status) {
             console.log(data);
@@ -527,7 +528,7 @@ phonecatControllers.controller('login',
         $scope.userlogin = function (login) {
             
             //login validation
-            $scope.allvalidation = [{
+            $scope.allvalidation1 = [{
                 field: $scope.login.email,
                 validation: ""
              }, {
@@ -535,7 +536,7 @@ phonecatControllers.controller('login',
                 validation: ""
              }];
 
-            var check = formvalidation($scope.allvalidation);
+            var check = formvalidation($scope.allvalidation1);
 
             if (check) {
                 
@@ -567,8 +568,48 @@ phonecatControllers.controller('login',
             }
         };
         $scope.signupuser = function (signup) {
-            console.log(signup);
-            RestService.signup(signup.email, signup.password).success(getuser);
+            
+            //signup validation
+            $scope.allvalidation = [{
+                field: $scope.signup.firstname,
+                validation: ""
+             }, {
+                field: $scope.signup.lastname,
+                validation: ""
+             }, {
+                field: $scope.signup.phoneno,
+                validation: ""
+             }, {
+                field: $scope.signup.email,
+                validation: ""
+             }, {
+                field: $scope.signup.password,
+                validation: ""
+             }, {
+                field: $scope.signup.cpassword,
+                validation: ""
+             }];
+
+            var check = formvalidation($scope.allvalidation);
+
+            if (check) {
+                if($scope.signup.password===$scope.signup.cpassword)
+                {
+                    $scope.signupmsg = "";
+                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
+                }else{
+                    $scope.signupmsg = "Wroung password";
+                }
+                
+            } else {
+                console.log("not ckeck");
+            }
+            
+            
+            
+            
+//            console.log(signup);
+//            RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
         }
 
         //signup
@@ -705,6 +746,8 @@ phonecatControllers.controller('listbusiness',
         $scope.list.category = [];
         $scope.catgo = [];
         $scope.demo = "";
+        $scope.ipath = "views/f2.php?id=event";
+        $scope.ipath1 = "views/f1.php?id=event";
         //    start my angular tree view
         var gettreeview = function (data, status) {
             console.log(data);
@@ -786,9 +829,12 @@ phonecatControllers.controller('listbusiness',
             $scope.list.longitude = data.results[0].geometry.location.lng;
 
         };
-        $scope.getlatlong = function (address, pin, city, state, country) {
+        $scope.getlatlong = function (address, area, pin, city, state, country) {
             if (!address) {
                 address = "";
+            }
+            if (!area) {
+                area = "";
             }
             if (!pin) {
                 pin = "";
@@ -806,7 +852,7 @@ phonecatControllers.controller('listbusiness',
                 country = "";
             }
 
-            $scope.lmap = address + "," + pin + "," + city + "," + state + "," + country;
+            $scope.lmap = address + "," + area + "," + pin + "," + city + "," + state + "," + country;
             console.log($scope.lmap);
             RestService.getmap($scope.lmap).success(mapp);
         };
@@ -823,13 +869,22 @@ phonecatControllers.controller('listbusiness',
 
 
         $scope.submitlist = function (list) {
-
+            $scope.logo = $(".myiframe").contents().find("body img").attr("src");
+                $scope.logo = $scope.logo.split('/');
+                $scope.logo = $scope.logo['4'];
+            $scope.video = $(".myiframe1").contents().find("body img").attr("src");
+                $scope.video = $scope.video.split('/');
+                $scope.video = $scope.video['4'];
+            console.log("my logo");
+            console.log($scope.logo);
+            console.log("my video");
+            console.log($scope.video);
 
             $scope.allvalidation = [{
                 field: $scope.list.name,
                 validation: ""
              }, {
-                field: $scope.list.category,
+                field: $scope.tagcategory,
                 validation: ""
              }, {
                 field: $scope.list.modeofpayment,
@@ -839,6 +894,9 @@ phonecatControllers.controller('listbusiness',
                 validation: ""
              }, {
                 field: $scope.list.address,
+                validation: ""
+             }, {
+                field: $scope.list.area,
                 validation: ""
              }, {
                 field: $scope.list.pincode,

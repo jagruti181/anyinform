@@ -130,8 +130,8 @@ var restservice = angular.module('restservice', [])
         viewonecitylocations: function(id){
             return $http.get(adminurl+"viewonecitylocations?id="+id,{});
         },
-        signup: function(email,password){
-            return $http.get(adminurl+"signup?email="+email+"&password="+password,{});
+        signup: function(firstname,lastname,phoneno,email,password){
+            return $http.get(adminurl+"signup?firstname="+firstname+"&lastname="+lastname+"&phoneno="+phoneno+"&email="+email+"&password="+password,{});
         }
 
     }

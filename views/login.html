@@ -7,8 +7,8 @@
 						<h2>Login to your account</h2>
                         <h5 class="demo">{{msg}}</h5>
 							
-							<input type="email" ng-model="login.email" class="form-control" ng-class="allvalidation[0].validation" required placeholder="Email Address * " />
-							<input type="password" ng-model="login.password" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Password *"/>
+							<input type="email" ng-model="login.email" class="form-control" ng-class="allvalidation1[0].validation" required placeholder="Email Address * " />
+							<input type="password" ng-model="login.password" class="form-control" ng-class="allvalidation1[1].validation" required placeholder="Password *"/>
 							 <div class="home-invites text-center">
     
                                     <a href="#">
@@ -37,11 +37,12 @@
 					<div class="login-form "><!--sign up form-->
 						<h2>New User Signup!</h2>
                         <h5 class="demo">{{signupmsg}}</h5>
-							<input type="text" ng-model="signup.firstname" class="form-control" ng-class="allvalidation[0].validation" required placeholder="First Name"/>
-							<input type="text" ng-model="signup.lastname" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Last Name"/>
-							<input type="email" ng-model="signup.email" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Email Address"/>
-							<input type="password" ng-model="signup.password" class="form-control" ng-class="allvalidation[3].validation" required placeholder="Password"/>
-							<input type="password" ng-model="signup.cpassword" class="form-control" ng-class="allvalidation[4].validation" required placeholder="Confirm Password"/>
+							<input type="text" ng-model="signup.firstname" class="form-control" ng-class="allvalidation[0].validation" required placeholder="First Name *"/>
+							<input type="text" ng-model="signup.lastname" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Last Name *"/>
+							<input type="number" min="6" ng-model="signup.phoneno" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Phone Number *"/>
+							<input type="email" ng-model="signup.email" class="form-control" ng-class="allvalidation[3].validation" required placeholder="Email Address *"/>
+							<input type="password" ng-model="signup.password" class="form-control" ng-class="allvalidation[4].validation" required placeholder="Password *"/>
+							<input type="password" ng-model="signup.cpassword" class="form-control" ng-class="allvalidation[5].validation" required placeholder="Confirm Password *"/>
 							     
                                    <div class="home-invites text-center">
     
