@@ -62,8 +62,10 @@ firstapp.filter('imagepath', function () {
     return function (input) {
         if (input == "") {
             return "http://mafiawarloots.com/foranyinformation/assets/img/default.jpg";
+//                        return "http://localhost/foranyinformation/assets/img/default.jpg";
         } else {
             return "http://mafiawarloots.com/foranyinformation/uploads/" + input;
+//            return "http://localhost/foranyinformation/uploads/" + input;
         }
     };
 });

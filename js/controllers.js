@@ -864,6 +864,12 @@ phonecatControllers.controller('listbusiness',
         var listingsuccess = function (data, status) {
 
             console.log(data);
+            if(data==1)
+            {
+                alert("Listing Saved");
+            }else{
+                alert("ERROR IN SAVING");
+            }
 
         };
 
@@ -871,10 +877,10 @@ phonecatControllers.controller('listbusiness',
         $scope.submitlist = function (list) {
             $scope.logo = $(".myiframe").contents().find("body img").attr("src");
                 $scope.logo = $scope.logo.split('/');
-                $scope.logo = $scope.logo['4'];
+                list.logo = $scope.logo['4'];
             $scope.video = $(".myiframe1").contents().find("body img").attr("src");
                 $scope.video = $scope.video.split('/');
-                $scope.video = $scope.video['4'];
+                list.video = $scope.video['4'];
             console.log("my logo");
             console.log($scope.logo);
             console.log("my video");
@@ -925,7 +931,7 @@ phonecatControllers.controller('listbusiness',
 
             if (check) {
                 list.user = $scope.userdata;
-                list.logo = "default.jpg";
+//                list.logo = "default.jpg";
                 list.city = list.city.split(",");
                 list.city = list.city['0'];
                 console.log(list);

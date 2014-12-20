@@ -64,6 +64,7 @@ var restservice = angular.module('restservice', [])
                       'modeofpayment':list.modeofpayment,
                       'daysofoperation':list.daysofoperation,
                       'address':list.address,
+                      'area':list.area,
                       'pincode':list.pincode,
                       'city':list.city,
                       'state':list.state,
