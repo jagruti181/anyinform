@@ -5,10 +5,22 @@
 				<div class="col-md-5">
 					<div class="login-form "><!--login form-->
 						<h2>Login to your account</h2>
-                        <h5 class="demo ">{{msg}}</h5>
+                        <h5 class="demo">{{msg}}</h5>
 							
-							<input type="email" ng-model="login.email" class="form-control" placeholder="Email Address" />
-							<input type="password" ng-model="login.password" class="form-control" placeholder="Password"/>
+							<input type="email" ng-model="login.email" class="form-control" ng-class="allvalidation[0].validation" required placeholder="Email Address * " />
+							<input type="password" ng-model="login.password" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Password *"/>
+							 <div class="home-invites text-center">
+    
+                                    <a href="#">
+                                        <p> <i class="fa fa-facebook"></i> SIGN IN WITH FACEBOOK</p>
+                                    </a>
+                                </div>
+                <div class="home-invites text-center">
+    
+                                    <a href="#">
+                                        <p> <i class="fa fa-twitter"></i> SIGN IN WITH TWITTER</p>
+                                    </a>
+                                </div>
 <!--
 							<span>
 								<input type="checkbox" class="checkbox form-control"> 
@@ -24,11 +36,25 @@
 				<div class="col-md-5">
 					<div class="login-form "><!--sign up form-->
 						<h2>New User Signup!</h2>
-                        <div class="signupmsg" ng-show="signupmsgg">
-                            {{signupmsg}}
-                        </div>
-							<input type="email" ng-model="signup.email" class="form-control" placeholder="Email Address"/>
-							<input type="password" ng-model="signup.password" class="form-control" placeholder="Password"/>
+                        <h5 class="demo">{{signupmsg}}</h5>
+							<input type="text" ng-model="signup.firstname" class="form-control" ng-class="allvalidation[0].validation" required placeholder="First Name"/>
+							<input type="text" ng-model="signup.lastname" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Last Name"/>
+							<input type="email" ng-model="signup.email" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Email Address"/>
+							<input type="password" ng-model="signup.password" class="form-control" ng-class="allvalidation[3].validation" required placeholder="Password"/>
+							<input type="password" ng-model="signup.cpassword" class="form-control" ng-class="allvalidation[4].validation" required placeholder="Confirm Password"/>
+							     
+                                   <div class="home-invites text-center">
+    
+                                    <a href="#">
+                                        <p> <i class="fa fa-facebook"></i> SIGN IN WITH FACEBOOK</p>
+                                    </a>
+                                </div>
+                <div class="home-invites text-center">
+    
+                                    <a href="#">
+                                        <p> <i class="fa fa-twitter"></i> SIGN IN WITH TWITTER</p>
+                                    </a>
+                                </div>
 							<button class="btn  form-control" ng-click="signupuser(signup)">Signup</button>
 					</div><!--/sign up form-->
 				</div>

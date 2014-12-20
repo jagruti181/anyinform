@@ -94,7 +94,7 @@
                             <br>
 
 
-                            <i class="fa fa-clock-o"></i><span class="fapadl">9:00 am To 9:00 pm</span>
+                            <i class="fa fa-clock-o" ng-show="detail.listing.timeofoperation_start!=''"></i><span class="fapadl" ng-show="detail.listing.timeofoperation_start!=''">{{detail.listing.timeofoperation_start}} To {{detail.listing.timeofoperation_end}}</span>
                         </div>
                     </div>
                     <div class="more-text">

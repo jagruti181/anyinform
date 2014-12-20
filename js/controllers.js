@@ -1,5 +1,7 @@
 var lat = 0;
 var long = 0;
+var city = '';
+var area = '';
 var pat = '\home';
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput']);
 
@@ -74,6 +76,7 @@ phonecatControllers.controller('home',
                     }
                     if (data[i].types[0] == "sublocality_level_1") {
 //                        $scope.cityis.selected = data[i].long_name;
+                        area = data[i].long_name;
                         $scope.area = data[i].long_name;
                         console.log(data[i].long_name);
                     }
@@ -89,6 +92,7 @@ phonecatControllers.controller('home',
                     }
                 }
                 $scope.form.cityy = citywegot;
+                city = citywegot;
                 $scope.$apply();
                 console.log(citywegot);
                 $scope.citychange(citywegot);
@@ -130,6 +134,7 @@ phonecatControllers.controller('home',
         }
 
         $scope.innershearch = function () {
+            RestService.recentvisit($scope.searchid);
             $location.url("/detail/" + $scope.searchid);
         };
 
@@ -144,12 +149,14 @@ phonecatControllers.controller('home',
             }
             for(var i=0;i<data.length;i++)
             {
-                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].cityname+" ) ";
+                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].area+" ) " + data[i].dist + " KM ";
             }
         };
         $scope.searchlist = function (text, city) {
-            if (!city)
-                city = 0;
+//            if (!city)
+//                city = 0;
+            
+            city = city;
             console.log("my city");
             console.log(city);
             console.log("my area");
@@ -504,6 +511,7 @@ phonecatControllers.controller('login',
         TemplateService.navigation = "views/innerheader.html";
         $scope.msg = "";
         $scope.msg1 = "";
+        $scope.login = [];
 
         var loginsuccess = function (data, status) {
             console.log(data);
@@ -517,8 +525,29 @@ phonecatControllers.controller('login',
         };
 
         $scope.userlogin = function (login) {
-            console.log(login);
-            RestService.login(login.email, login.password).success(loginsuccess);
+            
+            //login validation
+            $scope.allvalidation = [{
+                field: $scope.login.email,
+                validation: ""
+             }, {
+                field: $scope.login.password,
+                validation: ""
+             }];
+
+            var check = formvalidation($scope.allvalidation);
+
+            if (check) {
+                
+                RestService.login(login.email, login.password).success(loginsuccess);
+                
+            } else {
+                console.log("not ckeck");
+            }
+            
+//            
+//            console.log(login);
+//            RestService.login(login.email, login.password).success(loginsuccess);
         }
         //    
         //        var getuser = function (data, status){
@@ -532,9 +561,9 @@ phonecatControllers.controller('login',
         }
         var getuser = function (data, status) {
             console.log(data);
-            if (data == false) {
+            if (data == "false") {
                 $scope.signupmsgg = true;
-                $scope.signupmsg = "Already Exist. Choose Another Id";
+                $scope.signupmsg = "Already Exist. Choose Another Email Address";
             }
         };
         $scope.signupuser = function (signup) {
@@ -604,6 +633,7 @@ phonecatControllers.controller('OtherCtrl',
         // on inner search go button
         
         $scope.innershearch = function () {
+            RestService.recentvisit($scope.searchid);
             $location.url("/detail/" + $scope.searchid);
         };
         
@@ -628,14 +658,18 @@ phonecatControllers.controller('OtherCtrl',
             }
             for(var i=0;i<data.length;i++)
             {
-                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].cityname+" ) ";
+                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].area+" ) " + data[i].dist + " KM ";
             }
         };
-        $scope.searchlist = function (text, city, area) {
-            if (!city)
-                city = 0;
-            if (!area)
-                area = 0;
+        
+        $scope.searchlist = function (text) {
+//            if (!city)
+//                city = 0;
+            console.log("my city");
+            console.log(city);
+            console.log("my area");
+            console.log(area);
+            
             // substr()
             text = text.split(' in ');
             console.log("search tet");
@@ -644,13 +678,14 @@ phonecatControllers.controller('OtherCtrl',
             console.log(text[1]);
             if(!text[1])
             {
-                city=$scope.city;
+                $scope.area=$scope.area;
             }else{
-                city=text[1];
+                $scope.area=text[1];
             }
 
             if (text[0] != "") {
-                RestService.searchcategory($scope.searchtext, city).success(searchsuccess);
+                
+                RestService.searchcategory($scope.searchtext, city, area, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }

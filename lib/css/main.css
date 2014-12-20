@@ -73,6 +73,7 @@ width: 163px;
 }
 .demo {
     color: red;
+    text-align: center;
 }
 .searchrow {} #divsearch p {
     margin-left: 20px;
@@ -2287,4 +2288,41 @@ padding: 0px 7px 0px 11px;
 }
 .subcate-text:hover{
     color: #026177;
+}
+
+
+.home-invites {
+    background: #049FB3;
+    border: 1px solid #ffffff;
+    width: 281px;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    margin-left: -143px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.home-invites p {
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.grey{
+ color:#bda177;   
+}
+.home-invites p i {
+    background: white;
+    height: 30px;
+    width: 30px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    padding: 7px 8px;
+    color: #026177;
+    margin-left: 0;
+    margin-right: 13px;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
 }
