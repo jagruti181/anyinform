@@ -2294,7 +2294,7 @@ padding: 0px 7px 0px 11px;
 
 .home-invites {
     background: #049FB3;
-    border: 1px solid #ffffff;
+    border: 1px solid #049fb3;
     width: 281px;
     border-radius: 30px;
     position: relative;
@@ -2307,22 +2307,37 @@ padding: 0px 7px 0px 11px;
     font-size: 15px;
     color: #ffffff;
     text-transform: uppercase;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 .grey{
  color:#bda177;   
 }
-.home-invites p i {
+.home-invites i.fa.fa-facebook {
     background: white;
     height: 30px;
     width: 30px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
-    padding: 7px 8px;
+    padding: 7px 7px;
     color: #026177;
-    margin-left: 0;
-    margin-right: 13px;
+    margin-left: -7px;
+    margin-right: 15px;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+}
+.home-invites i.fa.fa-twitter {
+    background: white;
+    height: 30px;
+    width: 30px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    padding: 7px 7px;
+    color: #026177;
+    margin-left: -20px;
+    margin-right: 15px;
     font-size: 20px;
     position: relative;
     top: 4px;
