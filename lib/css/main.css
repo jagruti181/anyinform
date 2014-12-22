@@ -2111,6 +2111,7 @@ border-color: #049fb3;
 .cate-social {
     /* padding: 55px 0px; */
     padding: 84px 0px 0px;
+    text-indent: 3px;
 }
 .cat-btn a {
     margin: 16px auto;
@@ -2352,4 +2353,29 @@ padding: 0px 7px 0px 11px;
 }
 .single-blog-post .msg {
     color: white;
+}
+.img-cat {
+    float: right;
+    position: relative;
+    bottom: 79px;
+    right: 30px;
+}
+
+.img-cat span p {
+    background: #049fb3;
+    border-radius: 200px;
+    height: 70px;
+    width: 70px;
+    padding: 12px 12px;
+    font-size: 25px;
+    position: relative;
+    top: -12px;
+    right: -28px;
+    border: 3px solid #B4B9BA;
+    color: #fff;
+}
+.media-body p {
+    width: 50%;
+    text-indent: -5px;
+    padding-left: 11px;
 }
