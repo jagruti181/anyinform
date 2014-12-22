@@ -506,6 +506,13 @@ phonecatControllers.controller('about',
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     });
+phonecatControllers.controller('profile',
+    function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+        TemplateService.content = "views/profile.html";
+        TemplateService.slider = false;
+        TemplateService.navigation = "views/innerheader.html";
+    });
 
 phonecatControllers.controller('login',
     function ($scope, TemplateService, RestService, $location, $routeParams) {
