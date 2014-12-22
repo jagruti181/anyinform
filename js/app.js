@@ -89,6 +89,7 @@ firstapp.filter('imagepath1', function () {
 // start angular map directive
 
 firstapp.directive('map', function() {
+    
     return {
         restrict: 'E',
         replace: true,
@@ -134,6 +135,7 @@ google.maps.event.addListener(marker,"click",function(){});
             } //end addMarker
         }
     };
+
 })
 
 // end angular map directive

@@ -117,7 +117,7 @@ width: 163px;
 }
 .msg {
     color: #333;
-    background: rgba(255, 6, 16, 0.39);
+    background: rgba(4, 159, 179, 0.71);
     padding: 10px;
     font-size: 200%;
     font-weight: 100;
@@ -2312,14 +2312,10 @@ padding: 0px 7px 0px 11px;
 .grey{
  color:#bda177;   
 }
-<<<<<<< HEAD
 .linknot:hover{
     color: #026177;
 }
-.home-invites p i {
-=======
 .home-invites i.fa.fa-facebook {
->>>>>>> origin/master
     background: white;
     height: 30px;
     width: 30px;
