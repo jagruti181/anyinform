@@ -2312,6 +2312,9 @@ padding: 0px 7px 0px 11px;
 .grey{
  color:#bda177;   
 }
+.linknot:hover{
+    color: #026177;
+}
 .home-invites p i {
     background: white;
     height: 30px;

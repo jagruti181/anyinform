@@ -52,6 +52,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="lib/js/jstorage.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script src="lib/js/underscore-min.js"></script>
 
     <!--       <script src="lib/js/angular-treeview.js"></script>-->
 

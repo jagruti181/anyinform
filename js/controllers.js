@@ -414,6 +414,10 @@ phonecatControllers.controller('detail',
         $scope.enquiry = [];
         $scope.recentvisit = [];
 
+    var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
+    console.log("underscore");
+    console.log(sum);
+    
         $scope.listid = RestService.getrecentvisit();
         console.log("my recent visits");
         console.log($scope.listid);
@@ -458,7 +462,7 @@ phonecatControllers.controller('detail',
             console.log(data);
             if (data == "1") {
 //                $scope.enquiryshow = true;
-                $scope.enquirymsg = "Enquiry Send";
+                $scope.enquirymsg = "Enquiry Send successfuly";
 
             } else {
 //                $scope.enquiryshow = true;
