@@ -21,11 +21,12 @@ width: 163px;
 */
 .signupmsg{
     margin-bottom: 10px;
-    color: #333;
-    background: rgba(255, 146, 0, 0.39);
+
+    color: #F70808;
+/*    background: rgba(255, 146, 0, 0.39);*/
     padding: 10px;
-    font-size: 125%;
-    font-weight: 100;
+    font-size: 124%;
+    /* font-weight: 100; */
 }
 .onlycursor:hover{
     cursor: pointer;

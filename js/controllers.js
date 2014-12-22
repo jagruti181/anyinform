@@ -457,11 +457,11 @@ phonecatControllers.controller('detail',
         var enquirysuccess = function (data, status) {
             console.log(data);
             if (data == "1") {
-                $scope.enquiryshow = true;
+//                $scope.enquiryshow = true;
                 $scope.enquirymsg = "Enquiry Send";
 
             } else {
-                $scope.enquiryshow = true;
+//                $scope.enquiryshow = true;
                 $scope.enquirymsg = "Sorry, Try again later";
             }
         };
