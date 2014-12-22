@@ -52,6 +52,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'contact'
         }).
+                       when('/profile', {
+            templateUrl: 'views/template.html',
+            controller: 'profile'
+        }).
         otherwise({
             redirectTo: '/home'
         });
