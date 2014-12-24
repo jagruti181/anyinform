@@ -507,11 +507,49 @@ phonecatControllers.controller('about',
         $scope.navigation = NavigationService.getnav();
     });
 phonecatControllers.controller('profile',
-    function ($scope, TemplateService) {
+    function ($scope, TemplateService, RestService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/profile.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
+    
+        // controller vriables
+        $scope.profile = [];
+    
+        // user authentication
+    
+        var usersuccess = function (data, status) {
+            console.log(data);
+            $scope.profile = data;
+        };
+        var getuser = function (data, status) {
+            console.log("my data");
+            console.log(data);
+            $scope.user = data;
+            RestService.getuser(data).success(usersuccess);
+        }
+        RestService.authenticate().success(getuser);
+    
+        // get user profile stored data
+        $scope.saveprofile = function (profile) {
+            
+             //profile validation
+            $scope.allvalidation1 = [{
+                field: $scope.profile.email,
+                validation: ""
+             }];
+
+            var check = formvalidation($scope.allvalidation1);
+
+            if (check) {
+                console.log("yahooo...checked");
+//                RestService.
+                
+            } else {
+                console.log("not ckeck");
+            }
+            
+        }
     });
 
 phonecatControllers.controller('login',
@@ -659,6 +697,8 @@ phonecatControllers.controller('OtherCtrl',
         $scope.signupprofile = function () {
             if ($scope.signuppro == "Sign Up") {
                 $location.url('/login');
+            }else{
+                $location.url('/profile');
             }
         }
         //show listing one home page button
@@ -889,13 +929,9 @@ phonecatControllers.controller('listbusiness',
             $scope.logo = $(".myiframe").contents().find("body img").attr("src");
                 $scope.logo = $scope.logo.split('/');
                 list.logo = $scope.logo['4'];
-            $scope.video = $(".myiframe1").contents().find("body img").attr("src");
-                $scope.video = $scope.video.split('/');
-                list.video = $scope.video['4'];
-            console.log("my logo");
-            console.log($scope.logo);
-            console.log("my video");
-            console.log($scope.video);
+//            $scope.video = $(".myiframe1").contents().find("body img").attr("src");
+//                $scope.video = $scope.video.split('/');
+//                list.video = $scope.video['4'];
 
             $scope.allvalidation = [{
                 field: $scope.list.name,

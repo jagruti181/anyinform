@@ -30,6 +30,9 @@ var restservice = angular.module('restservice', [])
         getrecentvisit: function(){
             return $.jStorage.get('recent');
         },
+        getuser: function(id){
+            return $http.get(adminurl+"getuser?id="+id,{});
+        },
         getsubcategory: function(id){
             return $http.get(adminurl+"getsubcategory?id="+id,{});
         },

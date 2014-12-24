@@ -1,46 +1,31 @@
 <section id="profile">
     <div class="container">
         <div class="row">
-           <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
             <div class="col-md-5">
                 <div class="profile text-center">
-				<div class="login-form "><!--sign up form-->
-						<h2>My Profile</h2>
+                    <div class="login-form ">
+                        <!--sign up form-->
+                        <h2>My Profile</h2>
                         <h5 class="demo">{{signupmsg}}</h5>
-							<input type="text" ng-model="" class="form-control" ng-class="allvalidation[0].validation" required placeholder="First Name *"/>
-							<input type="text" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Last Name *"/>
-							<input type="email" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Email Address *"/>
-							<input type="number" min="6" ng-model="" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Phone Number *"/>
-							<input type="text" ng-model="" class="form-control" ng-class="allvalidation[5].validation" required placeholder="Date Of Birth *"/>
-							<input type="text" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Website *"/>
-							
-							<input type="text" ng-model="" class="form-control" ng-class="allvalidation[3].validation" required placeholder="Address *"/>
-							<input type="text" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="city *"/>
-							<input type="number" ng-model="" class="form-control" ng-class="allvalidation[4].validation" required placeholder="Pincode *"/>
-								<input type="text" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="State *"/>
-									<input type="text" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Country *"/>
-							
-                             
-                             <input type="email" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Google Email Address *"/>
-                             <input type="email" ng-model="" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Facebook Email Address *"/>
-                              <input type="file" name="pic" accept="image/*" >
-							     
-<!--
-                                   <div class="home-invites text-center">
-    
-                                    <a href="#">
-                                        <p> <i class="fa fa-facebook"></i> SIGN IN WITH FACEBOOK</p>
-                                    </a>
-                                </div>
-                <div class="home-invites text-center">
-    
-                                    <a href="#">
-                                        <p> <i class="fa fa-twitter"></i> SIGN IN WITH TWITTER</p>
-                                    </a>
-                                </div>
--->
-							<button class="btn  form-control" ng-click="signupuser(signup)">Signup</button>
-					</div>
+                        <input type="text" ng-model="profile.firstname" class="form-control" placeholder="First Name" />
+                        <input type="text" ng-model="profile.lastname" class="form-control" placeholder="Last Name" />
+                        <input type="email" ng-model="profile.email" class="form-control" ng-class="allvalidation[0].validation" required placeholder="Email Address *" />
+                        <input type="number" min="6" ng-model="profile.phone" class="form-control" placeholder="Phone Number" />
+                        <input type="text" ng-model="profile.dob" class="form-control" placeholder="Date Of Birth" />
+                        <input type="text" ng-model="profile.website" class="form-control" placeholder="Website" />
+
+                        <input type="text" ng-model="profile.address" class="form-control" placeholder="Address" />
+                        <input type="text" ng-model="profile.city" class="form-control" placeholder="city" />
+                        <input type="number" ng-model="profile.pincode" class="form-control" placeholder="Pincode" />
+                        <input type="text" ng-model="profile.state" class="form-control" placeholder="State" />
+                        <input type="text" ng-model="profile.country" class="form-control" placeholder="Country" />
+
+
+                        <input type="email" ng-model="profile.google" class="form-control" placeholder="Google Email Address" />
+                        <input type="email" ng-model="profile.facebookuserid" class="form-control" placeholder="Facebook Email Address" />
+                        <button class="btn  form-control" ng-click="saveprofile(profile)">Save</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3"></div>

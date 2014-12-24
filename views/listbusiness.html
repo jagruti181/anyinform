@@ -1,42 +1,41 @@
 <section>
     <div class="container">
         <div class="row">
-           
+
             <div class="col-md-3">
-               <div class="list-head">
-            <h3>List Your Business</h3>
-            </div>
+                <div class="list-head">
+                    <h3>List Your Business</h3>
+                </div>
                 <h5>Category List</h5>
                 <div class="list-back">
-                    <div data-angular-treeview="true" data-tree-model="roleList" data-node-id="id" data-node-label="name" >
-                    <div 
-                    <div data-node-children="children"  style="padding-left:10px">
-                        
-                    </div>
+                    <div data-angular-treeview="true" data-tree-model="roleList" data-node-id="id" data-node-label="name">
+                        <div <div data-node-children="children" style="padding-left:10px">
+
+                        </div>
                     </div>
                 </div>
 
             </div>
             <div class="col-md-9">
-               <div class="">
-                <div class="signup-list">
+                <div class="">
+                    <div class="signup-list">
 
 
 
-                    <h5>Name *</h5>
-<!--
+                        <h5>Name *</h5>
+                        <!--
                     <video width="320" height="240" controls>
                       <source src="http://localhost/foranyinformation/uploads/event11166.mp4" type="video/mp4">
                     </video>
 -->
-                    <input type="text" ng-model="list.name" placeholder="Name" class="form-control" ng-class="allvalidation[0].validation" required/>
-                    <h5>Category * <span class="list-select">( Select Category From Left Side )</span></h5>
-                    <tags-input ng-model="tagcategory" display-property="text">
-                        <auto-complete source="tagdata"></auto-complete>
-                    </tags-input>
-                    <!--                   demo angular tree-->
+                        <input type="text" ng-model="list.name" placeholder="Name" class="form-control" ng-class="allvalidation[0].validation" required/>
+                        <h5>Category * <span class="list-select">( Select Category From Left Side )</span></h5>
+                        <tags-input ng-model="tagcategory" display-property="text">
+                            <auto-complete source="tagdata"></auto-complete>
+                        </tags-input>
+                        <!--                   demo angular tree-->
 
-                    <!--
+                        <!--
       [TREE attribute]
       angular-treeview: the treeview directive
       tree-model : the tree model on $scope.
@@ -47,8 +46,8 @@
 
 
 
-                    <!--                   demo angular tree-->
-                    <!--
+                        <!--                   demo angular tree-->
+                        <!--
                     <select ng-model="list.category" ng-change="addcategorytab(list.category)" class="formselop form-control" ng-class="allvalidation[1].validation" multiple required>
                         <option ng-repeat="cat in alljson.category" value="{{cat.id}}">{{cat.name}}</option>
                     </select>
@@ -56,107 +55,110 @@
 
 
 
-                    <!--
+                        <!--
 							<select ng-model="tags" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
 
-                    <h5>Mode Of Payment *</h5>
-                    <select ng-model="list.modeofpayment" class="formselop form-control" ng-class="allvalidation[2].validation" multiple required>
-                        <option ng-repeat="mode in alljson.modeofpayment" value="{{mode.id}}">{{mode.name}}</option>
-                    </select>
-                    <!--
+                        <h5>Mode Of Payment *</h5>
+                        <select ng-model="list.modeofpayment" class="formselop form-control" ng-class="allvalidation[2].validation" multiple required>
+                            <option ng-repeat="mode in alljson.modeofpayment" value="{{mode.id}}">{{mode.name}}</option>
+                        </select>
+                        <!--
 							<select ng-model="list.modeofpaymnet" class="formselop">
                                 <option value=""></option>                                
                             </select>
 -->
-                    <h5>Days Of Operation *</h5>
-                    <select ng-model="list.daysofoperation" class="formselop form-control" ng-class="allvalidation[3].validation" multiple required>
-                        <option ng-repeat="doo in alljson.daysofoperations" value="{{doo.id}}">{{doo.name}}</option>
-                    </select>
-                    <!--
+                        <h5>Days Of Operation *</h5>
+                        <select ng-model="list.daysofoperation" class="formselop form-control" ng-class="allvalidation[3].validation" multiple required>
+                            <option ng-repeat="doo in alljson.daysofoperations" value="{{doo.id}}">{{doo.name}}</option>
+                        </select>
+                        <!--
 							<select ng-model="list.daysofoperation" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-                    <h6>* Address, Pincode, City, State, And Country Field should be perfect.</h6>
-                    <h5>Address *</h5>
-                    <textarea ng-model="list.address" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Address" class="formselop form-control" ng-class="allvalidation[4].validation" required></textarea>
+                        <h6><span class="list-select">( * Address, Pincode, City, State, And Country Field should be perfect. )</span></h6>
+                        <h5>Address *</h5>
+                        <textarea ng-model="list.address" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Address" class="formselop form-control" ng-class="allvalidation[4].validation" required></textarea>
 
-                    <h5>Area *</h5>
-                    <input type="text" ng-model="list.area" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Area" class="form-control" ng-class="allvalidation[5].validation" required />
-                    
-                    <h5>Pincode *</h5>
-                    <input type="number" ng-model="list.pincode" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Pincode" class="form-control" ng-class="allvalidation[6].validation" required />
+                        <h5>Area *</h5>
+                        <input type="text" ng-model="list.area" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Area" class="form-control" ng-class="allvalidation[5].validation" required />
 
-                    <h5>City *</h5>
-                    <select ng-model="list.city" class="formselop form-control" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" ng-class="allvalidation[7].validation" required>
-                        <option ng-repeat="city in alljson.city" value="{{city.id}},{{city.name}}">{{city.name}}</option>
-                    </select>
+                        <h5>Pincode *</h5>
+                        <input type="number" ng-model="list.pincode" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Pincode" class="form-control" ng-class="allvalidation[6].validation" required />
 
-                    <h5>State *</h5>
-                    <input type="text" ng-model="list.state" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="State" class="form-control" ng-class="allvalidation[8].validation" required />
+                        <h5>City *</h5>
+                        <select ng-model="list.city" class="formselop form-control" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" ng-class="allvalidation[7].validation" required>
+                            <option ng-repeat="city in alljson.city" value="{{city.id}},{{city.name}}">{{city.name}}</option>
+                        </select>
 
-                    <h5>Country *</h5>
-                    <input type="text" ng-model="list.country" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Country" class="form-control" ng-class="allvalidation[9].validation" required />
+                        <h5>State *</h5>
+                        <input type="text" ng-model="list.state" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="State" class="form-control" ng-class="allvalidation[8].validation" required />
 
-                    <h5>Latitude</h5>
-                    <input type="text" ng-model="list.latitude" class="form-control" placeholder="Latitude" disabled />
+                        <h5>Country *</h5>
+                        <input type="text" ng-model="list.country" ng-change="getlatlong(list.address,list.area,list.pincode,list.city,list.state,list.country)" placeholder="Country" class="form-control" ng-class="allvalidation[9].validation" required />
 
-                    <h5>Longitude</h5>
-                    <input type="text" ng-model="list.longitude" class="form-control" placeholder="Longitude" disabled />
+                        <h5>Latitude</h5>
+                        <input type="text" ng-model="list.latitude" class="form-control" placeholder="Latitude" disabled />
+
+                        <h5>Longitude</h5>
+                        <input type="text" ng-model="list.longitude" class="form-control" placeholder="Longitude" disabled />
 
 
-                    <!--
+                        <!--
 							<select ng-model="list.city" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
 
-                    <h5>Description</h5>
-                    <textarea ng-model="list.description" placeholder="Description" class="formselop form-control"></textarea>
-                    <h5>Contact Number</h5>
-                    <input type="number" ng-model="list.contact" placeholder="Contact Number" class="form-control" ng-class="allvalidation[9].validation" required />
-                    <h5>Email</h5>
-                    <input type="email" ng-model="list.email" placeholder="Email" class="form-control" ng-class="allvalidation[11].validation" required />
-                    <h5>Website</h5>
-                    <input type="text" ng-model="list.website" class="form-control" placeholder="Website" />
-                    <h5>Facebook Username</h5>
-                    <input type="text" ng-model="list.facebook" class="form-control" placeholder="Facebook Username" />
-                    <h5>Googleplus Username</h5>
-                    <input type="text" ng-model="list.googleplus" class="form-control" placeholder="Googleplus Username" />
-                    <h5>Twitter Username</h5>
-                    <input type="text" ng-model="list.twitter" class="form-control" placeholder="Twitter Username" />
-                    <h5>Year Of Establishment</h5>
-                    <input type="text" ng-model="list.yearofestablishment" class="form-control" placeholder="Year Of Establishment" />
-                    <h5>Time Of Operation Start</h5>
-                    <input type="text" ng-model="list.timeofoperationstart" class="form-control" placeholder="Time Of Operation Start" />
-                    <h5>Time Of Operation Ends</h5>
-                    <input type="text" ng-model="list.timeofoperationend" class="form-control" placeholder="Time Of Operation Ends" />
-                    <h5>Type</h5>
-                    <select ng-model="list.type" class="formselop form-control" ng-class="allvalidation[12].validation" required>
-                        <option ng-repeat="type in alljson.type" value="{{type.id}}">{{type.name}}</option>
-                    </select>
-                    <!--
+                        <h5>Description</h5>
+                        <textarea ng-model="list.description" placeholder="Description" class="formselop form-control"></textarea>
+                        <h5>Contact Number</h5>
+                        <input type="number" ng-model="list.contact" placeholder="Contact Number" class="form-control" ng-class="allvalidation[9].validation" required />
+                        <h5>Email</h5>
+                        <input type="email" ng-model="list.email" placeholder="Email" class="form-control" ng-class="allvalidation[11].validation" required />
+                        <h5>Website</h5>
+                        <input type="text" ng-model="list.website" class="form-control" placeholder="Website" />
+                        <h5>Facebook Username</h5>
+                        <input type="text" ng-model="list.facebook" class="form-control" placeholder="Facebook Username" />
+                        <h5>Googleplus Username</h5>
+                        <input type="text" ng-model="list.googleplus" class="form-control" placeholder="Googleplus Username" />
+                        <h5>Twitter Username</h5>
+                        <input type="text" ng-model="list.twitter" class="form-control" placeholder="Twitter Username" />
+                        <h5>Year Of Establishment</h5>
+                        <input type="text" ng-model="list.yearofestablishment" class="form-control" placeholder="Year Of Establishment" />
+                        <h5>Time Of Operation Start</h5>
+                        <input type="text" ng-model="list.timeofoperationstart" class="form-control" placeholder="Time Of Operation Start" />
+                        <h5>Time Of Operation Ends</h5>
+                        <input type="text" ng-model="list.timeofoperationend" class="form-control" placeholder="Time Of Operation Ends" />
+                        <h5>Type</h5>
+                        <select ng-model="list.type" class="formselop form-control" ng-class="allvalidation[12].validation" required>
+                            <option ng-repeat="type in alljson.type" value="{{type.id}}">{{type.name}}</option>
+                        </select>
+                        <!--
 							<select ng-model="list.type" class="formselop">
                                 <option value=""></option>
                             </select>
 -->
-                    <h5>Credits</h5>
-                    <input type="text" ng-model="list.credits" class="form-control" placeholder="Credits" />
+                        <h5>Credits</h5>
+                        <input type="text" ng-model="list.credits" class="form-control" placeholder="Credits" />
 
-                    <h5>Video</h5>
-                    <iframe class="myiframe1" src="{{ipath1}}" width="700px" height="130px" frameBorder="0"> </iframe>
-                    <h5>Logo</h5>
-                    
-                    Note * Upload 200px : 200px Image
-               <!--input type="text" id="msg"-->
-                <iframe class="myiframe" src="{{ipath}}" width="700px" height="330px" frameBorder="0"> </iframe>
-                    
-                    <!--							start angular image upload-->
+                        <h5>Video</h5>
+                        <span class="list-select notehigh">
+                            ( * Eg : &#60;iframe width="854" height="510" src="&#47;&#47;www.youtube.com&#47;embed&#47;<b class="notehigh">SfGBO7tmJmg</b>" frameborder="0" allowfullscreen&#62;&#60;/iframe&#62;. )
+                        </span>
+                        <input type="text" ng-model="list.video" class="form-control" placeholder="You Tube Embed Code" />
+                        <!--                    <iframe class="myiframe1" src="{{ipath1}}" width="700px" height="130px" frameBorder="0"> </iframe>-->
+                        <h5>Logo</h5>
+                        <span class="list-select">( Note * Upload 200px : 200px Image )</span>
+                        <!--input type="text" id="msg"-->
+                        <iframe class="myiframe" src="{{ipath}}" width="700px" height="330px" frameBorder="0"></iframe>
 
-<!--
+                        <!--							start angular image upload-->
+
+                        <!--
                     <div class="upload-div" ng-controller="MyCtrl">
                         <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
 
@@ -185,11 +187,11 @@
                     </div>
 -->
 
-                    <!--							end angular image upload-->
+                        <!--							end angular image upload-->
 
-                    <button class="btn" ng-click="submitlist(list)">Create Listing</button>
+                        <button class="btn" ng-click="submitlist(list)">Create Listing</button>
 
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
