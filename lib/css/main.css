@@ -845,8 +845,8 @@ ul.sub-menu {
     color: #FFFFFF;
     border-radius: 0px;
     /* padding: 8px; */
-    padding-left: 22px;
-    margin-left: -22px;
+    padding-left: 10px;
+    /* margin-left: -21px; */
 }
 .searchform input {
     border: 1px solid #DDDDDD;
@@ -898,12 +898,13 @@ ul.sub-menu {
     color: #363432;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    margin-left: 15px;
+    margin-right: 19px;
+    font-size: 12px;
 }
 .footer-bottom p span a {
-    color: #043eb3;
+    /* color: #043eb3; */
     font-style: italic;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 /*************************
 ******* Home ******
@@ -943,6 +944,9 @@ ul.sub-menu {
     margin-bottom: 22px;
     margin-top: 10px;
 }
+span.stButton_gradient {
+    height: 22px !important;
+}
 .item p {
     color: #363432;
     font-size: 16px;
@@ -979,7 +983,7 @@ ul.sub-menu {
     margin-bottom: 34px;
     padding-bottom: 20px;
     padding-top: 16px;
-    margin: 12px auto;
+    margin: 35px auto;
 }
 .left-sidebar h2,
 .brands_products h2 {
@@ -987,7 +991,7 @@ ul.sub-menu {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    margin: 0 auto 30px;
+    margin: 0px auto 10px;
     text-align: center;
     text-transform: uppercase;
     position: relative;
@@ -1067,7 +1071,7 @@ h2.title:before {
     white-space: nowrap;
 }
 .media.commnets {
-    margin: 11px auto;
+    margin: 35px auto;
     /* padding-bottom: 20px; */
     background: rgba(70, 109, 157, 0.05);
     padding: 25px 11px;
@@ -1085,11 +1089,11 @@ h2.title:before {
 }
 .brands-name {
     border: 1px solid #049fb3;
-    padding-bottom: 20px;
-    padding-top: 15px;
+    padding-bottom: 17px;
+    padding-top: 3px;
     padding: 10px;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 .brands-name .nav-stacked li a {
     background-color: #FFFFFF;
@@ -1978,13 +1982,13 @@ border-bottom: 0px solid #026177;  box-shadow: 3px 3px 5px 1px #aaa;
 margin: 0 0 13px;
 }
 .details-content {
-    margin: 50px 0px 19px 0px;
+    margin: 0px 0px 35px 0px;
     background: rgba(70, 109, 157, 0.05);
-    /* margin-right: 15px; */
     padding: 10px 0px;
 }
 .more-text {
-    padding: 17px 0px;
+    /* padding: 17px 0px; */
+    margin-top: 30px;
 }
 
 .more-text p {
@@ -2049,6 +2053,7 @@ margin: 12px auto;
 }
 .social-btn{
 margin: 3px auto;
+margin-bottom: 0px;
 }
 .btn-mail{
 margin:43px auto;
@@ -2110,8 +2115,9 @@ border-color: #049fb3;
 }
 .cate-social {
     /* padding: 55px 0px; */
-    padding: 84px 0px 0px;
+    padding: 92px 0px 0px;
     text-indent: 3px;
+    margin-bottom: -25px;
 }
 .cat-btn a {
     margin: 16px auto;
@@ -2133,7 +2139,8 @@ border-color: #049fb3;
     color: #fff !important;
 }
 a.btn.btn-primary.mrr:hover {
-    border-bottom: 0px solid #026177;  box-shadow: 3px 3px 5px 1px #aaa;
+    border-bottom: 0px solid #026177;  
+    box-shadow: 3px 3px 5px 1px;
 }
 a.cursor.ng-binding.Sub.Mobile:hover {
     background: #049fb3;  padding: 10px;  color: #fff !important;
@@ -2278,10 +2285,12 @@ border-right:1px solid;
 padding: 0px 7px 0px 11px;
 }
 .sub-cat {
-    font-size: 22px;
-/*    background: rgb(228, 241, 255);*/
-    padding: 22px 34px;
+    font-size: 15px;
+
+    background: rgb(228, 241, 255);
+    padding: 12px 34px;
     line-height: 1;
+    margin-top: 7px;
 }
 .sub-cat i.fa.fa-chevron-right {
     color: #049fb3;
@@ -2360,7 +2369,12 @@ padding: 0px 7px 0px 11px;
     bottom: 79px;
     right: 30px;
 }
-
+.cat {
+    padding: 18px 100px 24px 100px;
+    background: rgba(71, 171, 171, 0.52);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .img-cat span p {
     background: #049fb3;
     border-radius: 200px;
@@ -2381,4 +2395,26 @@ padding: 0px 7px 0px 11px;
 }
 .notehigh{
     color: green;
+}
+a:hover{
+color:#026177;
+}
+.video-you{
+padding-bottom: 20px;
+padding-top: 10px;
+}
+.facebook-deatils {
+    margin-top: 22px;
+}
+ol.carousel-indicators {
+    display: none;
+}
+.nav.navbar-nav a.onlycursor.ng-bindingul.fa-lock {
+    color: #000;
+}
+.nav.navbar-nav a.onlycursor.ng-bindingul.fa-user {
+    color: #000;
+}
+.nav.navbar-nav a.onlycursor.ng-bindingul.fa-lock:hover {
+    color: #000;
 }

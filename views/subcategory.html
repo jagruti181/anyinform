@@ -12,14 +12,15 @@
     <div class="row" style="height:10px;">
     </div>
     
-    
+     <div class="cat">
     <div class="row" ng-repeat="subc in subcat">
     
-    <div class="col-md-5" ng-repeat="cat in subc">
-    
+    <div class="col-md-6" ng-repeat="cat in subc">
+   
     <div class="sub-cat">
         <a ng-click="waytoin(cat.id)"><i class="fa fa-caret-right"></i><span class="subcate-text"> {{cat.name}}</span></a>
 
+    </div>
     </div>
     
 <!--
