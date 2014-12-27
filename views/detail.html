@@ -47,7 +47,7 @@
                 <div class="col-md-5">
 
                         <div class="pull-right">
-                           <map id="map_canvas" class="map_canvas"glat="19.072408199999998" glang="72.9000167" width="300" height="250"></map>
+                           <map id="map_canvas" class="map_canvas"glat="{{detail.listing.lat}}" glang="{{detail.listing.long}}" width="300" height="250"></map>
                             <br>
                             <div class="social-btn">
                                 <span class='st_facebook_hcount' displayText='Facebook'></span>
@@ -136,6 +136,7 @@
                         </div>
                     </div>
                     <div class="video-you">
+                    {{detail.listing.video}}
                     <iframe width="84%" height="315" src="//www.youtube.com/embed/{{detail.listing.video}}">
                     </iframe>
                     </div>
