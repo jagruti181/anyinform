@@ -79,10 +79,10 @@
   </div>
  
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+<!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
 <!--    <span class="glyphicon glyphicon-chevron-left"></span>-->
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+<!--  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
 <!--    <span class="glyphicon glyphicon-chevron-right"></span>-->
   </a>
 </div>
@@ -122,8 +122,9 @@
                <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
                     <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
                 </select>
-                
-                <i class="fa fa-map-marker fapadr"></i><span class="fapadr">{{area}}</span>
+                <span class="city-search">
+                <i class="fa fa-map-marker fapadr"><span class="city-pad">{{area}}</span></i>
+                </span>
                 
 <!--
                 <select class="city onlycursor" ng-model="form.area">
@@ -197,10 +198,10 @@
   </div>
  
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+<!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
 <!--    <span class="glyphicon glyphicon-chevron-left"></span>-->
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+<!--  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
 <!--    <span class="glyphicon glyphicon-chevron-right"></span>-->
   </a>
 </div>

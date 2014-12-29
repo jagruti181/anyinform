@@ -418,13 +418,15 @@ nav#main_menu li a,
 .searchslider {
 /*    position: absolute;*/
     
-background: rgba(183, 187, 207, 0.78);
+/* background: rgba(183, 187, 207, 0.78); */
     /* height: 11%; */
 /*    margin-top: 2%;*/
 /*    width: 51%;*/
 /*    margin-left: 17%;*/
     z-index: 1;
-    box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.8);
+    
+/* box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.8); */
+border: 1px solid #049fb3;
 }
 ul li {
     list-style: none;
@@ -498,6 +500,7 @@ a#scrollUp i {
     border-radius: 0px;
     padding-left: 14px;
     margin-left: 10px;
+    border: 1px solid #049fb3;
 }
 .contactinfo ul li a:hover {
     background: inherit;
@@ -590,7 +593,7 @@ a#scrollUp i {
     padding-right: 0;
 }
 .shop-menu ul li a {
-    background: rgba(5, 5, 5, 0.59);
+    background: #049fb3;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -598,13 +601,15 @@ a#scrollUp i {
     padding: 6px 13px 7px 9px;
     /* padding-right: 0; */
     margin-top: 10px;
+    border: 1px solid rgba(118, 111, 111, 0.12);
 }
 .shop-menu ul li a i {
     margin-right: 3px;
 }
 .shop-menu ul li a:hover {
-    color: #022977;
+    color: #049fb3;
     background: #fff;
+    border: 1px solid #049fb3;
 }
 .header-bottom {
     padding-bottom: 30px;
@@ -1771,7 +1776,7 @@ h2.title {
 }
 .productinfo .fa-3x:hover {
     border-bottom: 0px solid #026177;
-    box-shadow: 3px 3px 5px 1px #aaa;
+    /* box-shadow: 3px 3px 5px 1px #aaa; */
     /* border-top: 5px solid #E26C0B; */
 }
 .productinfo .fa-3x {
@@ -1958,13 +1963,17 @@ a.btn.btn-primary.mrr {
   
     padding: 12px;
     width: 104px;
-    text-align: center;
-    text-transform: uppercase;
+    /* text-align: center; */
+    /* text-transform: uppercase; */
     padding: 0px 4px;
-    box-shadow: 0 4px #026177;  
-    -webkit-box-shadow: 0 4px #026177;  
+    /* box-shadow: 0 4px #026177; */  
+    /* -webkit-box-shadow: 0 4px #026177; */  
     -moz-box-shadow: 0 4px #026177;  
     -o-box-shadow: 0 4px #026177; 
+    font-size: 2em;  -webkit-transition: all 0.5s ease;  padding: 15px;  background: #049fb3;  color: white;  
+    border-radius: 0px;  border-bottom: 5px solid #026177;  
+    height: 38px;  
+    /* width: 65px; */  text-align: center;
 }
 .signup-form button:hover{
 
@@ -2064,10 +2073,10 @@ background-color: none;
 border-color: none;
 }
 ul.nav.navbar-nav .fa-user {
-    color: #049fb3;
+    /* color: #FFFFFF; */
 }
 ul.nav.navbar-nav .fa-lock {
-    color: #049fb3;
+    /* color: #FFFFFF; */
 }
 .single-widget p {
     margin: 23px auto;
@@ -2154,6 +2163,7 @@ border-radius: 0px ;
 padding-left: 14px;
 margin-left: 10px;
     border-color:#049fb3;
+border: 1px solid #049fb3;
 }
 option.onlycursor {
     background: #fff;
@@ -2246,25 +2256,29 @@ margin-right: 8px;
     margin: 20px auto;
 }
 .login-form button{
-border-radius: 0px;
+/* border-radius: 0px; */
 padding: 12px;
-width: 118px;
+/* width: 118px; */
 /* text-align: center; */
-text-transform: uppercase;
+/* text-transform: uppercase; */
 padding: 0px 4px;
-box-shadow: 0 4px #026177;
--webkit-box-shadow: 0 4px #026177;
+/* box-shadow: 0 4px #026177; */
+/* -webkit-box-shadow: 0 4px #026177; */
 -moz-box-shadow: 0 4px #026177;
 -o-box-shadow: 0 4px #026177;
 margin: 7px 140px;
-background: #049fb3;
-color: #fff;
+/* background: #049fb3; */
+/* color: #fff; */
 /* padding-bottom: 10px; */
-margin-bottom: 20px;
+/* margin-bottom: 20px; */
+font-size: 2em;  -webkit-transition: all 0.5s ease;  padding: 15px;  background: #049fb3;  color: white;  
+border-radius: 0px;  border-bottom: 5px solid #026177;  
+height: 42px;  
+width: 100px;  text-align: center;
 }
 .login-form button:hover{
 border-bottom: 0px solid #026177;
-box-shadow: 3px 3px 5px 1px #aaa;
+/* box-shadow: 3px 3px 5px 1px #aaa; */
 }
 .or:hover {
 background: #fff;
@@ -2417,4 +2431,20 @@ ol.carousel-indicators {
 }
 .nav.navbar-nav a.onlycursor.ng-bindingul.fa-lock:hover {
     color: #000;
+}
+span.city-serach {
+    border: 1px solid #049fb3;
+    padding: 6px 4px 6px 7px;
+}
+.symbol i.fa.fa-phone {
+    padding-right: 8px;
+}
+span.city-pad {
+    padding-left: 7px;
+    font-family: open sans;
+    font-size: 15px;
+}
+.city-search i.fa.fa-map-marker.fapadr {
+    border: 1px solid;
+    padding: 7px 8px;
 }
