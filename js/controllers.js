@@ -16,7 +16,7 @@ phonecatControllers.controller('home',
         TemplateService.content = "views/content.html";
         TemplateService.footer = "views/footer.html";
         TemplateService.footerbottom = "views/footerbottom.html";
-        $scope.demo = "demo";
+        $scope.demo = "demo testing";
         $scope.searchshow = false;
         $scope.searchid = "";
         $scope.form = [];
@@ -531,8 +531,24 @@ phonecatControllers.controller('profile',
         RestService.authenticate().success(getuser);
     
         // get user profile stored data
-        $scope.saveprofile = function (profile) {
+    
+    $scope.signupmsg="";
+    
+        var profilesuccess = function (data, status) {
             
+            console.log(data);
+            if(data=="1")
+            {
+                $scope.profilemsg="Profile Updated";
+            }
+            
+        };
+    
+        $scope.saveprofile = function (profile) {
+            console.log("user in save profile");
+            console.log(profile);
+//            console.log($scope.profile);
+//            console.log(profile);
              //profile validation
             $scope.allvalidation1 = [{
                 field: $scope.profile.email,
@@ -543,7 +559,7 @@ phonecatControllers.controller('profile',
 
             if (check) {
                 console.log("yahooo...checked");
-//                RestService.
+                RestService.saveprofile(profile).success(profilesuccess);
                 
             } else {
                 console.log("not ckeck");

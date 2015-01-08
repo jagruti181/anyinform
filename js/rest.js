@@ -91,6 +91,26 @@ var restservice = angular.module('restservice', [])
                       'user':list.user}
             });
         },
+        saveprofile: function(profile){
+            return $http({
+                url: adminurl+"saveprofile",
+                method: "POST",
+               data: {'id':profile.id,
+                      'firstname':profile.firstname,
+                      'lastname':profile.lastname,
+                      'email':profile.email,
+                      'contact':profile.contact,
+                      'dob':profile.dob,
+                      'website':profile.website,
+                      'address':profile.address,
+                      'city':profile.city,
+                      'pincode':profile.pincode,
+                      'state':profile.state,
+                      'country':profile.country,
+                      'google':profile.google,
+                      'facebookuserid':profile.facebookuserid}
+            });
+        },
         authenticate: function(){
             return $http.get(adminurl+"authenticate",{});
         },
