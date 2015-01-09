@@ -630,6 +630,8 @@ phonecatControllers.controller('login',
             if (data == "false") {
                 $scope.signupmsgg = true;
                 $scope.signupmsg = "Already Exist. Choose Another Email Address";
+            }else{
+                $scope.signupmsg = "Registered Succeaafully...Login for Signin";
             }
         };
         $scope.signupuser = function (signup) {
