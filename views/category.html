@@ -54,14 +54,17 @@
 							<img class="media-object mediumimage" src="{{list.logo|imagepath}}" alt="">
 						</a>
 						<div class="media-body">
-                            <h4 class="media-heading onlycursor" ng-click="linkclick(list.listing)"><i class="fa fa-thumbs-up"></i>&nbsp;{{list.name}}</h4>
-                            <p><i class="fa fa-map-marker"></i>&nbsp;{{list.address}}</p>
-                            <p><i class="fa fa-phone"></i>&nbsp;{{list.contactno}}</p>
+                            <h4 class="media-heading onlycursor" ng-click="linkclick(list.listing)"><i class="fa fa-bookmark"></i><span>{{list.name}}</span></h4>
+                            <p><i class="fa fa-location-arrow"></i><span class="med1">{{list.address}}</p>
+                            <p><i class="fa fa-mobile"></i><span class="med2">{{list.contactno}}</p>
 							<div class="social-icons pull-laft">
 							<div class="cat-btn">
                             <p class="pull-left">
                                 <a class="btn btn-primary mrr" href="">Send SMS</a>
                                 <a class="btn btn-primary mrr" ng-click="sendemail(list.listing)">Send Email</a>
+                                <a class="btn btn-primary mrr" >Send Email</a>
+                                
+
 <!--                                <a class="btn btn-primary mrr" href="">Other Posts</a>-->
                             </p>
                             </div>
@@ -83,6 +86,7 @@
 			</div>
 		</div>
 	</section>
+	
 	
 <script>
     

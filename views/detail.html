@@ -19,12 +19,12 @@
                     </div>
                     <div class="col-md-4">
                         <div class="media-body">
-                            <h4 class="media-heading"><i class="fa fa-thumbs-up fapadr"></i>{{detail.listing.name}}</h4>
-                            <p><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
-                            <p><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
-                            <p>
-                                <i class="fa fa-at fapadr"></i><A HREF="#enq">Send Enquiry By Email</A>
-                            </p>
+                            <h4 class="media-heading"><i class="fa fa-bookmark fapadr"></i><span>{{detail.listing.name}}</span></h4>
+                            <h6><i class="fa fa-location-arrow fapadr"></i><span class="med1">{{detail.listing.address}}</span></h6>
+                            <h6><i class="fa fa-mobile fapadr"></i><span class="med2">{{detail.listing.contactno}}</span></h6>
+                            <h6>
+                                <i class="fa fa-envelope fapadr"></i><a href="#enq"><span class="med3">Send Enquiry By Email</span></a>
+                            </h6>
                         </div>
 
                         <div class="btn-mail">
@@ -71,6 +71,19 @@
 
         </div>
     </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+		<div class="image-row">
+				
+				<a class="example-image-link" href="img/demopage/image-2.jpg" data-lightbox="example-2" data-title="Optional caption."><img class="example-image" src="img/demopage/image-2.jpg" alt="image-1"/></a>
+			</div>
+            </div>
+
+        </div>
+        
+    </div>
     <div class="container">
         <div class="details-content">
             <div class="row">
@@ -78,8 +91,8 @@
                     <div class="more-text">
                         <h2 class="title text-center">More Information</h2>
                         <p class="fapadl"><i class="fa fa-info-circle fapadr"></i>{{detail.listing.description}}</p>
-                        <p class="fapadl"><i class="fa fa-map-marker fapadr"></i>&nbsp;{{detail.listing.address}}</p>
-                        <p class="fapadl"><i class="fa fa-phone fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
+                        <p class="fapadl"><i class="fa fa-location-arrow fapadr"></i>&nbsp;{{detail.listing.address}}</p>
+                        <p class="fapadl"><i class="fa fa-mobile fapadr"></i>&nbsp;{{detail.listing.contactno}}</p>
                     </div>
                     <div class="more-text">
                         <h2 class="title text-center">Other categories</h2>

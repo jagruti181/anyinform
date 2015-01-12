@@ -110,7 +110,7 @@ width: 163px;
     text-transform: capitalize;
 }
 .fapadr {
-    padding-right: 13px;
+    padding-right: 15px;
     text-transform: capitalize;
     font-size: 17px;
     color: #049fb3;
@@ -1027,7 +1027,7 @@ h2.title:after {
 h2.title:before {
     content: " ";
     position: absolute;
-    background: #049fb3;
+    background: #FFFFFF;
     bottom: -6px;
     width: 220px;
     height: 30px;
@@ -1036,6 +1036,7 @@ h2.title:before {
     margin-left: -110px;
     /* color: #fff; */
     /* padding: 8px; */
+    border: 1px solid #049fb3;
 }
 .category-products .panel {
     background-color: #FFFFFF;
@@ -1155,11 +1156,11 @@ h2.title:before {
     overflow: hidden;
 }
 h2.title {
-    color: #FFFFFF;
+    color: #049fb3;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     /* font-weight: 700; */
-    margin: 0 15px;
+    /* margin: 0 15px; */
     text-transform: uppercase;
     margin-bottom: 30px;
     position: relative;
@@ -1997,7 +1998,7 @@ margin: 0 0 13px;
 }
 .more-text {
     /* padding: 17px 0px; */
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .more-text p {
@@ -2321,16 +2322,16 @@ padding: 0px 7px 0px 11px;
 .home-invites {
     background: #049FB3;
     border: 1px solid #049fb3;
-    width: 281px;
+    width: 236px;
     border-radius: 30px;
     position: relative;
     left: 50%;
-    margin-left: -143px;
+    margin-left: -118px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 .home-invites p {
-    font-size: 15px;
+    font-size: 13px;
     color: #ffffff;
     text-transform: uppercase;
     /* font-weight: 600; */
@@ -2350,13 +2351,13 @@ padding: 0px 7px 0px 11px;
     border-radius: 50px;
     padding: 7px 7px;
     color: #026177;
-    margin-left: -7px;
+    margin-left: -2px;
     margin-right: 15px;
     font-size: 20px;
     position: relative;
     top: 4px;
 }
-.home-invites i.fa.fa-twitter {
+.home-invites i.fa.fa-google-plus {
     background: white;
     height: 30px;
     width: 30px;
@@ -2365,7 +2366,7 @@ padding: 0px 7px 0px 11px;
     border-radius: 50px;
     padding: 7px 7px;
     color: #026177;
-    margin-left: -20px;
+    margin-left: -13px;
     margin-right: 15px;
     font-size: 20px;
     position: relative;
@@ -2447,4 +2448,61 @@ span.city-pad {
 .city-search i.fa.fa-map-marker.fapadr {
     border: 1px solid;
     padding: 7px 8px;
+}
+.media-body i.fa.fa-location-arrow.fapadr {
+    font-size: 17px;
+}
+
+.media-body i.fa.fa-mobile.fapadr {
+    font-size: 23px;
+    vertical-align: middle;
+}
+
+.media-body i.fa.fa-envelope.fapadr {
+    font-size: 14px;
+    padding-right: 9px;
+}
+span.med1.ng-binding {
+    font-size: 14px;
+    padding-left: 0px;
+    text-indent: -1px !important;
+    /* display: block; */  margin-before: 1em;  margin-after: 1em;  margin-start: 0;  margin-end: 0;
+    position: relative;
+    top: -2px;
+    left: 2px;
+}
+
+span.med2.ng-binding {
+    font-size: 13px;
+    padding-left: 4px;
+}
+
+span.med3 {
+    font-size: 13px;
+    padding-right: -12px;
+}
+.more-text i.fa.fa-location-arrow.fapadr {
+    padding-right: 12px;
+}
+
+.more-text i.fa.fa-mobile.fapadr {
+    font-size: 23px;
+}
+
+
+
+
+.media-body i.fa.fa-bookmark {
+    padding-right: 12px;
+}
+
+.media-body i.fa-location-arrow {
+    font-size: 17px;
+    padding-right: 9px;
+}
+
+.media-body .fa-mobile {
+    font-size: 24px;
+    vertical-align: middle;
+    padding-right: 10px;
 }

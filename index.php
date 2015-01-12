@@ -23,6 +23,7 @@
     <link href="lib/css/responsive.css" rel="stylesheet">
     <link href="lib/css/ng-tags-input.bootstrap.min.css" rel="stylesheet">
     <link href="lib/css/ng-tags-input.min.css" rel="stylesheet">
+ 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <script src="lib/js/respond.min.js"></script>
@@ -34,6 +35,8 @@
     <link rel="apple-touch-icon-precomposed" href="lib/images/ico/apple-touch-icon-57-precomposed.png">
 
     <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/lightbox.js"></script>
+    
     <script src="lib/js/jquery-1.8.2.min.js"></script>
     <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/js/jquery.scrollUp.min.js"></script>
@@ -42,6 +45,9 @@
     <script src="lib/js/main.js"></script>
     <script src="lib/js/angular.js"></script>
     <script src="lib/js/ng-tags-input.min.js"></script>
+<!--    <script src="lib/js/miniPopup.js"></script>-->
+    
+    
 <!--    <script src="https://maps.googleapis.com/maps/api/js"></script>-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -64,6 +70,8 @@
 
     <script src="lib/js/angularimage/angular-file-upload-shim.js"></script>
     <script src="lib/js/angularimage/angular-file-upload.js"></script>
+    <script src="lib/js/lightbox.js"></script>
+    
 
 
 

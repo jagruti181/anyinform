@@ -9,6 +9,8 @@
 							
 							<input type="email" ng-model="login.email" class="form-control" ng-class="allvalidation1[0].validation" required placeholder="Email Address * " />
 							<input type="password" ng-model="login.password" class="form-control" ng-class="allvalidation1[1].validation" required placeholder="Password *"/>
+							
+							<button class="btn form-control" ng-click="userlogin(login)">Login</button>
 							 <div class="home-invites text-center">
     
                                     <a href="#">
@@ -18,7 +20,7 @@
                 <div class="home-invites text-center">
     
                                     <a href="#">
-                                        <p> <i class="fa fa-twitter"></i> SIGN IN WITH TWITTER</p>
+                                        <p> <i class="fa fa-google-plus"></i> SIGN IN WITH GOOGLE</p>
                                     </a>
                                 </div>
 <!--
@@ -27,7 +29,7 @@
 								Keep me signed in
 							</span>
 -->
-							<button class="btn form-control" ng-click="userlogin(login)">Login</button>
+							
 					</div><!--/login form-->
 				</div>
 				<div class="col-md-2">
@@ -44,6 +46,8 @@
 							<input type="password" ng-model="signup.password" class="form-control" ng-class="allvalidation[4].validation" required placeholder="Password *"/>
 							<input type="password" ng-model="signup.cpassword" class="form-control" ng-class="allvalidation[5].validation" required placeholder="Confirm Password *"/>
 							     
+                                  <button class="btn  form-control" ng-click="signupuser(signup)">Signup</button>
+                                  
                                    <div class="home-invites text-center">
     
                                     <a href="#">
@@ -53,10 +57,10 @@
                 <div class="home-invites text-center">
     
                                     <a href="#">
-                                        <p> <i class="fa fa-twitter"></i> SIGN IN WITH TWITTER</p>
+                                        <p> <i class="fa fa-google-plus"></i> SIGN IN WITH GOOGLE</p>
                                     </a>
                                 </div>
-							<button class="btn  form-control" ng-click="signupuser(signup)">Signup</button>
+							
 					</div><!--/sign up form-->
 				</div>
 				</div>
