@@ -23,6 +23,9 @@
     <link href="lib/css/responsive.css" rel="stylesheet">
     <link href="lib/css/ng-tags-input.bootstrap.min.css" rel="stylesheet">
     <link href="lib/css/ng-tags-input.min.css" rel="stylesheet">
+    <link href="lib/css/ngDialog.css" rel="stylesheet">
+    <link href="lib/css/ngDialog-theme-default.css" rel="stylesheet">
+    <link href="lib/css/ngDialog-theme-plain.css" rel="stylesheet">
  
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -45,7 +48,12 @@
     <script src="lib/js/main.js"></script>
     <script src="lib/js/angular.js"></script>
     <script src="lib/js/ng-tags-input.min.js"></script>
+    <script src="lib/js/ngDialog.js"></script>
+    <script src="lib/js/demo2.js"></script>
+    
 <!--    <script src="lib/js/miniPopup.js"></script>-->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+   
     
     
 <!--    <script src="https://maps.googleapis.com/maps/api/js"></script>-->

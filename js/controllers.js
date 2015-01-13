@@ -3,7 +3,7 @@ var long = 0;
 var city = '';
 var area = '';
 var pat = '\home';
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput', 'ngDialog']);
 
 window.uploadUrl = 'upload.php';
 
@@ -23,18 +23,18 @@ phonecatControllers.controller('home',
         $scope.city = '';
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
-        
+
         // set banner
         var bannersuccess = function (data, status) {
             console.log(data);
-            $scope.banner=data.banner;
+            $scope.banner = data.banner;
             console.log(RestService.setbanner(data.banner));
-            $location.url('/subcategory/'+data.id);
+            $location.url('/subcategory/' + data.id);
         };
         $scope.oncategoryclick = function (banner) {
             RestService.getcategoryinfo(banner).success(bannersuccess);
         }
-    
+
         //    Start Get all Banners / Adds
         var addsuccess = function (data, status) {
             console.log("my adds");
@@ -58,6 +58,7 @@ phonecatControllers.controller('home',
 
         //  get area from city
         $scope.area = "";
+
         function showPosition2(position) {
             var latlon = position.coords.latitude + "," + position.coords.longitude;
             console.log("Positions:.........");
@@ -75,7 +76,7 @@ phonecatControllers.controller('home',
                         console.log($scope.cityis.selected);
                     }
                     if (data[i].types[0] == "sublocality_level_1") {
-//                        $scope.cityis.selected = data[i].long_name;
+                        //                        $scope.cityis.selected = data[i].long_name;
                         area = data[i].long_name;
                         $scope.area = data[i].long_name;
                         console.log(data[i].long_name);
@@ -147,45 +148,43 @@ phonecatControllers.controller('home',
                 $scope.searchshow = false;
 
             }
-            for(var i=0;i<data.length;i++)
-            {
-                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].area+" ) " + data[i].dist + " KM ";
+            for (var i = 0; i < data.length; i++) {
+                $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
             }
         };
         $scope.searchlist = function (text, city) {
-//            if (!city)
-//                city = 0;
-            
+            //            if (!city)
+            //                city = 0;
+
             city = city;
             console.log("my city");
             console.log(city);
             console.log("my area");
             console.log($scope.area);
-            
+
             // substr()
             text = text.split(' in ');
             console.log("search tet");
-            $scope.searchtext=text[0];
+            $scope.searchtext = text[0];
             console.log("city");
             console.log(text[1]);
-            if(!text[1])
-            {
-                $scope.area=$scope.area;
-            }else{
-                $scope.area=text[1];
+            if (!text[1]) {
+                $scope.area = $scope.area;
+            } else {
+                $scope.area = text[1];
             }
 
             if (text[0] != "") {
-                
-                
-//        $category=$this->input->get_post('categoryname');
-//        $city=$this->input->get_post('cityname');
-//        $area=$this->input->get_post('area');
-//        $lat=$this->input->get_post('lat');
-//        $long=$this->input->get_post('long');
-//        $data['message']=$this->category_model->s
-        
-                
+
+
+                //        $category=$this->input->get_post('categoryname');
+                //        $city=$this->input->get_post('cityname');
+                //        $area=$this->input->get_post('area');
+                //        $lat=$this->input->get_post('lat');
+                //        $long=$this->input->get_post('long');
+                //        $data['message']=$this->category_model->s
+
+
                 RestService.searchcategory($scope.searchtext, city, $scope.area, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
@@ -244,7 +243,7 @@ phonecatControllers.controller('home',
     });
 
 phonecatControllers.controller('category',
-    function ($scope, TemplateService, RestService, $location, $routeParams) {
+    function ($scope, TemplateService, RestService, $location, $routeParams, ngDialog) {
         $scope.template = TemplateService;
         TemplateService.content = "views/category.html";
         TemplateService.slider = false;
@@ -252,15 +251,22 @@ phonecatControllers.controller('category',
 
         $scope.msg = "";
         $scope.msgarea = false;
-    
-    
+
+        $scope.onemailclick = function () {
+            console.log("Demo is wokring");
+            ngDialog.open({
+                template: 'views/emailclick.html',
+            });
+        };
+
+
         var categoryinfosuccess = function (data, status) {
             console.log(data);
-            $scope.banner=data;
+            $scope.banner = data;
             RestService.setbanner(data.banner);
         };
         RestService.getcategoryinfo($routeParams.id).success(categoryinfosuccess);
-    
+
         //    start authen
         $scope.linkclick = function (id) {
             RestService.recentvisit(id);
@@ -270,10 +276,10 @@ phonecatControllers.controller('category',
         //special offers by category id
 
         var getoffers = function (data, status) {
-            
+
             console.log("offers");
             console.log(data);
-            $scope.offers=data;
+            $scope.offers = data;
 
         };
         RestService.getspecialoffersbycategory($routeParams.id).success(getoffers);
@@ -360,19 +366,19 @@ phonecatControllers.controller('subcategory',
         var categoryinfosuccess = function (data, status) {
             console.log("my banner");
             console.log(data);
-            $scope.banner1=data;
+            $scope.banner1 = data;
             RestService.setbanner(data.banner);
         };
         RestService.getcategoryinfo($routeParams.id).success(categoryinfosuccess);
-    
+
         var allcat = function (data, status) {
             console.log(data);
             if (data == "") {
                 $location.url("/category/" + $routeParams.id);
             } else {
-                $scope.subcat = partitionarray(data,2);
+                $scope.subcat = partitionarray(data, 2);
             }
-            console.log(partitionarray(data,3));
+            console.log(partitionarray(data, 3));
 
         };
         RestService.getsubcategory($routeParams.id).success(allcat);
@@ -382,8 +388,8 @@ phonecatControllers.controller('subcategory',
             $location.url("/subcategory/" + id);
 
         }
-        
-        
+
+
         function partitionarray(myarray, number) {
             var arrlength = myarray.length;
             var newarray = [];
@@ -399,12 +405,12 @@ phonecatControllers.controller('subcategory',
         };
 
 
-        
+
 
     });
 
 phonecatControllers.controller('detail',
-    function ($scope, TemplateService, RestService, $location, $routeParams) {
+    function ($scope, TemplateService, RestService, $location, $routeParams, ngDialog) {
         $scope.template = TemplateService;
         TemplateService.content = "views/detail.html";
         TemplateService.slider = false;
@@ -414,24 +420,38 @@ phonecatControllers.controller('detail',
         $scope.enquiry = [];
         $scope.recentvisit = [];
 
-    var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
-    console.log("underscore");
-    console.log(sum);
-    
+        $scope.imagelightbox = function (img) {
+            console.log("Demo is wokring");
+            ngDialog.open({
+                template: '<img src="'+img+'" style="width:100%;height:auto;">',
+                plain: true
+         });
+        };
+
+
+        var sum = _.reduce([1, 2, 3], function (memo, num) {
+            return memo + num;
+        }, 0);
+        console.log("underscore");
+        console.log(sum);
+
+
+
+
         $scope.listid = RestService.getrecentvisit();
         console.log("my recent visits");
         console.log($scope.listid);
-        var getlistingrecent = function (data, status){
+        var getlistingrecent = function (data, status) {
             console.log(data);
             $scope.recentvisit = data;
         };
         RestService.getlistingarray($scope.listid).success(getlistingrecent);
-    
+
         // Get recent visit
         console.log("my recent visit");
-    console.log(RestService.getrecentvisit());
-    
-    
+        console.log(RestService.getrecentvisit());
+
+
         $scope.$on('$viewContentLoaded', function () {
             (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
@@ -442,9 +462,9 @@ phonecatControllers.controller('detail',
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             //Here your view content is fully loaded !!
-            
-            
-            
+
+
+
         });
 
 
@@ -461,11 +481,11 @@ phonecatControllers.controller('detail',
         var enquirysuccess = function (data, status) {
             console.log(data);
             if (data == "1") {
-//                $scope.enquiryshow = true;
+                //                $scope.enquiryshow = true;
                 $scope.enquirymsg = "Enquiry Send successfuly";
 
             } else {
-//                $scope.enquiryshow = true;
+                //                $scope.enquiryshow = true;
                 $scope.enquirymsg = "Sorry, Try again later";
             }
         };
@@ -512,12 +532,12 @@ phonecatControllers.controller('profile',
         TemplateService.content = "views/profile.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
-    
+
         // controller vriables
         $scope.profile = [];
-    
+
         // user authentication
-    
+
         var usersuccess = function (data, status) {
             console.log(data);
             $scope.profile = data;
@@ -529,27 +549,26 @@ phonecatControllers.controller('profile',
             RestService.getuser(data).success(usersuccess);
         }
         RestService.authenticate().success(getuser);
-    
+
         // get user profile stored data
-    
-    $scope.signupmsg="";
-    
+
+        $scope.signupmsg = "";
+
         var profilesuccess = function (data, status) {
-            
+
             console.log(data);
-            if(data=="1")
-            {
-                $scope.profilemsg="Profile Updated";
+            if (data == "1") {
+                $scope.profilemsg = "Profile Updated";
             }
-            
+
         };
-    
+
         $scope.saveprofile = function (profile) {
             console.log("user in save profile");
             console.log(profile);
-//            console.log($scope.profile);
-//            console.log(profile);
-             //profile validation
+            //            console.log($scope.profile);
+            //            console.log(profile);
+            //profile validation
             $scope.allvalidation1 = [{
                 field: $scope.profile.email,
                 validation: ""
@@ -560,11 +579,11 @@ phonecatControllers.controller('profile',
             if (check) {
                 console.log("yahooo...checked");
                 RestService.saveprofile(profile).success(profilesuccess);
-                
+
             } else {
                 console.log("not ckeck");
             }
-            
+
         }
     });
 
@@ -591,7 +610,7 @@ phonecatControllers.controller('login',
         };
 
         $scope.userlogin = function (login) {
-            
+
             //login validation
             $scope.allvalidation1 = [{
                 field: $scope.login.email,
@@ -604,16 +623,16 @@ phonecatControllers.controller('login',
             var check = formvalidation($scope.allvalidation1);
 
             if (check) {
-                
+
                 RestService.login(login.email, login.password).success(loginsuccess);
-                
+
             } else {
                 console.log("not ckeck");
             }
-            
-//            
-//            console.log(login);
-//            RestService.login(login.email, login.password).success(loginsuccess);
+
+            //            
+            //            console.log(login);
+            //            RestService.login(login.email, login.password).success(loginsuccess);
         }
         //    
         //        var getuser = function (data, status){
@@ -630,12 +649,12 @@ phonecatControllers.controller('login',
             if (data == "false") {
                 $scope.signupmsgg = true;
                 $scope.signupmsg = "Already Exist. Choose Another Email Address";
-            }else{
+            } else {
                 $scope.signupmsg = "Registered Succeaafully...Login for Signin";
             }
         };
         $scope.signupuser = function (signup) {
-            
+
             //signup validation
             $scope.allvalidation = [{
                 field: $scope.signup.firstname,
@@ -660,23 +679,22 @@ phonecatControllers.controller('login',
             var check = formvalidation($scope.allvalidation);
 
             if (check) {
-                if($scope.signup.password===$scope.signup.cpassword)
-                {
+                if ($scope.signup.password === $scope.signup.cpassword) {
                     $scope.signupmsg = "";
                     RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
-                }else{
+                } else {
                     $scope.signupmsg = "Wroung password";
                 }
-                
+
             } else {
                 console.log("not ckeck");
             }
-            
-            
-            
-            
-//            console.log(signup);
-//            RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
+
+
+
+
+            //            console.log(signup);
+            //            RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
         }
 
         //signup
@@ -689,11 +707,11 @@ phonecatControllers.controller('OtherCtrl',
         $scope.template = TemplateService;
         $scope.userdata = [];
         $scope.demo = "demo";
-    
+
         $scope.banner = RestService.getbanner();
-    console.log("my banner//////////////////////////////");
-    console.log(RestService.getbanner());
-    
+        console.log("my banner//////////////////////////////");
+        console.log(RestService.getbanner());
+
         var getuser = function (data, status) {
             $scope.userdata = data;
             console.log("my data");
@@ -715,7 +733,7 @@ phonecatControllers.controller('OtherCtrl',
         $scope.signupprofile = function () {
             if ($scope.signuppro == "Sign Up") {
                 $location.url('/login');
-            }else{
+            } else {
                 $location.url('/profile');
             }
         }
@@ -739,25 +757,25 @@ phonecatControllers.controller('OtherCtrl',
                 $location.url('/login');
             }
         }
-        
+
         // on inner search go button
-        
+
         $scope.innershearch = function () {
             RestService.recentvisit($scope.searchid);
             $location.url("/detail/" + $scope.searchid);
         };
-        
+
         // innersearch in drop click
-        
+
         $scope.totextbox = function (name, id) {
             $("input[name=abc]").val(name);
             $scope.searchid = id;
             $scope.searchshow = false;
         }
-        
+
         // inner header search 
-        
-         var searchsuccess = function (data, status) {
+
+        var searchsuccess = function (data, status) {
             console.log(data);
             if (data != "") {
                 $scope.searchdrop = data;
@@ -766,35 +784,33 @@ phonecatControllers.controller('OtherCtrl',
                 $scope.searchshow = false;
 
             }
-            for(var i=0;i<data.length;i++)
-            {
-                $scope.searchdrop[i].search=data[i].categoryname +" "+data[i].name+" ( "+data[i].area+" ) " + data[i].dist + " KM ";
+            for (var i = 0; i < data.length; i++) {
+                $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
             }
         };
-        
+
         $scope.searchlist = function (text) {
-//            if (!city)
-//                city = 0;
+            //            if (!city)
+            //                city = 0;
             console.log("my city");
             console.log(city);
             console.log("my area");
             console.log(area);
-            
+
             // substr()
             text = text.split(' in ');
             console.log("search tet");
-            $scope.searchtext=text[0];
+            $scope.searchtext = text[0];
             console.log("city");
             console.log(text[1]);
-            if(!text[1])
-            {
-                $scope.area=$scope.area;
-            }else{
-                $scope.area=text[1];
+            if (!text[1]) {
+                $scope.area = $scope.area;
+            } else {
+                $scope.area = text[1];
             }
 
             if (text[0] != "") {
-                
+
                 RestService.searchcategory($scope.searchtext, city, area, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
@@ -933,10 +949,9 @@ phonecatControllers.controller('listbusiness',
         var listingsuccess = function (data, status) {
 
             console.log(data);
-            if(data==1)
-            {
+            if (data == 1) {
                 alert("Listing Saved");
-            }else{
+            } else {
                 alert("ERROR IN SAVING");
             }
 
@@ -945,11 +960,11 @@ phonecatControllers.controller('listbusiness',
 
         $scope.submitlist = function (list) {
             $scope.logo = $(".myiframe").contents().find("body img").attr("src");
-                $scope.logo = $scope.logo.split('/');
-                list.logo = $scope.logo['4'];
-//            $scope.video = $(".myiframe1").contents().find("body img").attr("src");
-//                $scope.video = $scope.video.split('/');
-//                list.video = $scope.video['4'];
+            $scope.logo = $scope.logo.split('/');
+            list.logo = $scope.logo['4'];
+            //            $scope.video = $(".myiframe1").contents().find("body img").attr("src");
+            //                $scope.video = $scope.video.split('/');
+            //                list.video = $scope.video['4'];
 
             $scope.allvalidation = [{
                 field: $scope.list.name,
@@ -996,7 +1011,7 @@ phonecatControllers.controller('listbusiness',
 
             if (check) {
                 list.user = $scope.userdata;
-//                list.logo = "default.jpg";
+                //                list.logo = "default.jpg";
                 list.city = list.city.split(",");
                 list.city = list.city['0'];
                 console.log(list);

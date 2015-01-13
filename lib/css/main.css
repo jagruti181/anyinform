@@ -1684,8 +1684,33 @@ h2.title {
     padding: 10px;
     /* width: 310px; */
 }
+.signup-forms h2 {
+    color: #FFFEFD;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    background: #049fb3;
+    text-align: center;
+    padding: 10px;
+    /* width: 310px; */
+}
 .login-form form input,
 .signup-form form input {
+    background: #F0F0E9;
+    border: medium none;
+    color: #696763;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    height: 40px;
+    margin-bottom: 10px;
+    outline: medium none;
+    padding-left: 10px;
+    width: 100%;
+}
+.signup-forms form input {
     background: #F0F0E9;
     border: medium none;
     color: #696763;
@@ -1722,6 +1747,36 @@ h2.title {
     padding: 6px 25px;
     width: 100px;
     height: 36px;
+}
+.signup-forms form button {
+    background: #043eb3;
+    border: medium none;
+    border-radius: 0;
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    padding: 6px 25px;
+    width: 100px;
+    height: 36px;
+}
+.signup-forms .form-control {
+display: block;
+width: 70%;
+height: 40px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+color: #555;
+vertical-align: middle;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 0px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+margin: 19px auto;
 }
 .login-form label {} .login-form label input {
     border: medium none;
@@ -2505,4 +2560,26 @@ span.med3 {
     font-size: 24px;
     vertical-align: middle;
     padding-right: 10px;
+}
+.signup-forms textarea {
+    height: 120px !important;
+}
+
+.signup-forms a.btn.btn-primary.mrr {
+    position: relative;
+    left: 40%;
+}
+
+
+.lightbox {
+    cursor: pointer;
+}
+.image-row {
+    margin-bottom: 35px;
+    border: 1px solid #049fb3;
+    padding: 7px 18px;
+}
+a.btn.enq {
+    position: absolute;
+    right: 251px;
 }
