@@ -21,6 +21,13 @@ phonecatControllers.controller('home',
         $scope.searchid = "";
         $scope.form = [];
         $scope.city = '';
+    
+//        authentication user
+        var getuser = function (data, status) {
+            $scope.myemail = data.email;
+        };
+        RestService.authenticate().success(getuser);
+    
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
 
@@ -707,7 +714,8 @@ phonecatControllers.controller('OtherCtrl',
         $scope.template = TemplateService;
         $scope.userdata = [];
         $scope.demo = "demo";
-
+        $scope.myemail = "";
+        
         $scope.banner = RestService.getbanner();
         console.log("my banner//////////////////////////////");
         console.log(RestService.getbanner());
@@ -715,13 +723,16 @@ phonecatControllers.controller('OtherCtrl',
         var getuser = function (data, status) {
             $scope.userdata = data;
             console.log("my data");
-            console.log(data);
+            console.log(data.email);
+            
+            console.log($scope.myemail);
             if (data == "false") {
                 $scope.signuppro = "Sign Up";
                 $scope.loginlogout = "Login";
             } else {
                 $scope.signuppro = "My Profile";
                 $scope.loginlogout = "Logout";
+                $scope.myemail = "Welcome ,  "+data.email;
             }
         };
         RestService.authenticate().success(getuser);
