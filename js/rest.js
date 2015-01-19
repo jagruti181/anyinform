@@ -27,6 +27,12 @@ var restservice = angular.module('restservice', [])
             }
         $.jStorage.set('recent',recent);
         },
+        setjuser: function(data){
+            $.jStorage.set('user',data);
+        },
+        getjuser: function(data){
+            return $.jStorage.get('user');
+        },
         getrecentvisit: function(){
             return $.jStorage.get('recent');
         },
@@ -37,6 +43,7 @@ var restservice = angular.module('restservice', [])
             return $http.get(adminurl+"getsubcategory?id="+id,{});
         },
         logout: function(){
+            $.jStorage.flush();
             return $http.get(adminurl+"logout",{});
         },
         getbanner: function(){

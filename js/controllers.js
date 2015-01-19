@@ -635,6 +635,7 @@ phonecatControllers.controller('login',
             if (data != "false") {
                 $location.url("/home");
                 $scope.loginlogout = "Logout";
+                RestService.setjuser(data);
             } else {
                 $scope.msg = "Invalid Username Or Password";
             }
@@ -760,12 +761,27 @@ phonecatControllers.controller('OtherCtrl',
                 $scope.myemail = "Welcome ,  "+data.email;
             }
         };
-        RestService.authenticate().success(getuser);
+//        RestService.authenticate().success(getuser);
         var linloutsuccess = function (data, status) {
             console.log(data);
             $location.url('/home');
         };
 
+    
+//        jstorage get
+        console.log("5555555555555555555555555555555555555555555555555555");
+        $scope.juser=RestService.getjuser();
+        if($scope.juser==null)    
+        {
+             $scope.signuppro = "Sign Up";
+            $scope.loginlogout = "Login";
+        }else{
+            $scope.signuppro = "My Profile";
+            $scope.loginlogout = "Logout";
+            $scope.myemail = "Welcome ,  "+$scope.juser.email;
+        }
+    
+    
         $scope.signupprofile = function () {
             if ($scope.signuppro == "Sign Up") {
                 $location.url('/login');
