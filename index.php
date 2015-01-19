@@ -52,6 +52,7 @@
     <script src="lib/js/demo2.js"></script>
     
 <!--    <script src="lib/js/miniPopup.js"></script>-->
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
    
     
@@ -63,10 +64,15 @@
     <script src="lib/js/angular-ui-router.min.js"></script>
     <script src="lib/js/ui-utils.min.js"></script>
     <script src="lib/js/ui-bootstrap-tpls-0.11.0.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!--    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
     <script src="lib/js/jstorage.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    
     <script src="lib/js/underscore-min.js"></script>
+    
+    
+<!--    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>-->
+<!--	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>-->
+	<script src="lib/js/angular-google-maps.js"></script>
 
     <!--       <script src="lib/js/angular-treeview.js"></script>-->
 

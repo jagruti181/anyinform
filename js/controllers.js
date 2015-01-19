@@ -3,7 +3,7 @@ var long = 0;
 var city = '';
 var area = '';
 var pat = '\home';
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput', 'ngDialog']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput', 'ngDialog', 'google-maps']);
 
 window.uploadUrl = 'upload.php';
 
@@ -426,7 +426,21 @@ phonecatControllers.controller('detail',
         $scope.enquiryshow = false;
         $scope.enquiry = [];
         $scope.recentvisit = [];
-
+        
+        angular.extend($scope, {
+			centerProperty: {
+				lat: 45,
+				lng: -73
+			},
+			zoomProperty: 8,
+			markersProperty: [ {
+					latitude: 45,
+					longitude: -74
+				}],
+			clickedLatitudeProperty: null,	
+			clickedLongitudeProperty: null,
+		});
+        
         $scope.imagelightbox = function (img) {
             console.log("Demo is wokring");
             ngDialog.open({
@@ -474,11 +488,21 @@ phonecatControllers.controller('detail',
 
         });
 
-
         //get detail listing
         var getdetail = function (data, status) {
             console.log(data);
             $scope.detail = data;
+            angular.extend($scope, {
+			centerProperty: {
+				lat: 19.0734787,
+				lng: 72.8972996
+			},
+			zoomProperty: 8,
+			markersProperty: [{
+					latitude: 19.0734787,
+					longitude: 72.8972996
+				}]
+		});
         };
         RestService.getonelistingbyid($routeParams.id).success(getdetail);
 
@@ -606,6 +630,7 @@ phonecatControllers.controller('login',
         $scope.signup = [];
 
         var loginsuccess = function (data, status) {
+            console.log("after login");
             console.log(data);
             if (data != "false") {
                 $location.url("/home");

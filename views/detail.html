@@ -45,9 +45,22 @@
 							</div> -->
 
                 <div class="col-md-5">
+                        
 
                         <div class="pull-right">
-                           <map id="map_canvas" class="map_canvas"glat="{{detail.listing.lat}}" glang="{{detail.listing.long}}" width="300" height="250"></map>
+<!--                           <map id="map_canvas" class="map_canvas"glat="{{detail.listing.lat}}" glang="{{detail.listing.long}}" width="300" height="250"></map>-->
+                           <google-map
+                                center="centerProperty"
+                                zoom="zoomProperty" 
+                                markers="markersProperty"
+                                latitude="clickedLatitudeProperty"
+                                longitude="clickedLongitudeProperty"
+                                mark-click="false"
+                                draggable="true"
+                                style="height: 350px; width: 100%;">
+                            </google-map>
+                           
+                           
                             <br>
                             <div class="social-btn">
                                 <span class='st_facebook_hcount' displayText='Facebook'></span>

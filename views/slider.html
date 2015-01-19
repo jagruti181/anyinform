@@ -1,37 +1,6 @@
 <section id="slider">
     <!--slider-->
     <div class="container">
-        <!-- <div class="row searchslider">
-            <form class="searchform searchformtext">
-               
-               <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
-                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
-                </select>
-                
-                <select class="city onlycursor" ng-model="form.area">
-                   <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" value="">Select Area</option>
-                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
-                </select>
-               
-                <span style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
-                <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">
-                    <option ng-repeat="city in cities" value="{{city.name}}">{{city.name}}</option>
-                </select>
-                <span style="color:white;padding-left: 142px;" id="area" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
-                <select class="btn btn-default mrt30 area hidediv" id="areadrop" ng-model="area">
-                    <option ng-repeat="are in area" value="{{are.name}}">{{are.name}}</option>
-                </select>
-                
-                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search)" style="width: 90%;" />
-                <input type="hidden" name="searchid" ng-model="categoryid">
-                {{categoryid}}
-                <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
-                </button>
-                <div id="divsearch" class="searchdrop" ng-show="searchshow">
-                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.name,sea.id)">{{sea.name}}</p>
-                </div>
-            </form>
-        </div> -->
         <div class="row">
             <div class="col-sm-12">
 
@@ -77,40 +46,12 @@
       </div>
     </div>
   </div>
- 
-  <!-- Controls -->
-<!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
-<!--    <span class="glyphicon glyphicon-chevron-left"></span>-->
   </a>
-<!--  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
-<!--    <span class="glyphicon glyphicon-chevron-right"></span>-->
   </a>
 </div>
             
             
-            
-
-<!--
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                 
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                         Wrapper for slides 
-                        <div class="carousel-inner" role="listbox">
-                            
-                        <div class="item active items" ng-repeat="one in positionone">
-                            <img src="{{one.image|imagepath}}" width="200"/>
-                        </div>
-
-             
-                    
-                </div>
-                </div>
--->
+           
             </div>
 
 
@@ -125,22 +66,6 @@
                 <span class="city-search">
                 <i class="fa fa-map-marker fapadr"><span class="city-pad">{{area}}</span></i>
                 </span>
-                
-<!--
-                <select class="city onlycursor" ng-model="form.area">
-                   <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" value="0">Select Area</option>
-                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="area in areas" value="{{area.id}}">{{area.name}} </option>
-                </select>
--->
-               
-                <!-- <span style="color:white;" id="location" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
-                <select class="btn btn-default mrt30 city hidediv" id="locationdrop" ng-model="city">
-                    <option ng-repeat="city in cities" value="{{city.name}}">{{city.name}}</option>
-                </select>
-                <span style="color:white;padding-left: 142px;" id="area" class="showdiv tofirstup">Location <i class="fa fa-chevron-down"></i></span>
-                <select class="btn btn-default mrt30 area hidediv" id="areadrop" ng-model="area">
-                    <option ng-repeat="are in area" value="{{are.name}}">{{are.name}}</option>
-                </select> -->
                 
                 <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search,form.cityy)" style="width: 90%;" />
                 <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->

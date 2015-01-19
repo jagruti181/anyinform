@@ -2583,3 +2583,6 @@ a.btn.enq {
     position: absolute;
     right: 251px;
 }
+.angular-google-map {
+			display: block;
+		}
