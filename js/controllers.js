@@ -788,6 +788,7 @@ phonecatControllers.controller('OtherCtrl',
         $scope.loginfunction = function () {
             if ($scope.loginlogout == "Logout") {
                 $scope.loginlogout = "Login";
+                $scope.myemail = "";
                 RestService.logout().success(linloutsuccess);
             } else {
                 $location.url('/login');
