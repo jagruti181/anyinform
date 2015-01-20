@@ -465,9 +465,9 @@ phonecatControllers.controller('detail',
         
         $scope.imagelightbox = function (img) {
             console.log("Demo is wokring immmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
-            console.log(img|imagepath);
+//            console.log(img|imagepath);
             ngDialog.open({
-                template: '<img src="'+img|imagepath+'" style="width:100%;height:auto;">',
+                template: '<img src="http://mafiawarloots.com/foranyinformation/uploads/'+img+'" style="width:100%;height:auto;">',
                 plain: true
          });
         };
