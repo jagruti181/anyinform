@@ -29,7 +29,7 @@ phonecatControllers.controller('home',
         if($scope.juser!=null)    
         {
             
-            $scope.myemail = data.email;
+            $scope.myemail = $scope.juser.email;
                 
             
         }
