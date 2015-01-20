@@ -464,9 +464,10 @@ phonecatControllers.controller('detail',
 		});
         
         $scope.imagelightbox = function (img) {
-            console.log("Demo is wokring");
+            console.log("Demo is wokring immmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+            console.log(img|imagepath);
             ngDialog.open({
-                template: '<img src="'+img+'" style="width:100%;height:auto;">',
+                template: '<img src="'+img|imagepath+'" style="width:100%;height:auto;">',
                 plain: true
          });
         };
