@@ -44,23 +44,15 @@
 							    </ul>
 							</div> -->
 
-                <div class="col-md-5">
-                        
+                    <div class="col-md-5">
+
 
                         <div class="pull-right">
-<!--                           <map id="map_canvas" class="map_canvas"glat="{{detail.listing.lat}}" glang="{{detail.listing.long}}" width="300" height="250"></map>-->
-                           <google-map
-                                center="centerProperty"
-                                zoom="zoomProperty" 
-                                markers="markersProperty"
-                                latitude="clickedLatitudeProperty"
-                                longitude="clickedLongitudeProperty"
-                                mark-click="false"
-                                draggable="true"
-                                style="height: 350px; width: 100%;">
+                            <!--                           <map id="map_canvas" class="map_canvas"glat="{{detail.listing.lat}}" glang="{{detail.listing.long}}" width="300" height="250"></map>-->
+                            <google-map center="centerProperty" zoom="zoomProperty" markers="markersProperty" latitude="clickedLatitudeProperty" longitude="clickedLongitudeProperty" mark-click="false" draggable="true" style="height: 350px; width: 100%;">
                             </google-map>
-                           
-                           
+
+
                             <br>
                             <div class="social-btn">
                                 <span class='st_facebook_hcount' displayText='Facebook'></span>
@@ -84,22 +76,21 @@
 
         </div>
     </div>
-    
+
     <div class="container">
         <div class="row">
-           <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
             <div class="col-md-6">
-		<div class="image-row">
-				
-<img src="lib/images/png/slider1.png" class="lightbox" ng-click="imagelightbox('lib/images/png/slider1.png')" height="150px" width="150px"> 
-                    
-			            
-			            
-			</div>
+                <div class="image-row">
+                    <img src="{{img.image|imagepath}}" class="lightbox" ng-click="imagelightbox(img.image|imagepath)" height="150px" width="150px" ng-repeat="img in detail.images">
+
+
+
+                </div>
             </div>
-<div class="col-md-3"></div>
+            <div class="col-md-3"></div>
         </div>
-        
+
     </div>
     <div class="container">
         <div class="details-content">
@@ -130,7 +121,7 @@
                     <div class="more-text">
                         <h2 class="title text-center">Modes Of Payment</h2>
                         <div class="fapd fap">
-                            <i class="fa fa-money"></i><span class="fapadl mhs"  ng-repeat="payment in detail.modeofpayment" >{{payment.modeofpaymentname}}</span>
+                            <i class="fa fa-money"></i><span class="fapadl mhs" ng-repeat="payment in detail.modeofpayment">{{payment.modeofpaymentname}}</span>
                         </div>
                     </div>
                     <A NAME="enq"></A>
@@ -149,33 +140,38 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-<div class="facebook-deatils">
-                    <div class="fb-like-box" data-href="https://www.facebook.com/{{detail.listing.facebook}}" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+                    <div class="facebook-deatils">
+                        <div class="fb-like-box" data-href="https://www.facebook.com/{{detail.listing.facebook}}" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
                     </div>
                     <div class="recent-box">
-                 
+
                         <div class="panel panel-default">
                             <div class="panel-heading">Recently Visited</div>
                             <table class="table">
                                 <tr ng-repeat="recent in recentvisit">
-                                    <td><a href="#/detail/{{recent.id}}"><img src="{{recent.logo|imagepath}}"></a></td>
-                                    <td><a href="#/detail/{{recent.id}}" class="linknot">{{recent.name}}</a></td>
-<!--                                    </a>-->
+                                    <td>
+                                        <a href="#/detail/{{recent.id}}">
+                                            <img src="{{recent.logo|imagepath}}">
+                                        </a>
+                                    </td>
+                                    <td><a href="#/detail/{{recent.id}}" class="linknot">{{recent.name}}</a>
+                                    </td>
+                                    <!--                                    </a>-->
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <div class="video-you">
-                    {{detail.listing.video}}
-                    <iframe width="84%" height="315" src="//www.youtube.com/embed/{{detail.listing.video}}">
-                    </iframe>
+                        {{detail.listing.video}}
+                        <iframe width="84%" height="315" src="//www.youtube.com/embed/{{detail.listing.video}}">
+                        </iframe>
                     </div>
-<!--
+                    <!--
                     <video width="320" height="240" controls>
                       <source src="http://localhost/foranyinformation/uploads/event30414.3gp">
                     </video>
 -->
-                    
+
                 </div>
             </div>
             <!--

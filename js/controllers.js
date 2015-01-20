@@ -3,6 +3,7 @@ var long = 0;
 var city = '';
 var area = '';
 var pat = '\home';
+var cityis = {};
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput', 'ngDialog', 'google-maps']);
 
 window.uploadUrl = 'upload.php';
@@ -23,10 +24,21 @@ phonecatControllers.controller('home',
         $scope.city = '';
     
 //        authentication user
-        var getuser = function (data, status) {
+    
+        $scope.juser=RestService.getjuser();
+        if($scope.juser!=null)    
+        {
+            
             $scope.myemail = data.email;
-        };
-        RestService.authenticate().success(getuser);
+                
+            
+        }
+        
+    
+//        var getuser = function (data, status) {
+//            $scope.myemail = data.email;
+//        };
+//        RestService.authenticate().success(getuser);
     
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
@@ -73,17 +85,17 @@ phonecatControllers.controller('home',
             //$scope.coords = position.coords;
             lat = position.coords.latitude;
             long = position.coords.longitude;
-            $scope.cityis = {};
+            
             $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyDqN3t8_Nb04MF7jTufq-bkEHogZxyeUHY", {}, function (data) {
                 console.log(data);
                 data = data.results[0].address_components;
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].types[0] == "locality") {
-                        $scope.cityis.selected = data[i].long_name;
-                        console.log($scope.cityis.selected);
+                        cityis.selected = data[i].long_name;
+                        console.log(cityis.selected);
                     }
                     if (data[i].types[0] == "sublocality_level_1") {
-                        //                        $scope.cityis.selected = data[i].long_name;
+                        //                        cityis.selected = data[i].long_name;
                         area = data[i].long_name;
                         $scope.area = data[i].long_name;
                         console.log(data[i].long_name);
@@ -93,8 +105,8 @@ phonecatControllers.controller('home',
                 var cities = $scope.cities;
                 for (var i = 0; i < $scope.cities.length; i++) {
 
-                    console.log($scope.cities[i].name == $scope.cityis.selected);
-                    if ($scope.cities[i].name == $scope.cityis.selected) {
+                    console.log($scope.cities[i].name == cityis.selected);
+                    if ($scope.cities[i].name == cityis.selected) {
                         $scope.city = $scope.cities[i].name;
                         citywegot = $scope.cities[i].id;
                     }
@@ -327,16 +339,26 @@ phonecatControllers.controller('category',
 
         //        start authenticating user
 
-        var getuser = function (data, status) {
-            console.log("my data");
-            console.log(data);
-            if (data == "false") {
-                $scope.user = 0;
-            } else {
-                $scope.user = data;
-            }
-        };
-        RestService.authenticate().success(getuser);
+        
+        $scope.juser=RestService.getjuser();
+        if($scope.juser==null)    
+        {
+            $scope.user = 0;
+                
+        }else{
+            $scope.user = $scope.juser.id;
+        }
+        
+//        var getuser = function (data, status) {
+//            console.log("my data");
+//            console.log(data);
+//            if (data == "false") {
+//                $scope.user = 0;
+//            } else {
+//                $scope.user = data;
+//            }
+//        };
+//        RestService.authenticate().success(getuser);
 
         //        end authenticating user
 
@@ -573,13 +595,24 @@ phonecatControllers.controller('profile',
             console.log(data);
             $scope.profile = data;
         };
-        var getuser = function (data, status) {
-            console.log("my data");
-            console.log(data);
-            $scope.user = data;
-            RestService.getuser(data).success(usersuccess);
+    
+    
+        $scope.juser=RestService.getjuser();
+        if($scope.juser!=null)    
+        {
+            
+            $scope.user = $scope.juser.id;
+            RestService.getuser($scope.juser.id).success(usersuccess);
+            
         }
-        RestService.authenticate().success(getuser);
+    
+//        var getuser = function (data, status) {
+//            console.log("my data");
+//            console.log(data);
+//            $scope.user = data;
+//            RestService.getuser(data).success(usersuccess);
+//        }
+//        RestService.authenticate().success(getuser);
 
         // get user profile stored data
 
@@ -671,7 +704,7 @@ phonecatControllers.controller('login',
         //        var getuser = function (data, status){
         //            console.log(data);
         //        };
-        RestService.authenticate().success(getuser);
+//        RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
         $scope.clickme = function () {
@@ -938,15 +971,29 @@ phonecatControllers.controller('listbusiness',
 
         //        start validation for user if not valid go to home page
 
-        var getuser = function (data, status) {
-            console.log(data);
-            if (data == "false") {
-                $location.url("/login");
-            } else {
-                $scope.userdata = data;
-            }
-        };
-        RestService.authenticate().success(getuser);
+        
+        $scope.juser=RestService.getjuser();
+        if($scope.juser!=null)    
+        {
+            
+            $scope.userdata = $scope.juser.id;
+                
+            
+        }else{
+            
+            $location.url("/login");
+            
+        }
+        
+//        var getuser = function (data, status) {
+//            console.log(data);
+//            if (data == "false") {
+//                $location.url("/login");
+//            } else {
+//                $scope.userdata = data;
+//            }
+//        };
+//        RestService.authenticate().success(getuser);
 
         //        end validation for user if not valid go to home page
 
