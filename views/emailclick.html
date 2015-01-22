@@ -1,12 +1,12 @@
                     <div class="more-text">
                         <h2 class=" text-center" style="color:#049fb3;text-transform: uppercase;">Enquiry</h2>
                         <div class="signup-forms">
-                            <div class="signupmsg">
-                                {{demo}}
+                            <div class="popupenquiry" ng-if="enquirymsg!=''">
+                                {{enquirymsg}}
                             </div>
-                            <input type="text" ng-model="enquiry.name" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
+                            <input type="text" ng-model="enquiry.name" ng-pattern="/^(\D)+$/" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
                             <input type="email" ng-model="enquiry.email" class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
-                            <input type="number" ng-model="enquiry.phone" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
+                            <input type="number" ng-model="enquiry.phone" ng-pattern="/^[0-9]+$/" ng-minlength="10" ng-maxlength="15" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
                             <textarea ng-model="enquiry.comment" class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
 <!--                            <button class="btn" >Send</button>-->
                             <a class="btn btn-primary mrr" href="" ng-click="enquiryuser(enquiry)">Send</a>

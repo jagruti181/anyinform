@@ -256,17 +256,61 @@ phonecatControllers.controller('category',
         TemplateService.content = "views/category.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
-    $scope.demo = "hey hey hye";
+        $scope.demo = "hey hey hye";
         $scope.msg = "";
         $scope.msgarea = false;
+//        $scope.listingid = '';
+        $scope.enquirymsg = '';
 
-        $scope.onemailclick = function () {
+        $scope.onemailclick = function (listing) {
+            $scope.listingid = listing;
             console.log("Demo is wokring");
             ngDialog.open({
-                template: 'views/emailclick.html'
+                template: 'views/emailclick.html',
+                controller: 'category'
             });
         };
+//    enquiry for listing
 
+        $scope.enquiry = [];
+        var enquirysuccess = function (data, status) {
+            console.log(data);
+            if (data == "1") {
+                //                $scope.enquiryshow = true;
+                $scope.enquirymsg = "Enquiry Send successfuly";
+
+            } else {
+                //                $scope.enquiryshow = true;
+                $scope.enquirymsg = "Sorry, Try again later";
+            }
+        };
+        $scope.enquiryuser = function (enquiry) {
+            console.log(enquiry);
+
+            $scope.allvalidation = [{
+                field: $scope.enquiry.name,
+                validation: ""
+             }, {
+                field: $scope.enquiry.email,
+                validation: ""
+             }, {
+                field: $scope.enquiry.phone,
+                validation: ""
+             }, {
+                field: $scope.enquiry.comment,
+                validation: ""
+             }];
+
+            var check = formvalidation($scope.allvalidation);
+
+            if (check) {
+                RestService.enquiryuser(enquiry.name, $scope.listingid, enquiry.email, enquiry.phone, enquiry.comment).success(enquirysuccess);
+            } else {
+                console.log("not ckeck");
+            }
+
+
+        }
 
         var categoryinfosuccess = function (data, status) {
             console.log(data);
@@ -507,7 +551,7 @@ phonecatControllers.controller('detail',
 				lat: data.listing.lat,
 				lng: data.listing.long
 			},
-			zoomProperty: 8,
+			zoomProperty: 10,
 			markersProperty: [{
 					latitude: data.listing.lat,
 					longitude: data.listing.long

@@ -52,7 +52,7 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'contact'
         }).
-                       when('/profile', {
+        when('/profile', {
             templateUrl: 'views/template.html',
             controller: 'profile'
         }).
