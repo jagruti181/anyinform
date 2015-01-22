@@ -267,14 +267,14 @@ phonecatControllers.controller('category',
         TemplateService.content = "views/category.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
-
+    $scope.demo = "hey hey hye";
         $scope.msg = "";
         $scope.msgarea = false;
 
         $scope.onemailclick = function () {
             console.log("Demo is wokring");
             ngDialog.open({
-                template: 'views/emailclick.html',
+                template: 'views/emailclick.html'
             });
         };
 
@@ -517,13 +517,13 @@ phonecatControllers.controller('detail',
             $scope.detail = data;
             angular.extend($scope, {
 			centerProperty: {
-				lat: 19.0734787,
-				lng: 72.8972996
+				lat: data.listing.lat,
+				lng: data.listing.long
 			},
 			zoomProperty: 8,
 			markersProperty: [{
-					latitude: 19.0734787,
-					longitude: 72.8972996
+					latitude: data.listing.lat,
+					longitude: data.listing.long
 				}]
 		});
         };
@@ -891,6 +891,7 @@ phonecatControllers.controller('OtherCtrl',
             console.log("city");
             console.log(text[1]);
             if (!text[1]) {
+//                $scope.area = '';
                 $scope.area = $scope.area;
             } else {
                 $scope.area = text[1];
