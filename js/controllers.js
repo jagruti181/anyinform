@@ -45,7 +45,6 @@ phonecatControllers.controller('home',
 
         // set banner
         var bannersuccess = function (data, status) {
-            console.log(data);
             $scope.banner = data.banner;
             console.log(RestService.setbanner(data.banner));
             $location.url('/subcategory/' + data.id);
@@ -98,7 +97,6 @@ phonecatControllers.controller('home',
                         //                        cityis.selected = data[i].long_name;
                         area = data[i].long_name;
                         $scope.area = data[i].long_name;
-                        console.log(data[i].long_name);
                     }
                 }
                 var citywegot = 9;
@@ -188,21 +186,12 @@ phonecatControllers.controller('home',
             console.log("city");
             console.log(text[1]);
             if (!text[1]) {
-                $scope.area = $scope.area;
+                $scope.area = '';
             } else {
                 $scope.area = text[1];
             }
 
             if (text[0] != "") {
-
-
-                //        $category=$this->input->get_post('categoryname');
-                //        $city=$this->input->get_post('cityname');
-                //        $area=$this->input->get_post('area');
-                //        $lat=$this->input->get_post('lat');
-                //        $long=$this->input->get_post('long');
-                //        $data['message']=$this->category_model->s
-
 
                 RestService.searchcategory($scope.searchtext, city, $scope.area, lat, long).success(searchsuccess);
             } else {
@@ -464,8 +453,6 @@ phonecatControllers.controller('detail',
 		});
         
         $scope.imagelightbox = function (img) {
-            console.log("Demo is wokring immmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
-//            console.log(img|imagepath);
             ngDialog.open({
                 template: '<img src="http://mafiawarloots.com/foranyinformation/uploads/'+img+'" style="width:100%;height:auto;">',
                 plain: true

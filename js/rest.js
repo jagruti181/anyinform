@@ -28,10 +28,10 @@ var restservice = angular.module('restservice', [])
         $.jStorage.set('recent',recent);
         },
         setjuser: function(data){
-            $.jStorage.set('user',data);
+            $.jStorage.set('anyuser',data);
         },
         getjuser: function(data){
-            return $.jStorage.get('user');
+            return $.jStorage.get('anyuser');
         },
         getrecentvisit: function(){
             return $.jStorage.get('recent');
