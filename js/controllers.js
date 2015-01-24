@@ -22,24 +22,23 @@ phonecatControllers.controller('home',
         $scope.searchid = "";
         $scope.form = [];
         $scope.city = '';
-    
-//        authentication user
-    
-        $scope.juser=RestService.getjuser();
-        if($scope.juser!=null)    
-        {
-            
+
+        //        authentication user
+
+        $scope.juser = RestService.getjuser();
+        if ($scope.juser != null) {
+
             $scope.myemail = $scope.juser.email;
-                
-            
+
+
         }
-        
-    
-//        var getuser = function (data, status) {
-//            $scope.myemail = data.email;
-//        };
-//        RestService.authenticate().success(getuser);
-    
+
+
+        //        var getuser = function (data, status) {
+        //            $scope.myemail = data.email;
+        //        };
+        //        RestService.authenticate().success(getuser);
+
         //$scope.form.cityy = 9;
         $scope.homecategory = {};
 
@@ -84,7 +83,7 @@ phonecatControllers.controller('home',
             //$scope.coords = position.coords;
             lat = position.coords.latitude;
             long = position.coords.longitude;
-            
+
             $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyDqN3t8_Nb04MF7jTufq-bkEHogZxyeUHY", {}, function (data) {
                 console.log(data);
                 data = data.results[0].address_components;
@@ -174,32 +173,27 @@ phonecatControllers.controller('home',
             //                city = 0;
 
             city = city;
-            console.log("my city");
-            console.log(city);
-            console.log("my area");
-            console.log($scope.area);
-
+            console.log("global area////////////////////////////////////");
+            console.log(area);
             // substr()
             text = text.split(' in ');
-            console.log("search tet");
             $scope.searchtext = text[0];
-            console.log("city");
-            console.log(text[1]);
             if (!text[1]) {
-                $scope.area = '';
+                $scope.area = $scope.area;
+                $scope.areatosend = '';
             } else {
                 $scope.area = text[1];
+                $scope.areatosend = text[1];
             }
 
             if (text[0] != "") {
 
-                RestService.searchcategory($scope.searchtext, city, $scope.area, lat, long).success(searchsuccess);
+                RestService.searchcategory($scope.searchtext, city, $scope.areatosend, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }
         }
         var getcity = function (data, status) {
-            console.log(data);
             $scope.cities = data;
         };
         RestService.getallcity().success(getcity);
@@ -259,7 +253,7 @@ phonecatControllers.controller('category',
         $scope.demo = "hey hey hye";
         $scope.msg = "";
         $scope.msgarea = false;
-//        $scope.listingid = '';
+        //        $scope.listingid = '';
         $scope.enquirymsg = '';
 
         $scope.onemailclick = function (listing) {
@@ -270,7 +264,7 @@ phonecatControllers.controller('category',
                 controller: 'category'
             });
         };
-//    enquiry for listing
+        //    enquiry for listing
 
         $scope.enquiry = [];
         var enquirysuccess = function (data, status) {
@@ -372,26 +366,25 @@ phonecatControllers.controller('category',
 
         //        start authenticating user
 
-        
-        $scope.juser=RestService.getjuser();
-        if($scope.juser==null)    
-        {
+
+        $scope.juser = RestService.getjuser();
+        if ($scope.juser == null) {
             $scope.user = 0;
-                
-        }else{
+
+        } else {
             $scope.user = $scope.juser.id;
         }
-        
-//        var getuser = function (data, status) {
-//            console.log("my data");
-//            console.log(data);
-//            if (data == "false") {
-//                $scope.user = 0;
-//            } else {
-//                $scope.user = data;
-//            }
-//        };
-//        RestService.authenticate().success(getuser);
+
+        //        var getuser = function (data, status) {
+        //            console.log("my data");
+        //            console.log(data);
+        //            if (data == "false") {
+        //                $scope.user = 0;
+        //            } else {
+        //                $scope.user = data;
+        //            }
+        //        };
+        //        RestService.authenticate().success(getuser);
 
         //        end authenticating user
 
@@ -481,26 +474,26 @@ phonecatControllers.controller('detail',
         $scope.enquiryshow = false;
         $scope.enquiry = [];
         $scope.recentvisit = [];
-        
+
         angular.extend($scope, {
-			centerProperty: {
-				lat: 45,
-				lng: -73
-			},
-			zoomProperty: 8,
-			markersProperty: [ {
-					latitude: 45,
-					longitude: -74
-				}],
-			clickedLatitudeProperty: null,	
-			clickedLongitudeProperty: null,
-		});
-        
+            centerProperty: {
+                lat: 45,
+                lng: -73
+            },
+            zoomProperty: 8,
+            markersProperty: [{
+                latitude: 45,
+                longitude: -74
+    }],
+            clickedLatitudeProperty: null,
+            clickedLongitudeProperty: null,
+        });
+
         $scope.imagelightbox = function (img) {
             ngDialog.open({
-                template: '<img src="http://mafiawarloots.com/foranyinformation/uploads/'+img+'" style="width:100%;height:auto;">',
+                template: '<img src="http://mafiawarloots.com/foranyinformation/uploads/' + img + '" style="width:100%;height:auto;">',
                 plain: true
-         });
+            });
         };
 
 
@@ -526,8 +519,7 @@ phonecatControllers.controller('detail',
         console.log("my recent visit");
         console.log(RestService.getrecentvisit());
 
-
-        $scope.$on('$viewContentLoaded', function () {
+        $scope.$on('$viewContentLoaded', function (event, viewConfig) {
             (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
@@ -536,27 +528,39 @@ phonecatControllers.controller('detail',
                 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=623204201082335&version=v2.0";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-            //Here your view content is fully loaded !!
-
-
-
         });
+
+
+        //        $scope.$on('$viewContentLoaded', function () {
+        //            (function (d, s, id) {
+        //                var js, fjs = d.getElementsByTagName(s)[0];
+        //                if (d.getElementById(id)) return;
+        //                js = d.createElement(s);
+        //                js.id = id;
+        //                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=623204201082335&version=v2.0";
+        //                fjs.parentNode.insertBefore(js, fjs);
+        //            }(document, 'script', 'facebook-jssdk'));
+        //            //Here your view content is fully loaded !!
+        //
+        //
+        //
+        //        });
 
         //get detail listing
         var getdetail = function (data, status) {
             console.log(data);
             $scope.detail = data;
             angular.extend($scope, {
-			centerProperty: {
-				lat: data.listing.lat,
-				lng: data.listing.long
-			},
-			zoomProperty: 10,
-			markersProperty: [{
-					latitude: data.listing.lat,
-					longitude: data.listing.long
-				}]
-		});
+                centerProperty: {
+                    lat: data.listing.lat,
+                    lng: data.listing.long
+                },
+                zoomProperty: 10,
+                markersProperty: [{
+                    latitude: data.listing.lat,
+                    longitude: data.listing.long
+    }]
+            });
         };
         RestService.getonelistingbyid($routeParams.id).success(getdetail);
 
@@ -627,24 +631,23 @@ phonecatControllers.controller('profile',
             console.log(data);
             $scope.profile = data;
         };
-    
-    
-        $scope.juser=RestService.getjuser();
-        if($scope.juser!=null)    
-        {
-            
+
+
+        $scope.juser = RestService.getjuser();
+        if ($scope.juser != null) {
+
             $scope.user = $scope.juser.id;
             RestService.getuser($scope.juser.id).success(usersuccess);
-            
+
         }
-    
-//        var getuser = function (data, status) {
-//            console.log("my data");
-//            console.log(data);
-//            $scope.user = data;
-//            RestService.getuser(data).success(usersuccess);
-//        }
-//        RestService.authenticate().success(getuser);
+
+        //        var getuser = function (data, status) {
+        //            console.log("my data");
+        //            console.log(data);
+        //            $scope.user = data;
+        //            RestService.getuser(data).success(usersuccess);
+        //        }
+        //        RestService.authenticate().success(getuser);
 
         // get user profile stored data
 
@@ -727,16 +730,12 @@ phonecatControllers.controller('login',
             } else {
                 console.log("not ckeck");
             }
-
-            //            
-            //            console.log(login);
-            //            RestService.login(login.email, login.password).success(loginsuccess);
         }
         //    
         //        var getuser = function (data, status){
         //            console.log(data);
         //        };
-//        RestService.authenticate().success(getuser);
+        //        RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
         $scope.clickme = function () {
@@ -806,7 +805,7 @@ phonecatControllers.controller('OtherCtrl',
         $scope.userdata = [];
         $scope.demo = "demo";
         $scope.myemail = "";
-        
+
         $scope.banner = RestService.getbanner();
         console.log("my banner//////////////////////////////");
         console.log(RestService.getbanner());
@@ -815,7 +814,7 @@ phonecatControllers.controller('OtherCtrl',
             $scope.userdata = data;
             console.log("my data");
             console.log(data.email);
-            
+
             console.log($scope.myemail);
             if (data == "false") {
                 $scope.signuppro = "Sign Up";
@@ -823,30 +822,29 @@ phonecatControllers.controller('OtherCtrl',
             } else {
                 $scope.signuppro = "My Profile";
                 $scope.loginlogout = "Logout";
-                $scope.myemail = "Welcome ,  "+data.email;
+                $scope.myemail = "Welcome ,  " + data.email;
             }
         };
-//        RestService.authenticate().success(getuser);
+        //        RestService.authenticate().success(getuser);
         var linloutsuccess = function (data, status) {
             console.log(data);
             $location.url('/home');
         };
 
-    
-//        jstorage get
+
+        //        jstorage get
         console.log("5555555555555555555555555555555555555555555555555555");
-        $scope.juser=RestService.getjuser();
-        if($scope.juser==null)    
-        {
-             $scope.signuppro = "Sign Up";
+        $scope.juser = RestService.getjuser();
+        if ($scope.juser == null) {
+            $scope.signuppro = "Sign Up";
             $scope.loginlogout = "Login";
-        }else{
+        } else {
             $scope.signuppro = "My Profile";
             $scope.loginlogout = "Logout";
-            $scope.myemail = "Welcome ,  "+$scope.juser.email;
+            $scope.myemail = "Welcome ,  " + $scope.juser.email;
         }
-    
-    
+
+
         $scope.signupprofile = function () {
             if ($scope.signuppro == "Sign Up") {
                 $location.url('/login');
@@ -922,7 +920,7 @@ phonecatControllers.controller('OtherCtrl',
             console.log("city");
             console.log(text[1]);
             if (!text[1]) {
-//                $scope.area = '';
+                //                $scope.area = '';
                 $scope.area = $scope.area;
             } else {
                 $scope.area = text[1];
@@ -1004,29 +1002,28 @@ phonecatControllers.controller('listbusiness',
 
         //        start validation for user if not valid go to home page
 
-        
-        $scope.juser=RestService.getjuser();
-        if($scope.juser!=null)    
-        {
-            
+
+        $scope.juser = RestService.getjuser();
+        if ($scope.juser != null) {
+
             $scope.userdata = $scope.juser.id;
-                
-            
-        }else{
-            
+
+
+        } else {
+
             $location.url("/login");
-            
+
         }
-        
-//        var getuser = function (data, status) {
-//            console.log(data);
-//            if (data == "false") {
-//                $location.url("/login");
-//            } else {
-//                $scope.userdata = data;
-//            }
-//        };
-//        RestService.authenticate().success(getuser);
+
+        //        var getuser = function (data, status) {
+        //            console.log(data);
+        //            if (data == "false") {
+        //                $location.url("/login");
+        //            } else {
+        //                $scope.userdata = data;
+        //            }
+        //        };
+        //        RestService.authenticate().success(getuser);
 
         //        end validation for user if not valid go to home page
 
