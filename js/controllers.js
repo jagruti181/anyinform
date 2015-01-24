@@ -4,12 +4,12 @@ var city = '';
 var area = '';
 var pat = '\home';
 var cityis = {};
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput', 'ngDialog', 'google-maps']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'restservice', 'ngRoute', 'angularFileUpload', 'ngTagsInput', 'ngDialog', 'google-maps', 'toaster']);
 
 window.uploadUrl = 'upload.php';
 
 phonecatControllers.controller('home',
-    function ($scope, TemplateService, RestService, $location, $sce) {
+    function ($scope, TemplateService, RestService, $location, $sce, toaster) {
         $scope.template = TemplateService;
         TemplateService.header = "views/header.html";
         TemplateService.navigation = "views/navigation.html";
@@ -23,6 +23,12 @@ phonecatControllers.controller('home',
         $scope.form = [];
         $scope.city = '';
 
+    $scope.pop = function(){
+            console.log("on pop");
+            toaster.pop('success', "title", "<button>ok</button>", null, 'trustedHtml');
+       
+        };
+    
         //        authentication user
 
         $scope.juser = RestService.getjuser();
@@ -669,6 +675,12 @@ phonecatControllers.controller('profile',
             //            console.log(profile);
             //profile validation
             $scope.allvalidation1 = [{
+                field: $scope.profile.firstname,
+                validation: ""
+             },{
+                field: $scope.profile.lastname,
+                validation: ""
+             },{
                 field: $scope.profile.email,
                 validation: ""
              }];
@@ -687,7 +699,7 @@ phonecatControllers.controller('profile',
     });
 
 phonecatControllers.controller('login',
-    function ($scope, TemplateService, RestService, $location, $routeParams) {
+    function ($scope, TemplateService, RestService, $location, $routeParams, toaster) {
         $scope.template = TemplateService;
         TemplateService.content = "views/login.html";
         TemplateService.slider = false;
@@ -706,6 +718,7 @@ phonecatControllers.controller('login',
                 RestService.setjuser(data);
             } else {
                 $scope.msg = "Invalid Username Or Password";
+                toaster.pop("error","Login Error", "Invalid Username Or Password",5000);
             }
 
         };
@@ -746,8 +759,12 @@ phonecatControllers.controller('login',
             if (data == "false") {
                 $scope.signupmsgg = true;
                 $scope.signupmsg = "Already Exist. Choose Another Email Address";
+                toaster.pop("error","Signup Error", "Already Exist. Choose Another Email Address",5000);
             } else {
+                $scope.signup = [];
                 $scope.signupmsg = "Registered Succeaafully...Login for Signin";
+                toaster.pop("success","Signup Message", "Registered Successfuly",3000);
+                toaster.pop("success","Signup Message", "Login Again For Signin",5000);
             }
         };
         $scope.signupuser = function (signup) {
@@ -810,6 +827,12 @@ phonecatControllers.controller('OtherCtrl',
         console.log("my banner//////////////////////////////");
         console.log(RestService.getbanner());
 
+//        toster function
+//        $scope.pop = function(){
+//            console.log("on pop");
+//            toaster.pop('success', "title", "text");
+//        };
+    
         var getuser = function (data, status) {
             $scope.userdata = data;
             console.log("my data");
@@ -822,7 +845,7 @@ phonecatControllers.controller('OtherCtrl',
             } else {
                 $scope.signuppro = "My Profile";
                 $scope.loginlogout = "Logout";
-                $scope.myemail = "Welcome ,  " + data.email;
+                $scope.myemail = "Welcome ,  " + data.firstname;
             }
         };
         //        RestService.authenticate().success(getuser);
@@ -841,7 +864,7 @@ phonecatControllers.controller('OtherCtrl',
         } else {
             $scope.signuppro = "My Profile";
             $scope.loginlogout = "Logout";
-            $scope.myemail = "Welcome ,  " + $scope.juser.email;
+            $scope.myemail = "Welcome ,  " + $scope.juser.firstname + " " + $scope.juser.lastname;
         }
 
 

@@ -1,137 +1,139 @@
 <section id="slider">
+    <toaster-container></toaster-container>
+    <!--   <toast></toast>-->
     <!--slider-->
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
 
-
             </div>
         </div>
         <div class="row">
-<!--<img src="http://localhost/anyinform/lib/images/home/shipping.jpg" class="homeimageright">-->
+            <!--<img src="http://localhost/anyinform/lib/images/home/shipping.jpg" class="homeimageright">-->
 
 
 
 
-            
+
             <div class="col-xs-3">
-            
-            
-             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"data-interval="2000">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
- 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="{{'png/slider1.png'|imagepath2}}" alt="" height="100%" width="100%">
-      <div class="carousel-caption">
-         
-      </div>
-    </div>
-    <div class="item">
-      <img src="{{'png/slider2.png'|imagepath2}}" alt="" height="100%" width="100%">
-      <div class="carousel-caption">
-          
-      </div>
-    </div>
-    <div class="item">
-      <img src="{{'png/slider3.png'|imagepath2}}" alt="" height="100%" width="100%">
-      <div class="carousel-caption">
-         
-      </div>
-    </div>
-  </div>
-  </a>
-  </a>
-</div>
-            
-            
-           
+
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="{{'png/slider1.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{'png/slider2.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{'png/slider3.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    </a>
+                </div>
+
+
+
             </div>
 
 
 
             <div class="col-xs-6">
-                
+
                 <div class="searchslider">
-            <form class="searchform searchformtext">
-               <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
-                    <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="city in cities" value="{{city.id}}">{{city.name}} </option>
-                </select>
-                <span class="city-search">
-                <i class="fa fa-map-marker fapadr"><span class="city-pad">{{area}}</span></i>
-                </span>
-                
-                <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search,form.cityy)" style="width: 90%;" />
-                <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->
-                {{categoryid}}
-                <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
-                </button>
-<!--
+                    <form class="searchform searchformtext">
+                        <select class="city onlycursor" ng-model="form.cityy" ng-click="citychange(form.cityy)">
+                            <option class="onlycursor" style="background:rgba(229, 83, 94, 0.2);" ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+                        </select>
+                        <span class="city-search">
+                <i class="fa fa-map-marker fapadr"><span class="city-pad">{{area}}</span>
+                        </i>
+                        </span>
+
+                        <input type="text" name="abc" placeholder="Search For Anything Anywhere" ng-model="search" ng-change="searchlist(search,form.cityy)" style="width: 90%;" />
+                        <!-- <input type="hidden" name="searchid" ng-model="categoryid"> -->
+                        {{categoryid}}
+                        <button type="submit" id="sea" class="btn btn-default search"><i class="fa fa-arrow-circle-o-right" ng-click="innershearch()"></i>
+                        </button>
+                        <!--
                 <div id="divsearch" class="searchdrop" ng-show="searchshow">
                     <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.search,sea.listing)">{{sea.search}}</p>
                 </div>
 -->
-                <div id="divsearch" class="searchdrop" ng-show="searchshow">
-                    <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.search,sea.listing)">{{sea.search}}</p>
+                        <div id="divsearch" class="searchdrop" ng-show="searchshow">
+                            <p ng-repeat="sea in searchdrop" ng-click="totextbox(sea.search,sea.listing)">{{sea.search}}</p>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-                
+
             </div>
 
 
-            
-            <div class="col-xs-3">
-            
-            
-            
-            
-             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"data-interval="2000">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
- 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="{{'png/slider4.png'|imagepath2}}" alt="" height="100%" width="100%">
-      <div class="carousel-caption">
-         
-      </div>
-    </div>
-    <div class="item">
-      <img src="{{'png/slider5.png'|imagepath2}}" alt="" height="100%" width="100%">
-      <div class="carousel-caption">
-          
-      </div>
-    </div>
-    <div class="item">
-      <img src="{{'png/slider6.png'|imagepath2}}" alt="" height="100%" width="100%">
-      <div class="carousel-caption">
-         
-      </div>
-    </div>
-  </div>
- 
-  <!-- Controls -->
-<!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
-<!--    <span class="glyphicon glyphicon-chevron-left"></span>-->
-  </a>
-<!--  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
-<!--    <span class="glyphicon glyphicon-chevron-right"></span>-->
-  </a>
-</div>
 
-<!--
+            <div class="col-xs-3">
+
+
+
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="{{'png/slider4.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{'png/slider5.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{'png/slider6.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+                    <!--    <span class="glyphicon glyphicon-chevron-left"></span>-->
+                    </a>
+                    <!--  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+                    <!--    <span class="glyphicon glyphicon-chevron-right"></span>-->
+                    </a>
+                </div>
+
+                <!--
                 <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
                      Indicators 
                     <ol class="carousel-indicators">
@@ -163,74 +165,73 @@
 -->
             </div>
 
-<!--<img src="http://localhost/anyinform/lib/images/home/shipping.jpg" class="homeimageleft">-->
+            <!--<img src="http://localhost/anyinform/lib/images/home/shipping.jpg" class="homeimageleft">-->
         </div>
     </div>
-    
+
 </section>
 <!--/slider-->
 <script>
-    $("#locationdrop").change(function(){
+    $("#locationdrop").change(function () {
         console.log("####################################3333");
         console.log($(this).val());
-        $("#location").html($(this).val()+" <i class='fa fa-chevron-down'></i>");
+        $("#location").html($(this).val() + " <i class='fa fa-chevron-down'></i>");
         $("#location").addClass("showdiv");
         $("#locationdrop").addClass("hidediv");
         $("#location").removeClass("hidediv");
     });
-    $("#areadrop").change(function(){
+    $("#areadrop").change(function () {
         console.log("####################################3333");
         console.log($(this).val());
-        $("#area").html($(this).val()+" <i class='fa fa-chevron-down'></i>");
+        $("#area").html($(this).val() + " <i class='fa fa-chevron-down'></i>");
         $("#area").addClass("showdiv");
         $("#areadrop").addClass("hidediv");
         $("#area").removeClass("hidediv");
     });
-    $(".showdiv").click(function(){
+    $(".showdiv").click(function () {
         $("#location").addClass("hidediv");
         $("#locationdrop").addClass("showdiv");
         $("#locationdrop").removeClass("hidediv");
     });
-//    function getsearch(id){
-//        $.getJSON(
-//                "http://mafiawarloots.com/foranyinformation/index.php/json/getcategoryinfo?id="+id, {},
-//                function (data) {
-//                    console.log(data.name);
-//                    $("input[name=seachtextt]").val(data.name);
-//                    $("input[name=searchid]").val(data.id);
-//                    $("#divsearch").removeClass("yessearch");
-//                }
-//
-//            );
-//    }
-//    
-//    var searchtext="";
-//        $("#searchbox").keyup(function(){
-//            
-//            $("#divsearch").html("");
-//            var val=$(this).val();
-//            $.getJSON(
-//                "http://mafiawarloots.com/foranyinformation/index.php/json/searchcategory?categoryname="+val, {},
-//                function (data) {
-//                    //  alert(data);
-//                    if(data!="")
-//                    {
-//                        
-//                        $("#divsearch").addClass("yessearch");
-//                        console.log(data);
-//                        for(var i=0;i<data.length;i++)
-//                        {
-//                            $("#divsearch").append("<p class='demo' name='"+data[i].name+"' onclick='getsearch("+data[i].id+")'>"+data[i].name+"</p>");
-//                        }
-//                        
-//                        
-//                    }else{
-//                        $("#divsearch").addClass("nosearch");
-//                    }
-//
-//                }
-//
-//            );
-//        });
-        
+    //    function getsearch(id){
+    //        $.getJSON(
+    //                "http://mafiawarloots.com/foranyinformation/index.php/json/getcategoryinfo?id="+id, {},
+    //                function (data) {
+    //                    console.log(data.name);
+    //                    $("input[name=seachtextt]").val(data.name);
+    //                    $("input[name=searchid]").val(data.id);
+    //                    $("#divsearch").removeClass("yessearch");
+    //                }
+    //
+    //            );
+    //    }
+    //    
+    //    var searchtext="";
+    //        $("#searchbox").keyup(function(){
+    //            
+    //            $("#divsearch").html("");
+    //            var val=$(this).val();
+    //            $.getJSON(
+    //                "http://mafiawarloots.com/foranyinformation/index.php/json/searchcategory?categoryname="+val, {},
+    //                function (data) {
+    //                    //  alert(data);
+    //                    if(data!="")
+    //                    {
+    //                        
+    //                        $("#divsearch").addClass("yessearch");
+    //                        console.log(data);
+    //                        for(var i=0;i<data.length;i++)
+    //                        {
+    //                            $("#divsearch").append("<p class='demo' name='"+data[i].name+"' onclick='getsearch("+data[i].id+")'>"+data[i].name+"</p>");
+    //                        }
+    //                        
+    //                        
+    //                    }else{
+    //                        $("#divsearch").addClass("nosearch");
+    //                    }
+    //
+    //                }
+    //
+    //            );
+    //        });
 </script>

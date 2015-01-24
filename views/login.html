@@ -1,11 +1,12 @@
 <section id="login"><!--form-->
+    <toaster-container></toaster-container>
 		<div class="container">
 			<div class="row">
 			<div class="">
 				<div class="col-md-5">
-					<div class="login-form "><!--login form-->
+					<div class="login-form" style="margin:-24px !important;"><!--login form-->
 						<h2>Login to your account</h2>
-                        <h5 class="demo">{{msg}}</h5>
+<!--                        <h5 class="demo">{{msg}}</h5>-->
 							
 							<input type="email" ng-model="login.email" class="form-control" ng-class="allvalidation1[0].validation" required placeholder="Email Address * " />
 							<input type="password" ng-model="login.password" class="form-control" ng-class="allvalidation1[1].validation" required placeholder="Password *"/>
@@ -36,9 +37,9 @@
 					<h2 class="or">OR</h2>
 				</div>
 				<div class="col-md-5">
-					<div class="login-form "><!--sign up form-->
+					<div class="login-form " style="margin:-24px !important;"><!--sign up form-->
 						<h2>New User Signup!</h2>
-                        <h5 class="demo">{{signupmsg}}</h5>
+<!--                        <h5 class="demo">{{signupmsg}}</h5>-->
 							<input type="text" ng-model="signup.firstname" class="form-control" ng-class="allvalidation[0].validation" required placeholder="First Name *"/>
 							<input type="text" ng-model="signup.lastname" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Last Name *"/>
 							<input type="number" min="6" ng-model="signup.phoneno" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Phone Number *"/>
