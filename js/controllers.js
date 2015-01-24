@@ -761,7 +761,6 @@ phonecatControllers.controller('login',
                 $scope.signupmsg = "Already Exist. Choose Another Email Address";
                 toaster.pop("error","Signup Error", "Already Exist. Choose Another Email Address",5000);
             } else {
-                $scope.signup = [];
                 $scope.signupmsg = "Registered Succeaafully...Login for Signin";
                 toaster.pop("success","Signup Message", "Registered Successfuly",3000);
                 toaster.pop("success","Signup Message", "Login Again For Signin",5000);
