@@ -1,6 +1,6 @@
 
-var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
-//var adminurl="http://localhost/foranyinformation/index.php/json/";
+//var adminurl="http://mafiawarloots.com/foranyinformation/index.php/json/";
+var adminurl="http://localhost/foranyinformation/index.php/json/";
 
 var restservice = angular.module('restservice', [])
 
