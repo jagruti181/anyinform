@@ -2554,11 +2554,12 @@ span.med3 {
 
 .lightbox {
     cursor: pointer;
+    padding-right: 8px;
 }
 .image-row {
     margin-bottom: 35px;
     border: 1px solid #049fb3;
-    padding: 7px 18px;
+    padding: 7px 7px;
 }
 a.btn.enq {
     position: absolute;

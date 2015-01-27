@@ -23,12 +23,12 @@ phonecatControllers.controller('home',
         $scope.form = [];
         $scope.city = '';
 
-    $scope.pop = function(){
+        $scope.pop = function () {
             console.log("on pop");
             toaster.pop('success', "title", "<button>ok</button>", null, 'trustedHtml');
-       
+
         };
-    
+
         //        authentication user
 
         $scope.juser = RestService.getjuser();
@@ -677,10 +677,10 @@ phonecatControllers.controller('profile',
             $scope.allvalidation1 = [{
                 field: $scope.profile.firstname,
                 validation: ""
-             },{
+             }, {
                 field: $scope.profile.lastname,
                 validation: ""
-             },{
+             }, {
                 field: $scope.profile.email,
                 validation: ""
              }];
@@ -707,7 +707,6 @@ phonecatControllers.controller('login',
         $scope.msg = "";
         $scope.msg1 = "";
         $scope.login = [];
-        $scope.signup = [];
 
         var loginsuccess = function (data, status) {
             console.log("after login");
@@ -717,8 +716,7 @@ phonecatControllers.controller('login',
                 $scope.loginlogout = "Logout";
                 RestService.setjuser(data);
             } else {
-                $scope.msg = "Invalid Username Or Password";
-                toaster.pop("error","Login Error", "Invalid Username Or Password",5000);
+                toaster.pop("error", "Login Error", "Invalid Username Or Password", 5000);
             }
 
         };
@@ -754,16 +752,30 @@ phonecatControllers.controller('login',
         $scope.clickme = function () {
             console.log("helloooooo");
         }
+    });
+
+
+phonecatControllers.controller('signup',
+    function ($scope, TemplateService, RestService, $location, $routeParams, toaster) {
+        $scope.template = TemplateService;
+        TemplateService.content = "views/signup.html";
+        TemplateService.slider = false;
+        TemplateService.navigation = "views/innerheader.html";
+        $scope.signup = [];
+
+        $scope.signupmsg = "";
+        $scope.signupmsgg = false;
+        $scope.clickme = function () {
+            console.log("helloooooo");
+        }
         var getuser = function (data, status) {
             console.log(data);
             if (data == "false") {
                 $scope.signupmsgg = true;
                 $scope.signupmsg = "Already Exist. Choose Another Email Address";
-                toaster.pop("error","Signup Error", "Already Exist. Choose Another Email Address",5000);
+                toaster.pop("error", "Signup Error", "Already Exist. Choose Another Email Address", 50000);
             } else {
-                $scope.signupmsg = "Registered Succeaafully...Login for Signin";
-                toaster.pop("success","Signup Message", "Registered Successfuly",3000);
-                toaster.pop("success","Signup Message", "Login Again For Signin",5000);
+                $location.url("/login");
             }
         };
         $scope.signupuser = function (signup) {
@@ -794,9 +806,12 @@ phonecatControllers.controller('login',
             if (check) {
                 if ($scope.signup.password === $scope.signup.cpassword) {
                     $scope.signupmsg = "";
-                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
+                    console.log("phone no");
+                    console.log(signup.phoneno);
+//                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
                 } else {
                     $scope.signupmsg = "Wroung password";
+                    toaster.pop("error", "Signup Error", "Wroung password", 5000);
                 }
 
             } else {
@@ -804,13 +819,8 @@ phonecatControllers.controller('login',
             }
 
 
-
-
-            //            console.log(signup);
-            //            RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
         }
 
-        //signup
     });
 
 
@@ -826,12 +836,12 @@ phonecatControllers.controller('OtherCtrl',
         console.log("my banner//////////////////////////////");
         console.log(RestService.getbanner());
 
-//        toster function
-//        $scope.pop = function(){
-//            console.log("on pop");
-//            toaster.pop('success', "title", "text");
-//        };
-    
+        //        toster function
+        //        $scope.pop = function(){
+        //            console.log("on pop");
+        //            toaster.pop('success', "title", "text");
+        //        };
+
         var getuser = function (data, status) {
             $scope.userdata = data;
             console.log("my data");
@@ -869,7 +879,7 @@ phonecatControllers.controller('OtherCtrl',
 
         $scope.signupprofile = function () {
             if ($scope.signuppro == "Sign Up") {
-                $location.url('/login');
+                $location.url('/signup');
             } else {
                 $location.url('/profile');
             }
