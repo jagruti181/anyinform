@@ -251,7 +251,7 @@ phonecatControllers.controller('home',
     });
 
 phonecatControllers.controller('category',
-    function ($scope, TemplateService, RestService, $location, $routeParams, ngDialog) {
+    function ($scope, TemplateService, RestService, $location, $routeParams, ngDialog, toaster) {
         $scope.template = TemplateService;
         TemplateService.content = "views/category.html";
         TemplateService.slider = false;
@@ -277,11 +277,13 @@ phonecatControllers.controller('category',
             console.log(data);
             if (data == "1") {
                 //                $scope.enquiryshow = true;
-                $scope.enquirymsg = "Enquiry Send successfuly";
+//                $scope.enquirymsg = "Enquiry Send successfuly";
+                toaster.pop('success', "Enquiry", "Enquiry Send successfuly", 5000);
 
             } else {
                 //                $scope.enquiryshow = true;
-                $scope.enquirymsg = "Sorry, Try again later";
+//                $scope.enquirymsg = "Sorry, Try again later";
+                toaster.pop('error', "Enquiry", "Sorry, Try again later", 5000);
             }
         };
         $scope.enquiryuser = function (enquiry) {
@@ -471,7 +473,7 @@ phonecatControllers.controller('subcategory',
     });
 
 phonecatControllers.controller('detail',
-    function ($scope, TemplateService, RestService, $location, $routeParams, ngDialog) {
+    function ($scope, TemplateService, RestService, $location, $routeParams, ngDialog, toaster) {
         $scope.template = TemplateService;
         TemplateService.content = "views/detail.html";
         TemplateService.slider = false;
@@ -577,11 +579,13 @@ phonecatControllers.controller('detail',
             console.log(data);
             if (data == "1") {
                 //                $scope.enquiryshow = true;
-                $scope.enquirymsg = "Enquiry Send successfuly";
+//                $scope.enquirymsg = "Enquiry Send successfuly";
+                toaster.pop('success', "Enquiry", "Enquiry Send successfuly", 5000);
 
             } else {
                 //                $scope.enquiryshow = true;
-                $scope.enquirymsg = "Sorry, Try again later";
+//                $scope.enquirymsg = "Sorry, Try again later";
+                toaster.pop('error', "Enquiry", "Sorry, Try again later", 5000);
             }
         };
         $scope.enquiryuser = function (enquiry) {
