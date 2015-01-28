@@ -115,15 +115,23 @@ var rad = function(x) {
 
 var formvalidation = function(allvalidation) {
             var isvalid2 = true;
+            var error = '';
             for (var i = 0; i < allvalidation.length; i++) {
                 console.log("checking");
                 console.log(allvalidation[i].field);
+                console.log(allvalidation[i].name)
                 if (allvalidation[i].field == "" || !allvalidation[i].field) {
                     allvalidation[i].validation = "ng-dirty";
+                    if( error == '' )
+                    {
+                        error += allvalidation[i].name;
+                    }else{
+                        error += " , " + allvalidation[i].name;
+                    }
                     isvalid2 = false;
                 }
             }
-            return isvalid2;
+            return error;
         };
 
 

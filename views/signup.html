@@ -7,12 +7,12 @@
                 <!--sign up form-->
                 <h2>New User Signup!</h2>
                 <!--                        <h5 class="demo">{{signupmsg}}</h5>-->
-                <input type="text" ng-model="signup.firstname" class="form-control" ng-class="allvalidation[0].validation" required placeholder="First Name *" />
-                <input type="text" ng-model="signup.lastname" class="form-control" ng-class="allvalidation[1].validation" required placeholder="Last Name *" />
-                <input type="number" min="6" ng-model="signup.phoneno" class="form-control" ng-class="allvalidation[2].validation" required placeholder="Phone Number *" />
+                <input type="text" ng-model="signup.firstname" class="form-control" ng-pattern="/^(\D)+$/" ng-class="allvalidation[0].validation" required placeholder="First Name *" />
+                <input type="text" ng-model="signup.lastname" class="form-control" ng-pattern="/^(\D)+$/" ng-class="allvalidation[1].validation" required placeholder="Last Name *" />
+                <input type="number" min="6" ng-model="signup.phoneno" class="form-control" ng-pattern="/^[0-9]+$/" ng-minlength="10" ng-maxlength="15" ng-class="allvalidation[2].validation" required placeholder="Phone Number *" />
                 <input type="email" ng-model="signup.email" class="form-control" ng-class="allvalidation[3].validation" required placeholder="Email Address *" />
-                <input type="password" ng-model="signup.password" class="form-control" ng-class="allvalidation[4].validation" required placeholder="Password *" />
-                <input type="password" ng-model="signup.cpassword" class="form-control" ng-class="allvalidation[5].validation" required placeholder="Confirm Password *" />
+                <input type="password" ng-model="signup.password" class="form-control" ng-class="allvalidation[4].validation" ng-minlength="4" ng-maxlength="10" required placeholder="Password *" />
+                <input type="password" ng-model="signup.cpassword" class="form-control" ng-class="allvalidation[5].validation" ng-minlength="4" ng-maxlength="10" required placeholder="Confirm Password *" />
 
                 <button class="btn  form-control" ng-click="signupuser(signup)">Signup</button>
 

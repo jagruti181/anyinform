@@ -39,13 +39,6 @@ phonecatControllers.controller('home',
 
         }
 
-
-        //        var getuser = function (data, status) {
-        //            $scope.myemail = data.email;
-        //        };
-        //        RestService.authenticate().success(getuser);
-
-        //$scope.form.cityy = 9;
         $scope.homecategory = {};
 
         // set banner
@@ -275,6 +268,7 @@ phonecatControllers.controller('category',
         $scope.enquiry = [];
         var enquirysuccess = function (data, status) {
             console.log(data);
+            $scope.allvalidation = [];
             if (data == "1") {
                 //                $scope.enquiryshow = true;
 //                $scope.enquirymsg = "Enquiry Send successfuly";
@@ -291,24 +285,29 @@ phonecatControllers.controller('category',
 
             $scope.allvalidation = [{
                 field: $scope.enquiry.name,
+                name: "Name",
                 validation: ""
              }, {
                 field: $scope.enquiry.email,
+                name: "Email",
                 validation: ""
              }, {
                 field: $scope.enquiry.phone,
+                name: "Phone Number",
                 validation: ""
              }, {
                 field: $scope.enquiry.comment,
+                name: "Comment",
                 validation: ""
              }];
 
             var check = formvalidation($scope.allvalidation);
 
-            if (check) {
+            if ( check == '' ) {
                 RestService.enquiryuser(enquiry.name, $scope.listingid, enquiry.email, enquiry.phone, enquiry.comment).success(enquirysuccess);
             } else {
                 console.log("not ckeck");
+                toaster.pop('error', "Enquiry", "Enter Proper "+check, 5000);
             }
 
 
@@ -576,6 +575,7 @@ phonecatControllers.controller('detail',
 
 
         var enquirysuccess = function (data, status) {
+            $scope.allvalidation = [];
             console.log(data);
             if (data == "1") {
                 //                $scope.enquiryshow = true;
@@ -593,24 +593,28 @@ phonecatControllers.controller('detail',
 
             $scope.allvalidation = [{
                 field: $scope.enquiry.name,
+                name: "Name",
                 validation: ""
              }, {
                 field: $scope.enquiry.email,
+                name: "Email",
                 validation: ""
              }, {
                 field: $scope.enquiry.phone,
+                name: "Phone",
                 validation: ""
              }, {
                 field: $scope.enquiry.comment,
+                name: "Comment",
                 validation: ""
              }];
 
             var check = formvalidation($scope.allvalidation);
 
-            if (check) {
+            if ( check == '' ) {
                 RestService.enquiryuser(enquiry.name, $scope.detail.listing.listingid, enquiry.email, enquiry.phone, enquiry.comment).success(enquirysuccess);
             } else {
-                console.log("not ckeck");
+                toaster.pop('error', "Enquiry", "Enter Proper "+check, 5000);
             }
 
 
@@ -730,20 +734,23 @@ phonecatControllers.controller('login',
             //login validation
             $scope.allvalidation1 = [{
                 field: $scope.login.email,
+                name: "Email",
                 validation: ""
              }, {
                 field: $scope.login.password,
+                name: "Password",
                 validation: ""
              }];
 
             var check = formvalidation($scope.allvalidation1);
 
-            if (check) {
+            if ( check == '' ) {
 
                 RestService.login(login.email, login.password).success(loginsuccess);
 
             } else {
                 console.log("not ckeck");
+                toaster.pop('error', "Login", "Enter Proper "+check, 5000);
             }
         }
         //    
@@ -787,27 +794,33 @@ phonecatControllers.controller('signup',
             //signup validation
             $scope.allvalidation = [{
                 field: $scope.signup.firstname,
+                name: "First Name",
                 validation: ""
              }, {
                 field: $scope.signup.lastname,
+                name: "Last Name",
                 validation: ""
              }, {
                 field: $scope.signup.phoneno,
+                name: "Phone Number",
                 validation: ""
              }, {
                 field: $scope.signup.email,
+                name: "Email",
                 validation: ""
              }, {
                 field: $scope.signup.password,
+                name: "Password",
                 validation: ""
              }, {
                 field: $scope.signup.cpassword,
+                name: "Confirm Password",
                 validation: ""
              }];
 
             var check = formvalidation($scope.allvalidation);
 
-            if (check) {
+            if ( check == '' ) {
                 if ($scope.signup.password === $scope.signup.cpassword) {
                     $scope.signupmsg = "";
                     console.log("phone no");
@@ -820,6 +833,7 @@ phonecatControllers.controller('signup',
 
             } else {
                 console.log("not ckeck");
+                toaster.pop("error", "Signup Error", "Enter Proper " + check, 5000);
             }
 
 

@@ -133,9 +133,9 @@
                             <div class="signupmsg">
                                 {{enquirymsg}}
                             </div>
-                            <input type="text" ng-model="enquiry.name" class="form-control" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
+                            <input type="text" ng-model="enquiry.name" class="form-control" ng-pattern="/^(\D)+$/" ng-class="allvalidation[0].validation" placeholder="Name *" required/>
                             <input type="email" ng-model="enquiry.email" class="form-control" ng-class="allvalidation[1].validation" placeholder="Email *" required/>
-                            <input type="number" ng-model="enquiry.phone" class="form-control" ng-class="allvalidation[2].validation" placeholder="Phone *" required/>
+                            <input type="tel" ng-model="enquiry.phone" class="form-control" ng-pattern="/^[0-9]+$/" ng-class="allvalidation[2].validation" ng-minlength="10" ng-maxlength="15" placeholder="Phone *" required/>
                             <textarea ng-model="enquiry.comment" class="form-control" ng-class="allvalidation[3].validation" placeholder="Comment *" required></textarea>
                             <button class="btn" ng-click="enquiryuser(enquiry)">Send</button>
                         </div>
