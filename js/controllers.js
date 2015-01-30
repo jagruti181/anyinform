@@ -825,7 +825,7 @@ phonecatControllers.controller('signup',
                     $scope.signupmsg = "";
                     console.log("phone no");
                     console.log(signup.phoneno);
-//                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
+                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
                 } else {
                     $scope.signupmsg = "Wroung password";
                     toaster.pop("error", "Signup Error", "Wroung password", 5000);
