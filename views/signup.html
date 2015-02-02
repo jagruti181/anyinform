@@ -3,9 +3,10 @@
     <toaster-container></toaster-container>
     <div class="container">
         <div class="row">
-            <div class="login-form " style="margin:-24px !important;">
+            <div class="login-form " >
                 <!--sign up form-->
-                <h2>New User Signup!</h2>
+                <h2 style="text-align: center !important;
+margin: 30px auto;">New User Signup!</h2>
                 <!--                        <h5 class="demo">{{signupmsg}}</h5>-->
                 <input type="text" ng-model="signup.firstname" class="form-control" ng-pattern="/^(\D)+$/" ng-class="allvalidation[0].validation" required placeholder="First Name *" />
                 <input type="text" ng-model="signup.lastname" class="form-control" ng-pattern="/^(\D)+$/" ng-class="allvalidation[1].validation" required placeholder="Last Name *" />

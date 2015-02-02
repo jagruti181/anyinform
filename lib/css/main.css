@@ -1647,7 +1647,7 @@ h2.title {
 .login-form {
     padding: 3px 30px 7px 30px;
     text-transform: capitalize;
-    width: 100%;
+    width: 40%;
     background: rgb(228, 241, 255);
     margin: 10px auto;
     margin-bottom: 40px;
@@ -1663,7 +1663,7 @@ h2.title {
     background: #049fb3;
     text-align: center;
     padding: 10px;
-    /* width: 310px; */
+    width: 310px;
 }
 .signup-forms h2 {
     color: #FFFEFD;
@@ -2303,7 +2303,7 @@ padding: 0px 4px;
 /* -webkit-box-shadow: 0 4px #026177; */
 -moz-box-shadow: 0 4px #026177;
 -o-box-shadow: 0 4px #026177;
-margin: 7px 140px;
+/* margin: 7px 140px; */
 /* background: #049fb3; */
 /* color: #fff; */
 /* padding-bottom: 10px; */
@@ -2311,7 +2311,10 @@ margin: 7px 140px;
 font-size: 2em;  -webkit-transition: all 0.5s ease;  padding: 15px;  background: #049fb3;  color: white;  
 border-radius: 0px;  border-bottom: 5px solid #026177;  
 height: 42px;  
-width: 100px;  text-align: center;
+width: 100px;  
+text-align: center !important;
+margin: 0px auto !important;
+display: -webkit-box;
 }
 .login-form button:hover{
 border-bottom: 0px solid #026177;
@@ -2361,10 +2364,12 @@ padding: 0px 7px 0px 11px;
     width: 236px;
     border-radius: 30px;
     position: relative;
-    left: 50%;
-    margin-left: -118px;
-    margin-top: 20px;
+    /* left: 50%; */
+    /* margin-left: -118px; */
+    /* margin-top: 20px; */
     margin-bottom: 10px;
+    text-align: center !important;
+    margin: 30px auto;
 }
 .home-invites p {
     font-size: 13px;
