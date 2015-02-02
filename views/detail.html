@@ -48,7 +48,7 @@
                     <div class="col-md-5">
 
 
-                        <div class="">
+                        <div ng-if="detail.listing.lat!='' && detail.listing.long!=''">
                             <google-map center="centerProperty" class="posii" zoom="zoomProperty" markers="markersProperty" latitude="clickedLatitudeProperty" longitude="clickedLongitudeProperty" mark-click="false" draggable="true" style="height: 223px; width: 100%;transform:inherit;">
                             </google-map>
                         </div>
