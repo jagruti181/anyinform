@@ -776,6 +776,16 @@ phonecatControllers.controller('signup',
 
         $scope.signupmsg = "";
         $scope.signupmsgg = false;
+    
+//        login with facebook
+        var onfacebooklogin = function (data, status) {
+            console.log(data);
+        };
+        $scope.tofacebook = function () {
+            console.log("facebook click");
+            RestService.facebooklogin().success(onfacebooklogin);
+        }
+    
         $scope.clickme = function () {
             console.log("helloooooo");
         }
