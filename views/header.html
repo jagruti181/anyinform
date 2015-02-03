@@ -1,35 +1,69 @@
-
-   
-    <header id="header" ng-controller="OtherCtrl"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-                                <li><a class="onlycursor" ng-click="loginfunction()"><i class="fa fa-lock"></i> {{loginlogout}}</a></li>
-								<li><a ng-click="showlisting()" class="onlycursor">&nbsp;&nbsp;List Your Business</a></li>
-								<a href="#/profile" class="onlycursor"><span class="symbol" style="font-size:13px; position: relative;left: 470px;top: 8px;color: #aeaeae;z-index:100000;" ng-click="showlisting()">{{myemail}}</span></a>
-<!--								<li><a href="#/listbusiness" class="onlycursor">&nbsp;&nbsp;List Your Business</a></li>-->
-								<!-- <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+<header id="header" ng-controller="OtherCtrl">
+    <!--header-->
+    <div class="header_top">
+        <!--header_top-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="contactinfo">
+                        <ul class="nav nav-pills">
+                            <li><a class="onlycursor" ng-click="loginfunction()"><i class="fa fa-lock"></i> {{loginlogout}}</a>
+                            </li>
+                            <li><a ng-click="showlisting()" class="onlycursor">&nbsp;&nbsp;List Your Business</a>
+                            </li>
+                            <div id="notification_li">
+                            <a href="#/profile" class="onlycursor" id="notificationLink"><span class="symbol" style="font-size:13px; position: relative;left: 470px;top: 8px;color: #aeaeae;z-index:100000;" ng-click="showlisting()">{{myemail}}</span></a>
+                            <!--								<li><a href="#/listbusiness" class="onlycursor">&nbsp;&nbsp;List Your Business</a></li>-->
+                            <!-- <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li> -->
-							</ul>
-						</div>
-						
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
-	</header><!--/header-->
-	
+                            <div id="notificationContainer">
+                                <div id="notificationTitle"><a href="#">Visit Profile</a><a href="#">Change Password</a></div>
+                              
+                            </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="social-icons pull-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/header_top-->
+</header>
+<!--/header-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#notificationLink").click(function () {
+            $("#notificationContainer").fadeToggle(300);
+            $("#notification_count").fadeOut("slow");
+            return false;
+        });
+
+        //Document Click
+        $(document).click(function () {
+            $("#notificationContainer").hide();
+        });
+        //Popup Click
+        $("#notificationContainer").click(function () {
+            return false
+        });
+
+    });
+</script>
