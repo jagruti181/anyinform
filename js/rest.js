@@ -1,7 +1,7 @@
 var onlyadminurl="http://mafiawarloots.com/foranyinformation/";
 var adminurl=onlyadminurl+"index.php/json/";
 //var adminurl="http://localhost/foranyinformation/index.php/json/";
-var 
+
 
 var restservice = angular.module('restservice', [])
 
