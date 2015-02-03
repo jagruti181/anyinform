@@ -1647,7 +1647,7 @@ h2.title {
 .login-form {
     padding: 3px 30px 7px 30px;
     text-transform: capitalize;
-    width: 40%;
+    /* width: 40%; */
     background: rgb(228, 241, 255);
     margin: 10px auto;
     margin-bottom: 40px;
@@ -1663,7 +1663,7 @@ h2.title {
     background: #049fb3;
     text-align: center;
     padding: 10px;
-    width: 310px;
+    /* width: 310px; */
 }
 .signup-forms h2 {
     color: #FFFEFD;
@@ -2288,7 +2288,7 @@ margin-right: 8px;
 /* padding: 30px 0px; */
 }
 .login-form input {
-    width: 268px;  border-radius: 0px;
+    /* width: 268px; */  border-radius: 0px;
     margin-bottom: 20px;
     margin: 20px auto;
 }
@@ -2632,4 +2632,4 @@ border-top: 1px solid #dddddd;
 div#notificationTitle a {
     /* padding-right: 35px; */
     padding: 24px;
-}
+} 
