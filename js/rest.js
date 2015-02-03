@@ -1,4 +1,5 @@
 var onlyadminurl="http://mafiawarloots.com/foranyinformation/";
+//var onlyadminurl="http://localhost/foranyinformation/";
 var adminurl=onlyadminurl+"index.php/json/";
 //var adminurl="http://localhost/foranyinformation/index.php/json/";
 

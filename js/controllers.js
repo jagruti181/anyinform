@@ -23,6 +23,15 @@ phonecatControllers.controller('home',
         $scope.form = [];
         $scope.city = '';
 
+        var authsuccess = function (data, status) {
+            
+            console.log(data);
+            RestService.setjuser(data);
+            
+        };
+    
+        RestService.authenticate().success(authsuccess);
+    
         $scope.pop = function () {
             console.log("on pop");
             toaster.pop('success', "title", "<button>ok</button>", null, 'trustedHtml');
