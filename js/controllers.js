@@ -25,7 +25,9 @@ phonecatControllers.controller('home',
 
         var authsuccess = function (data, status) {
             
+            console.log("auth auth success");
             console.log(data);
+            console.log("auth authe success end");
             RestService.setjuser(data);
             
         };
@@ -33,7 +35,7 @@ phonecatControllers.controller('home',
         RestService.authenticate().success(authsuccess);
     
         $scope.pop = function () {
-            console.log("on pop");
+//            console.log("on pop");
             toaster.pop('success', "title", "<button>ok</button>", null, 'trustedHtml');
 
         };
@@ -53,7 +55,7 @@ phonecatControllers.controller('home',
         // set banner
         var bannersuccess = function (data, status) {
             $scope.banner = data.banner;
-            console.log(RestService.setbanner(data.banner));
+//            console.log(RestService.setbanner(data.banner));
             $location.url('/subcategory/' + data.id);
         };
         $scope.oncategoryclick = function (banner) {
@@ -62,8 +64,8 @@ phonecatControllers.controller('home',
 
         //    Start Get all Banners / Adds
         var addsuccess = function (data, status) {
-            console.log("my adds");
-            console.log(data);
+//            console.log("my adds");
+//            console.log(data);
             for (var i = 0; i < data.length; i++) {
                 if (data[i].position == 1) {
                     $scope.positionone = data[i].adds;
@@ -71,10 +73,10 @@ phonecatControllers.controller('home',
                     $scope.positiontwo = data[i].adds;
                 }
             }
-            console.log("one");
-            console.log($scope.positionone);
-            console.log("two");
-            console.log($scope.positiontwo);
+//            console.log("one");
+//            console.log($scope.positionone);
+//            console.log("two");
+//            console.log($scope.positiontwo);
         };
 
         RestService.alladd().success(addsuccess);
@@ -86,19 +88,19 @@ phonecatControllers.controller('home',
 
         function showPosition2(position) {
             var latlon = position.coords.latitude + "," + position.coords.longitude;
-            console.log("Positions:.........");
-            console.log(position.coords);
+//            console.log("Positions:.........");
+//            console.log(position.coords);
             //$scope.coords = position.coords;
             lat = position.coords.latitude;
             long = position.coords.longitude;
 
             $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyDqN3t8_Nb04MF7jTufq-bkEHogZxyeUHY", {}, function (data) {
-                console.log(data);
+//                console.log(data);
                 data = data.results[0].address_components;
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].types[0] == "locality") {
                         cityis.selected = data[i].long_name;
-                        console.log(cityis.selected);
+//                        console.log(cityis.selected);
                     }
                     if (data[i].types[0] == "sublocality_level_1") {
                         //                        cityis.selected = data[i].long_name;
@@ -110,7 +112,7 @@ phonecatControllers.controller('home',
                 var cities = $scope.cities;
                 for (var i = 0; i < $scope.cities.length; i++) {
 
-                    console.log($scope.cities[i].name == cityis.selected);
+//                    console.log($scope.cities[i].name == cityis.selected);
                     if ($scope.cities[i].name == cityis.selected) {
                         $scope.city = $scope.cities[i].name;
                         citywegot = $scope.cities[i].id;
@@ -208,8 +210,8 @@ phonecatControllers.controller('home',
         // searching 
 
         //        var searchdata = function (data, status) {
-        //            console.log("in home");
-        //            console.log(data);
+//                    console.log("in home");
+//                    console.log(data);
         //        };
         //        RestService.searchcategory("h").success(searchdata);
 
@@ -392,8 +394,8 @@ phonecatControllers.controller('category',
         }
 
         //        var getuser = function (data, status) {
-        //            console.log("my data");
-        //            console.log(data);
+//                    console.log("my data");
+//                    console.log(data);
         //            if (data == "false") {
         //                $scope.user = 0;
         //            } else {
@@ -665,8 +667,8 @@ phonecatControllers.controller('profile',
         }
 
         //        var getuser = function (data, status) {
-        //            console.log("my data");
-        //            console.log(data);
+//                    console.log("my data");
+//                    console.log(data);
         //            $scope.user = data;
         //            RestService.getuser(data).success(usersuccess);
         //        }
@@ -688,8 +690,8 @@ phonecatControllers.controller('profile',
         $scope.saveprofile = function (profile) {
             console.log("user in save profile");
             console.log(profile);
-            //            console.log($scope.profile);
-            //            console.log(profile);
+//                        console.log($scope.profile);
+//                        console.log(profile);
             //profile validation
             $scope.allvalidation1 = [{
                 field: $scope.profile.firstname,
@@ -764,7 +766,7 @@ phonecatControllers.controller('login',
         }
         //    
         //        var getuser = function (data, status){
-        //            console.log(data);
+//                    console.log(data);
         //        };
         //        RestService.authenticate().success(getuser);
         $scope.signupmsg = "";
@@ -875,7 +877,7 @@ phonecatControllers.controller('OtherCtrl',
 
         //        toster function
         //        $scope.pop = function(){
-        //            console.log("on pop");
+//                    console.log("on pop");
         //            toaster.pop('success', "title", "text");
         //        };
 
@@ -902,7 +904,6 @@ phonecatControllers.controller('OtherCtrl',
 
 
         //        jstorage get
-        console.log("5555555555555555555555555555555555555555555555555555");
         $scope.juser = RestService.getjuser();
         if ($scope.juser == null) {
             $scope.signuppro = "Sign Up";
@@ -1028,7 +1029,7 @@ phonecatControllers.controller('listbusiness',
         console.log("tree select");
         $scope.tagcategory = [];
         $scope.selectNodeLabel = function (c, b) {
-            //        console.log(c);
+//                    console.log(c);
             //        if($scope.catgo=="")
             //        {
             //            $scope.catgo=c.id;
@@ -1085,7 +1086,7 @@ phonecatControllers.controller('listbusiness',
         }
 
         //        var getuser = function (data, status) {
-        //            console.log(data);
+//                    console.log(data);
         //            if (data == "false") {
         //                $location.url("/login");
         //            } else {
@@ -1350,7 +1351,7 @@ phonecatControllers.controller('MyCtrl',
                     $scope.progress[index] = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
                 });
                 $scope.upload[index].xhr(function (xhr) {
-                    //				xhr.upload.addEventListener('abort', function() {console.log('abort complete')}, false);
+//                    				xhr.upload.addEventListener('abort', function() {console.log('abort complete')}, false);
                 });
             } else {
                 var fileReader = new FileReader();
