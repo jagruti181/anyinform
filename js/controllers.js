@@ -29,7 +29,7 @@ phonecatControllers.controller('home',
             console.log(data);
             console.log("auth authe success end");
             
-            if(data != false)
+            if(data != "false")
             {
                 RestService.setjuser(data);
             }
