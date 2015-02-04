@@ -1,6 +1,6 @@
-var onlyadminurl="http://mafiawarloots.com/foranyinformation/";
+//var onlyadminurl="http://mafiawarloots.com/foranyinformation/";
 //var onlyadminurl="http://localhost/foranyinformation/";
-//var onlyadminurl="http://indiavaluehomes.com/fa/";
+var onlyadminurl="http://indiavaluehomes.com/fa/";
 var adminurl=onlyadminurl+"index.php/json/";
 //var adminurl="http://localhost/foranyinformation/index.php/json/";
 
