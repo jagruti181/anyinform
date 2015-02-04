@@ -393,7 +393,7 @@ nav#main_menu li a,
     width: 249px !important;
     border: 1px solid #000;
     margin-left: 8px;
-    height: 206px !important;
+    height: 142px !important;
 }
 .fa-linkedin {
     background: rgba(255, 69, 24, 0.3);
@@ -2156,7 +2156,7 @@ border-color: #049fb3;
 }
 .category .media {
     width: 850px;
-    padding: 21px;
+    /* padding: 4px; */
     /* padding-bottom: 0px; */
 }
 .cate-social {

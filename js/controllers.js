@@ -109,6 +109,7 @@ phonecatControllers.controller('home',
                     if (data[i].types[0] == "sublocality_level_1") {
                         //                        cityis.selected = data[i].long_name;
                         area = data[i].long_name;
+                        $scope.area1 = data[i].long_name;
                         $scope.area = data[i].long_name;
                     }
                 }
@@ -875,6 +876,11 @@ phonecatControllers.controller('OtherCtrl',
         $scope.demo = "demo";
         $scope.myemail = "";
 
+        $scope.gotoprofile = function () {
+            $location.url('/profile');
+        }
+    
+    
         $scope.banner = RestService.getbanner();
         console.log("my banner//////////////////////////////");
         console.log(RestService.getbanner());
