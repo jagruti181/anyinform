@@ -982,15 +982,15 @@ phonecatControllers.controller('OtherCtrl',
             console.log("city");
             console.log(text[1]);
             if (!text[1]) {
-                                $scope.area = '';
-//                $scope.area = $scope.area;
+                //                $scope.area = '';
+                $scope.area = $scope.area;
             } else {
                 $scope.area = text[1];
             }
 
             if (text[0] != "") {
 
-                RestService.searchcategory($scope.searchtext, city, $scope.area, lat, long).success(searchsuccess);
+                RestService.searchcategory($scope.searchtext, city, area, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }
