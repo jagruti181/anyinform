@@ -955,7 +955,7 @@ phonecatControllers.controller('OtherCtrl',
 
             }
             for (var i = 0; i < data.length; i++) {
-                if(data[i].dist && data[i].dist!='')
+                if(data[i].dist!=null && data[i].dist!='')
                 {
                     $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
                 }else{
