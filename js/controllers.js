@@ -41,7 +41,7 @@ phonecatControllers.controller('home',
             console.log(data);
             console.log("auth authe success end");
             
-            if(data != "false")
+            if(data != "false" && !data.accesslevel)
             {
                 RestService.setjusera(data,callback);
                 
@@ -896,7 +896,7 @@ phonecatControllers.controller('OtherCtrl',
             console.log(data);
             console.log("auth authe success end");
             
-            if(data != "false")
+            if(data != "false" && !data.accesslevel)
             {
                 RestService.setjusera(data,callback);
                 
