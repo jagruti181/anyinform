@@ -878,6 +878,34 @@ phonecatControllers.controller('OtherCtrl',
         }
     
     
+        var callback = function () {
+            $scope.juser = RestService.getjuser();
+                if ($scope.juser == null) {
+                    $scope.signuppro = "Sign Up";
+                    $scope.loginlogout = "Login";
+                } else {
+                    $scope.signuppro = "My Profile";
+                    $scope.loginlogout = "Logout";
+                    $scope.myemail = "Welcome ,  " + $scope.juser.firstname + " " + $scope.juser.lastname;
+                }
+        }
+    
+        var authsuccess = function (data, status) {
+            
+            console.log("auth auth success");
+            console.log(data);
+            console.log("auth authe success end");
+            
+            if(data != "false")
+            {
+                RestService.setjusera(data,callback);
+                
+            }
+            
+        };
+    
+        RestService.authenticate().success(authsuccess);
+        
         $scope.banner = RestService.getbanner();
         console.log("my banner//////////////////////////////");
         console.log(RestService.getbanner());
