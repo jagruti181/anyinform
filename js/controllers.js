@@ -32,7 +32,15 @@ phonecatControllers.controller('home',
             if(data != "false")
             {
                 RestService.setjuser(data);
-                $location.url('/home');
+                $scope.juser = RestService.getjuser();
+                if ($scope.juser == null) {
+                    $scope.signuppro = "Sign Up";
+                    $scope.loginlogout = "Login";
+                } else {
+                    $scope.signuppro = "My Profile";
+                    $scope.loginlogout = "Logout";
+                    $scope.myemail = "Welcome ,  " + $scope.juser.firstname + " " + $scope.juser.lastname;
+                }
             }
             
         };
