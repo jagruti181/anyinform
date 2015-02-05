@@ -975,6 +975,13 @@ phonecatControllers.controller('OtherCtrl',
         };
 
         $scope.searchlist = function (text) {
+            //            if (!city)
+            //                city = 0;
+            console.log("my city");
+            console.log(city);
+            console.log("my area");
+            console.log(area);
+
             // substr()
             text = text.split(' in ');
             console.log("search tet");
@@ -982,8 +989,8 @@ phonecatControllers.controller('OtherCtrl',
             console.log("city");
             console.log(text[1]);
             if (!text[1]) {
-                //                $scope.area = '';
-                $scope.area = $scope.area;
+                                $scope.area = '';
+//                $scope.area = $scope.area;
             } else {
                 $scope.area = text[1];
             }
