@@ -32,6 +32,7 @@ phonecatControllers.controller('home',
             if(data != "false")
             {
                 RestService.setjuser(data);
+                $location.url('/home');
             }
             
         };
