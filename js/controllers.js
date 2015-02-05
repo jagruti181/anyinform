@@ -997,7 +997,7 @@ phonecatControllers.controller('OtherCtrl',
 
             if (text[0] != "") {
 
-                RestService.searchcategory($scope.searchtext, city, area, lat, long).success(searchsuccess);
+                RestService.searchcategory($scope.searchtext, city, $scope.area, lat, long).success(searchsuccess);
             } else {
                 $scope.searchshow = false;
             }
