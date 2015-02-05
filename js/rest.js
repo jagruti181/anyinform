@@ -33,6 +33,10 @@ var restservice = angular.module('restservice', [])
         setjuser: function(data){
             $.jStorage.set('anyuser',data);
         },
+        setjusera: function(data,callback){
+            $.jStorage.set('anyuser',data);
+            callback();
+        },
         getjuser: function(data){
             return $.jStorage.get('anyuser');
         },

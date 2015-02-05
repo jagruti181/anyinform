@@ -23,16 +23,8 @@ phonecatControllers.controller('home',
         $scope.form = [];
         $scope.city = '';
 
-        var authsuccess = function (data, status) {
-            
-            console.log("auth auth success");
-            console.log(data);
-            console.log("auth authe success end");
-            
-            if(data != "false")
-            {
-                RestService.setjuser(data);
-                $scope.juser = RestService.getjuser();
+        var callback = function () {
+            $scope.juser = RestService.getjuser();
                 if ($scope.juser == null) {
                     $scope.signuppro = "Sign Up";
                     $scope.loginlogout = "Login";
@@ -41,6 +33,18 @@ phonecatControllers.controller('home',
                     $scope.loginlogout = "Logout";
                     $scope.myemail = "Welcome ,  " + $scope.juser.firstname + " " + $scope.juser.lastname;
                 }
+        }
+    
+        var authsuccess = function (data, status) {
+            
+            console.log("auth auth success");
+            console.log(data);
+            console.log("auth authe success end");
+            
+            if(data != "false")
+            {
+                RestService.setjusera(data,callback);
+                
             }
             
         };
