@@ -542,32 +542,6 @@ phonecatControllers.controller('detail',
         console.log("my recent visit");
         console.log(RestService.getrecentvisit());
 
-        $scope.$on('$viewContentLoaded', function (event, viewConfig) {
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=623204201082335&version=v2.0";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        });
-
-
-        //        $scope.$on('$viewContentLoaded', function () {
-        //            (function (d, s, id) {
-        //                var js, fjs = d.getElementsByTagName(s)[0];
-        //                if (d.getElementById(id)) return;
-        //                js = d.createElement(s);
-        //                js.id = id;
-        //                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=623204201082335&version=v2.0";
-        //                fjs.parentNode.insertBefore(js, fjs);
-        //            }(document, 'script', 'facebook-jssdk'));
-        //            //Here your view content is fully loaded !!
-        //
-        //
-        //
-        //        });
 
         //get detail listing
         var getdetail = function (data, status) {
@@ -981,7 +955,12 @@ phonecatControllers.controller('OtherCtrl',
 
             }
             for (var i = 0; i < data.length; i++) {
-                $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
+                if(data[i].dist)
+                {
+                    $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
+                }else{
+                    $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) ";
+                }
             }
         };
 
