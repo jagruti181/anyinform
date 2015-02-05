@@ -113,6 +113,7 @@ var restservice = angular.module('restservice', [])
                       'lastname':profile.lastname,
                       'email':profile.email,
                       'contact':profile.contact,
+                      'phoneno':profile.phoneno,
                       'dob':profile.dob,
                       'website':profile.website,
                       'address':profile.address,

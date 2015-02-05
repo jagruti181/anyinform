@@ -695,7 +695,7 @@ phonecatControllers.controller('profile',
 
             var check = formvalidation($scope.allvalidation1);
 
-            if (check) {
+            if (check=='') {
                 console.log("yahooo...checked");
                 RestService.saveprofile(profile).success(profilesuccess);
 
