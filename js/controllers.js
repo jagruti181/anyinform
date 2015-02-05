@@ -180,7 +180,14 @@ phonecatControllers.controller('home',
 
             }
             for (var i = 0; i < data.length; i++) {
-                $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
+                
+                if(data[i].dist!=null && data[i].dist!='')
+                {
+                    $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) " + data[i].dist + " KM ";
+                }else{
+                    $scope.searchdrop[i].search = data[i].categoryname + " " + data[i].name + " ( " + data[i].area + " ) ";
+                }
+                
             }
         };
         $scope.searchlist = function (text, city) {
