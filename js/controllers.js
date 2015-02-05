@@ -217,6 +217,11 @@ phonecatControllers.controller('home',
         }
         var getcity = function (data, status) {
             $scope.cities = data;
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition2, showError);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
         };
         RestService.getallcity().success(getcity);
         // searching 
