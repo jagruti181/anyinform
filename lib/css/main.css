@@ -2574,6 +2574,12 @@ a.btn.enq {
 			display: block;
 		}
 
+.login{
+
+width: 40%;
+
+}
+
 #notificationContainer {
 background-color: #fff;
 border: 1px solid rgba(100, 100, 100, .4);
