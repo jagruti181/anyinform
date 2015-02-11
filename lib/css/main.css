@@ -390,7 +390,7 @@ nav#main_menu li a,
     margin-top: 7px;
 }
 .mediumimage {
-    width: 249px !important;
+    width: 190px !important;
     border: 1px solid #000;
     margin-left: 8px;
     height: 142px !important;
@@ -2445,7 +2445,7 @@ padding: 0px 7px 0px 11px;
     color: #fff;
 }
 .media-body p {
-    width: 50%;
+    width: 100%;
     text-indent: -5px;
     padding-left: 11px;
 }
