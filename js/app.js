@@ -44,6 +44,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'signup'
         }).
+        when('/changepassword', {
+            templateUrl: 'views/template.html',
+            controller: 'changepassword'
+        }).
         when('/login', {
             templateUrl: 'views/template.html',
             controller: 'login'

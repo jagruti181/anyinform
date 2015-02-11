@@ -642,6 +642,15 @@ phonecatControllers.controller('about',
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     });
+
+phonecatControllers.controller('changepassword',
+    function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+        TemplateService.content = "views/changepassword.html";
+        TemplateService.slider = false;
+        TemplateService.navigation = "views/innerheader.html";
+    });
+
 phonecatControllers.controller('profile',
     function ($scope, TemplateService, RestService) {
         $scope.template = TemplateService;
