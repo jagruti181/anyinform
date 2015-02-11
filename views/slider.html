@@ -28,12 +28,13 @@
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="{{'png/slider1.png'|imagepath2}}" alt="" height="100%" width="100%">
+                        <div class="item {{slider1.active}}" ng-repeat="slider1 in positionone">
+                            <img src="{{slider1.image|imagepath}}" alt="" height="100%" width="100%">
                             <div class="carousel-caption">
-
+                                {{slider1.name}}
                             </div>
                         </div>
+<!--
                         <div class="item">
                             <img src="{{'png/slider2.png'|imagepath2}}" alt="" height="100%" width="100%">
                             <div class="carousel-caption">
@@ -46,9 +47,12 @@
 
                             </div>
                         </div>
+-->
                     </div>
+<!--
                     </a>
                     </a>
+-->
                 </div>
 
 
@@ -103,33 +107,35 @@
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
+                        <div class="item {{slider2.active}}" ng-repeat="slider2 in positiontwo">
+                            <img src="{{slider2.image|imagepath}}" alt="" height="100%" width="100%">
+                            <div class="carousel-caption">
+                                {{slider2.name}}
+                            </div>
+                        </div>
+<!--
                         <div class="item active">
-                            <img src="{{'png/slider4.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <img src="{{'2012103118495610970.jpg'|imagepath}}" alt="" height="100%" width="100%">
                             <div class="carousel-caption">
 
                             </div>
                         </div>
                         <div class="item">
-                            <img src="{{'png/slider5.png'|imagepath2}}" alt="" height="100%" width="100%">
+                            <img src="{{'2012103118495610970.jpg'|imagepath}}" alt="" height="100%" width="100%">
                             <div class="carousel-caption">
 
                             </div>
                         </div>
-                        <div class="item">
-                            <img src="{{'png/slider6.png'|imagepath2}}" alt="" height="100%" width="100%">
-                            <div class="carousel-caption">
-
-                            </div>
-                        </div>
+-->
                     </div>
 
                     <!-- Controls -->
                     <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
                     <!--    <span class="glyphicon glyphicon-chevron-left"></span>-->
-                    </a>
+<!--                    </a>-->
                     <!--  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
                     <!--    <span class="glyphicon glyphicon-chevron-right"></span>-->
-                    </a>
+<!--                    </a>-->
                 </div>
 
                 <!--

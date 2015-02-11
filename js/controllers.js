@@ -81,8 +81,8 @@ phonecatControllers.controller('home',
 
         //    Start Get all Banners / Adds
         var addsuccess = function (data, status) {
-//            console.log("my adds");
-//            console.log(data);
+            console.log("my adds");
+            console.log(data);
             for (var i = 0; i < data.length; i++) {
                 if (data[i].position == 1) {
                     $scope.positionone = data[i].adds;
@@ -90,6 +90,15 @@ phonecatControllers.controller('home',
                     $scope.positiontwo = data[i].adds;
                 }
             }
+            
+            $scope.positiontwo[0].active = "active";
+            $scope.positionone[0].active = "active";
+            
+//            for(var j = 0 ; j < $scope.positionone.length ; j++)
+//            {
+//                $scope.positionone[0]
+//            }
+            
 //            console.log("one");
 //            console.log($scope.positionone);
 //            console.log("two");
