@@ -11,12 +11,12 @@
                             </li>
                             <li><a ng-click="showlisting()" class="onlycursor">&nbsp;&nbsp;List Your Business</a>
                             </li>
-                            <div id="notification_li">
-                            <a class="onlycursor" id="notificationLink"><span class="symbol" style="font-size:13px; position: relative;left: 470px;top: 8px;color: #aeaeae;z-index:100000;">{{myemail}}</span></a>
+                            <div id="">
+                            <a class="onlycursor" ><span class="symbol" style="font-size:13px; position: relative;left: 470px;top: 8px;color: #aeaeae;z-index:100000;">{{myemail}}</span></a>
                             <!--								<li><a href="#/listbusiness" class="onlycursor">&nbsp;&nbsp;List Your Business</a></li>-->
                             <!-- <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li> -->
-                            <div id="notificationContainer">
+                            <div id="notificationContainer" style="display:inline;">
                                 <div id="notificationTitle"><a ng-click="gotoprofile()">Visit Profile</a><a ng-click="gotochangepass()">Change Password</a></div>
                               
                             </div>
@@ -48,22 +48,3 @@
 </header>
 <!--/header-->
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#notificationLink").click(function () {
-            $("#notificationContainer").fadeToggle(300);
-            $("#notification_count").fadeOut("slow");
-            return false;
-        });
-
-        //Document Click
-        $(document).click(function () {
-            $("#notificationContainer").hide();
-        });
-        //Popup Click
-        $("#notificationContainer").click(function () {
-            return false
-        });
-
-    });
-</script>
