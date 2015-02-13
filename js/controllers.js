@@ -653,28 +653,50 @@ phonecatControllers.controller('about',
     });
 
 phonecatControllers.controller('changepassword',
-    function ($scope, TemplateService) {
+    function ($scope, TemplateService, toaster, RestService, $location) {
         $scope.template = TemplateService;
         TemplateService.content = "views/changepassword.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
     
         $scope.login = [];
+        $scope.allvalidation = [];
+    
+//        jstorage user authentication start
+        $scope.juser = RestService.getjuser();
+        if ($scope.juser != null) {
+
+            $scope.userdata = $scope.juser.id;
+
+        } else {
+
+            $location.url("/login");
+
+        }
+//        jstorage user authentication ends
+    
+        var changepasswordsuccess = function (data, status){
+            if( data == "1" ){
+                $location.url("/home");
+            }else{
+                toaster.pop("error", "Change Password Error", "Wroung Password. ", 5000);
+            }
+        }
         
         $scope.changepassword = function (login) {
             console.log(login);
             
             //signup validation
             $scope.allvalidation = [{
-                field: $scope.login.firstname,
+                field: $scope.login.oldpassword,
                 name: "Current Password",
                 validation: ""
              }, {
-                field: $scope.login.lastname,
+                field: $scope.login.newpassword,
                 name: "New Password",
                 validation: ""
              }, {
-                field: $scope.login.phoneno,
+                field: $scope.login.confirmpassword,
                 name: "Confirm Password",
                 validation: ""
              }];
@@ -682,15 +704,16 @@ phonecatControllers.controller('changepassword',
             var check = formvalidation($scope.allvalidation);
 
             if ( check == '' ) {
-                if ($scope.signup.password === $scope.signup.cpassword) {
-                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
+                if ($scope.login.newpassword === $scope.login.confirmpassword) {
+                    login.id = $scope.userdata;
+                    RestService.changepass(login).success(changepasswordsuccess);
                 } else {
-                    toaster.pop("error", "Signup Error", "Wroung password", 5000);
+                    toaster.pop("error", "Change Password Error", "New password & Confirm password mismatch. ", 5000);
                 }
 
             } else {
                 console.log("not ckeck");
-                toaster.pop("error", "Signup Error", "Enter Proper " + check, 5000);
+                toaster.pop("error", "Change Password Error", "Enter Proper " + check, 5000);
             }
 
         }
@@ -927,8 +950,16 @@ phonecatControllers.controller('OtherCtrl',
         $scope.userdata = [];
         $scope.demo = "demo";
         $scope.myemail = "";
+        $scope.profilepasword = "false";
     
 
+        $scope.showhidediv = function (){
+            if($scope.profilepasword == "false")
+                $scope.profilepasword = "true";
+            else
+                $scope.profilepasword = "false";
+        }
+    
         $scope.gotoprofile = function () {
             $location.url('/profile');
         }

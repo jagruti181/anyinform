@@ -2589,7 +2589,7 @@ position: absolute;
 top: 30px;
 /* margin-left: -170px; */
 /* width: 400px; */
-/* z-index: -1; */
+z-index: 99999999;
 /*display: none;*/
     
 right: -300px;
@@ -2608,7 +2608,6 @@ margin-top: -20px;
 margin-left: 188px;
 }
 #notificationTitle {
-z-index: 1000;
 font-weight: bold;
 padding: 14px;
 font-size: 13px;

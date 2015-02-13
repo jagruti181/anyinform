@@ -12,14 +12,12 @@
                             <li><a ng-click="showlisting()" class="onlycursor">&nbsp;&nbsp;List Your Business</a>
                             </li>
                             <div id="">
-                            <a class="onlycursor" ><span class="symbol" style="font-size:13px; position: relative;left: 470px;top: 8px;color: #aeaeae;z-index:100000;">{{myemail}}</span></a>
-                            <!--								<li><a href="#/listbusiness" class="onlycursor">&nbsp;&nbsp;List Your Business</a></li>-->
-                            <!-- <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li> -->
-                            <div id="notificationContainer" style="display:inline;">
-                                <div id="notificationTitle"><a ng-click="gotoprofile()">Visit Profile</a><a ng-click="gotochangepass()">Change Password</a></div>
-                              
-                            </div>
+                                <a class="onlycursor" ng-click="showhidediv()"><span class="symbol" style="font-size:13px; position: relative;left: 470px;top: 8px;color: #aeaeae;z-index:100000;">{{myemail}}</span></a>
+                                <div id="notificationContainer" style="display:inline;" ng-if="profilepasword">
+                                    <div id="notificationTitle"><a ng-click="gotoprofile()">Visit Profile</a><a ng-click="gotochangepass()">Change Password</a>
+                                    </div>
+
+                                </div>
                             </div>
                         </ul>
                     </div>
