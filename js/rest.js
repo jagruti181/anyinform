@@ -1,179 +1,191 @@
-var onlyadminurl="http://mafiawarloots.com/foranyinformation/";
+var onlyadminurl = "http://mafiawarloots.com/foranyinformation/";
 //var onlyadminurl="http://localhost/foranyinformation/";
 //var onlyadminurl="http://indiavaluehomes.com/fa/";
-var adminurl=onlyadminurl+"index.php/json/";
+var adminurl = onlyadminurl + "index.php/json/";
 //var adminurl="http://localhost/foranyinformation/index.php/json/";
 
 
 var restservice = angular.module('restservice', [])
 
 .factory('RestService', function ($http) {
-   
-    var banner='';
+
+    var banner = '';
     var recent = [];
     return {
-        getmap: function(data){
-            return $http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+data+"&key=AIzaSyAj0OXepKIgjTlZiPe_ZVYTDjL8rYpobgQ",{});
+        getmap: function (data) {
+            return $http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + data + "&key=AIzaSyAj0OXepKIgjTlZiPe_ZVYTDjL8rYpobgQ", {});
         },
-        recentvisit: function(id){
-//            console.log("my recent id");
-//            console.log(id);
-//            $recent = {
-//                'one' : id
-//            };
-//            recent=$.jStorage.get('recent');
+        recentvisit: function (id) {
+            //            console.log("my recent id");
+            //            console.log(id);
+            //            $recent = {
+            //                'one' : id
+            //            };
+            //            recent=$.jStorage.get('recent');
             recent.push(id);
-            if(recent.length > 3)
-            {
-            recent.splice(0,1);
-//                $scope.cat.splice(i, 1);
+            if (recent.length > 3) {
+                recent.splice(0, 1);
+                //                $scope.cat.splice(i, 1);
             }
-        $.jStorage.set('recent',recent);
+            $.jStorage.set('recent', recent);
         },
-        setjuser: function(data){
-            $.jStorage.set('anyuser',data);
+        setjuser: function (data) {
+            $.jStorage.set('anyuser', data);
         },
-        setjusera: function(data,callback){
-            $.jStorage.set('anyuser',data);
+        setjusera: function (data, callback) {
+            $.jStorage.set('anyuser', data);
             callback();
         },
-        getjuser: function(data){
+        getjuser: function (data) {
             return $.jStorage.get('anyuser');
         },
-        getrecentvisit: function(){
+        getrecentvisit: function () {
             return $.jStorage.get('recent');
         },
-        facebooklogin: function(){
-            return $http.get(onlyadminurl+"index.php/hauth/login/Facebook",{});
+        facebooklogin: function () {
+            return $http.get(onlyadminurl + "index.php/hauth/login/Facebook", {});
         },
-        getuser: function(id){
-            return $http.get(adminurl+"getuser?id="+id,{});
+        getuser: function (id) {
+            return $http.get(adminurl + "getuser?id=" + id, {});
         },
-        getsubcategory: function(id){
-            return $http.get(adminurl+"getsubcategory?id="+id,{});
+        getsubcategory: function (id) {
+            return $http.get(adminurl + "getsubcategory?id=" + id, {});
         },
-        logout: function(){
+        logout: function () {
             $.jStorage.flush();
-            return $http.get(adminurl+"logout",{});
+            return $http.get(adminurl + "logout", {});
         },
-        getbanner: function(){
+        getbanner: function () {
             return banner;
         },
-        setbanner: function(banner){
+        setbanner: function (banner) {
             banner = banner;
             return banner;
         },
-        getcategoryinfo: function(id){
-            return $http.get(adminurl+"getcategoryinfo?id="+id,{});
+        getcategoryinfo: function (id) {
+            return $http.get(adminurl + "getcategoryinfo?id=" + id, {});
         },
-        getcategorytree: function(){
-            return $http.get(adminurl+"getcategorytree",{});
+        getcategorytree: function () {
+            return $http.get(adminurl + "getcategorytree", {});
         },
-        alladd: function(){
-            return $http.get(adminurl+"alladd",{});
+        alladd: function () {
+            return $http.get(adminurl + "alladd", {});
         },
-        getallcategory: function(){
-            return $http.get(adminurl+"getcategoryfront",{});
+        getallcategory: function () {
+            return $http.get(adminurl + "getcategoryfront", {});
         },
-        createlisting: function(list){
+        createlisting: function (list) {
             return $http({
-                url: adminurl+"createlisting",
+                url: adminurl + "createlisting",
                 method: "POST",
-               data: {'name':list.name,
-                      'category':list.category,
-                      'modeofpayment':list.modeofpayment,
-                      'daysofoperation':list.daysofoperation,
-                      'address':list.address,
-                      'area':list.area,
-                      'pincode':list.pincode,
-                      'city':list.city,
-                      'state':list.state,
-                      'country':list.country,
-                      'latitude':list.latitude,
-                      'longitude':list.longitude,
-                      'description':list.description,
-                      'contact':list.contact,
-                      'email':list.email,
-                      'website':list.website,
-                      'facebook':list.facebook,
-                      'googleplus':list.googleplus,
-                      'twitter':list.twitter,
-                      'yearofestablishment':list.yearofestablishment,
-                      'timeofoperationstart':list.timeofoperationstart,
-                      'timeofoperationend':list.timeofoperationend,
-                      'type':list.type,
-                      'credits':list.credits,
-                      'video':list.video,
-                      'logo':list.logo,
-                      'user':list.user}
+                data: {
+                    'name': list.name,
+                    'category': list.category,
+                    'modeofpayment': list.modeofpayment,
+                    'daysofoperation': list.daysofoperation,
+                    'address': list.address,
+                    'area': list.area,
+                    'pincode': list.pincode,
+                    'city': list.city,
+                    'state': list.state,
+                    'country': list.country,
+                    'latitude': list.latitude,
+                    'longitude': list.longitude,
+                    'description': list.description,
+                    'contact': list.contact,
+                    'email': list.email,
+                    'website': list.website,
+                    'facebook': list.facebook,
+                    'googleplus': list.googleplus,
+                    'twitter': list.twitter,
+                    'yearofestablishment': list.yearofestablishment,
+                    'timeofoperationstart': list.timeofoperationstart,
+                    'timeofoperationend': list.timeofoperationend,
+                    'type': list.type,
+                    'credits': list.credits,
+                    'video': list.video,
+                    'logo': list.logo,
+                    'user': list.user
+                }
             });
         },
-        saveprofile: function(profile){
+        changepass: function (password) {
             return $http({
-                url: adminurl+"saveprofile",
+                url: adminurl + "changepassword",
                 method: "POST",
-               data: {'id':profile.id,
-                      'firstname':profile.firstname,
-                      'lastname':profile.lastname,
-                      'email':profile.email,
-                      'contact':profile.contact,
-                      'phoneno':profile.phoneno,
-                      'dob':profile.dob,
-                      'website':profile.website,
-                      'address':profile.address,
-                      'city':profile.city,
-                      'pincode':profile.pincode,
-                      'state':profile.state,
-                      'country':profile.country,
-                      'google':profile.google,
-                      'facebookuserid':profile.facebookuserid}
+                data: {
+                    'id': password.id,
+                    'password': password.password,
+                }
             });
         },
-        authenticate: function(){
-            return $http.get(adminurl+"authenticate",{});
+        saveprofile: function (profile) {
+            return $http({
+                url: adminurl + "saveprofile",
+                method: "POST",
+                data: {
+                    'id': profile.id,
+                    'firstname': profile.firstname,
+                    'lastname': profile.lastname,
+                    'email': profile.email,
+                    'contact': profile.contact,
+                    'phoneno': profile.phoneno,
+                    'dob': profile.dob,
+                    'website': profile.website,
+                    'address': profile.address,
+                    'city': profile.city,
+                    'pincode': profile.pincode,
+                    'state': profile.state,
+                    'country': profile.country,
+                    'google': profile.google,
+                    'facebookuserid': profile.facebookuserid
+                }
+            });
         },
-        sendemail: function(userid,listingid){
-            return $http.get(adminurl+"sendemail?userid="+userid+"&listingid="+listingid,{});
+        authenticate: function () {
+            return $http.get(adminurl + "authenticate", {});
         },
-        getlistingbycategory: function(id){
-            return $http.get(adminurl+"getlistingbycategory?id="+id,{});
+        sendemail: function (userid, listingid) {
+            return $http.get(adminurl + "sendemail?userid=" + userid + "&listingid=" + listingid, {});
         },
-        enquiryuser: function(name,listing,email,phone,comment){
-            return $http.get(adminurl+"addenquiryoflistingfromfrontend?listingid="+listing+"&name="+name+"&email="+email+"&phone="+phone+"&comment="+comment,{});
+        getlistingbycategory: function (id) {
+            return $http.get(adminurl + "getlistingbycategory?id=" + id, {});
         },
-        getspecialoffersbycategory: function(cid){
-            return $http.get(adminurl+"getspecialoffersbycategory?categoryid="+cid,{});
+        enquiryuser: function (name, listing, email, phone, comment) {
+            return $http.get(adminurl + "addenquiryoflistingfromfrontend?listingid=" + listing + "&name=" + name + "&email=" + email + "&phone=" + phone + "&comment=" + comment, {});
         },
-        getonelistingbyid: function(id){
-            return $http.get(adminurl+"getonelistingbyid?id="+id,{});
+        getspecialoffersbycategory: function (cid) {
+            return $http.get(adminurl + "getspecialoffersbycategory?categoryid=" + cid, {});
         },
-        getlistingarray: function(id){
-            return $http.get(adminurl+"getlistingarray?ids="+id,{});
+        getonelistingbyid: function (id) {
+            return $http.get(adminurl + "getonelistingbyid?id=" + id, {});
         },
-        searchcategory: function(text,city,area,lat,long){
-            if(!city)
-            {
-                city='';
+        getlistingarray: function (id) {
+            return $http.get(adminurl + "getlistingarray?ids=" + id, {});
+        },
+        searchcategory: function (text, city, area, lat, long) {
+            if (!city) {
+                city = '';
             }
-            return $http.get(adminurl+"searchcategory?categoryname="+text+"&cityname="+city+"&area="+area+"&lat="+lat+"&long="+long,{});
+            return $http.get(adminurl + "searchcategory?categoryname=" + text + "&cityname=" + city + "&area=" + area + "&lat=" + lat + "&long=" + long, {});
         },
-        login: function(email,password){
-            return $http.get(adminurl+"login?email="+email+"&password="+password,{});
+        login: function (email, password) {
+            return $http.get(adminurl + "login?email=" + email + "&password=" + password, {});
         },
-        getallcity: function(search){
-            return $http.get(adminurl+"getallcity",{});
+        getallcity: function (search) {
+            return $http.get(adminurl + "getallcity", {});
         },
-        getallparentcategories: function(search){
-            return $http.get(adminurl+"getallparentcategories",{});
+        getallparentcategories: function (search) {
+            return $http.get(adminurl + "getallparentcategories", {});
         },
-        getfilter: function(id){
-            return $http.get(adminurl+"getfilter?id="+id,{});
+        getfilter: function (id) {
+            return $http.get(adminurl + "getfilter?id=" + id, {});
         },
-        viewonecitylocations: function(id){
-            return $http.get(adminurl+"viewonecitylocations?id="+id,{});
+        viewonecitylocations: function (id) {
+            return $http.get(adminurl + "viewonecitylocations?id=" + id, {});
         },
-        signup: function(firstname,lastname,phoneno,email,password){
-            return $http.get(adminurl+"signup?firstname="+firstname+"&lastname="+lastname+"&phoneno="+phoneno+"&email="+email+"&password="+password,{});
+        signup: function (firstname, lastname, phoneno, email, password) {
+            return $http.get(adminurl + "signup?firstname=" + firstname + "&lastname=" + lastname + "&phoneno=" + phoneno + "&email=" + email + "&password=" + password, {});
         }
 
     }

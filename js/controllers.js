@@ -658,6 +658,43 @@ phonecatControllers.controller('changepassword',
         TemplateService.content = "views/changepassword.html";
         TemplateService.slider = false;
         TemplateService.navigation = "views/innerheader.html";
+    
+        $scope.login = [];
+        
+        $scope.changepassword = function (login) {
+            console.log(login);
+            
+            //signup validation
+            $scope.allvalidation = [{
+                field: $scope.login.firstname,
+                name: "Current Password",
+                validation: ""
+             }, {
+                field: $scope.login.lastname,
+                name: "New Password",
+                validation: ""
+             }, {
+                field: $scope.login.phoneno,
+                name: "Confirm Password",
+                validation: ""
+             }];
+
+            var check = formvalidation($scope.allvalidation);
+
+            if ( check == '' ) {
+                if ($scope.signup.password === $scope.signup.cpassword) {
+                    RestService.signup(signup.firstname, signup.lastname, signup.phoneno, signup.email, signup.password).success(getuser);
+                } else {
+                    toaster.pop("error", "Signup Error", "Wroung password", 5000);
+                }
+
+            } else {
+                console.log("not ckeck");
+                toaster.pop("error", "Signup Error", "Enter Proper " + check, 5000);
+            }
+
+        }
+    
     });
 
 phonecatControllers.controller('profile',
@@ -890,12 +927,18 @@ phonecatControllers.controller('OtherCtrl',
         $scope.userdata = [];
         $scope.demo = "demo";
         $scope.myemail = "";
+    
 
         $scope.gotoprofile = function () {
             $location.url('/profile');
         }
     
-    
+        $scope.gotochangepass = function () {
+            $location.url('/changepassword');
+        }
+        
+        
+        
         var callback = function () {
             $scope.juser = RestService.getjuser();
                 if ($scope.juser == null) {
