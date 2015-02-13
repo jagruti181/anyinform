@@ -2590,7 +2590,7 @@ top: 30px;
 /* margin-left: -170px; */
 /* width: 400px; */
 z-index: -1;
-display: none;
+/*display: none;*/
     
 right: -300px;
 text-align: center !important;
