@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <a class="pull-left" href="#">
-                            <img class="media-object mediumimage img-responsive" src="{{detail.listing.logo|imagepath}}" alt="">
+                            <img class="media-object mediumimage img-responsive" ng-src="{{detail.listing.logo|imagepath}}" alt="">
                         </a>
                     </div>
                     <div class="col-md-4">
@@ -73,7 +73,7 @@
 
             <div class="col-md-12">
                 <div class="image-row">
-                    <img src="{{img.image|imagepath}}" class="lightbox" ng-click="imagelightbox(img.image)" height="80px" width="150px" ng-repeat="img in detail.images">
+                    <img ng-src="{{img.image|imagepath}}" class="lightbox" ng-click="imagelightbox(img.image)" height="80px" width="150px" ng-repeat="img in detail.images">
 
 
 
@@ -164,7 +164,7 @@
                                 <tr ng-repeat="recent in recentvisit">
                                     <td>
                                         <a href="#/detail/{{recent.id}}">
-                                            <img src="{{recent.logo|imagepath}}">
+                                            <img ng-src="{{recent.logo|imagepath}}">
                                         </a>
                                     </td>
                                     <td><a href="#/detail/{{recent.id}}" class="linknot">{{recent.name}}</a>
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <div class="video-you">
-                        <iframe width="84%" height="315" src="//www.youtube.com/embed/{{detail.listing.video}}">
+                        <iframe width="84%" height="315" ng-src="//www.youtube.com/embed/{{detail.listing.video}}">
                         </iframe>
                     </div>
                     <!--
